@@ -37,7 +37,6 @@ FP = {
     "TSOT5": "Package_TO_SOT_SMD:TSOT-23-5",
     "SOIC14": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
     "PTC1812": "Fuse:Fuse_1812_4532Metric",
-    "NTC_DISC": "Varistor:RV_Disc_D7mm_W3.4mm_P5mm",
     "IND6045": "Inductor_SMD:L_Bourns_SRN6045TA",
     "JST8": "Connector_JST:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical",
     "WIRE2": "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm",
@@ -49,33 +48,31 @@ PENDING = {"Pending": "⏳ value set after Cube measurement (TODO.md)"}
 
 
 def driver() -> Sheet:
-    s = Sheet("Liberty Lamp — candle driver", "candle-driver")
+    s = Sheet("Liberty Lamp — candle driver", "candle-driver", paper="A2")
     c = s.connect
 
     # ---- Input: cord, fuse, surge, bridge, inrush, bulk (row 0)
     heading(s, "INPUT: Cube 12–15 V AC (dimmed)", 0, 0)
     s.add("J1", "Connector_Generic:Conn_01x02", "Cord (2×20 AWG)", FP["WIRE2"], at(0, 0))
     c("J1", 1, "AC1"); c("J1", 2, "AC2")
-    s.add("F1", "Device:Polyfuse", "PTC 0.5 A hold, ≥30 V", FP["PTC1812"], at(1, 0))
+    s.add("F1", "Device:Polyfuse", "PTC 1.1 A hold, ≥30 V", FP["PTC1812"], at(1, 0))
     c("F1", 1, "AC1"); c("F1", 2, "AC1F")
     s.add("D1", "Device:D_TVS", "SMBJ24CA", FP["SMB"], at(2, 0))
     c("D1", 1, "AC1F"); c("D1", 2, "AC2")
-    # Schottky bridge (Device:D_Schottky: 1 = K, 2 = A)
-    for ref, col, anode, cathode in [("D2", 3, "AC1F", "VRAW"), ("D3", 4, "AC2", "VRAW"), ("D4", 5, "GND", "AC1F"), ("D5", 6, "GND", "AC2")]:
-        s.add(ref, "Device:D_Schottky", "SS34", FP["SMA"], at(col, 0))
+    # Schottky bridge (Device:D_Schottky: 1 = K, 2 = A). Low side returns via the inrush limiter (VNEG).
+    for ref, col, anode, cathode in [("D2", 3, "AC1F", "VBUS"), ("D3", 4, "AC2", "VBUS"), ("D4", 5, "VNEG", "AC1F"), ("D5", 6, "VNEG", "AC2")]:
+        s.add(ref, "Device:D_Schottky", "SS36", FP["SMA"], at(col, 0))
         c(ref, 2, anode); c(ref, 1, cathode)
-    s.add("RT1", "Device:Thermistor_NTC", "NTC 5 Ω, ≥1 A (inrush)", FP["NTC_DISC"], at(7, 0))
-    c("RT1", 1, "VRAW"); c("RT1", 2, "VBUS")
     s.add("C1", "Device:C_Polarized", "470µF 35V 105°C", FP["CP10"], at(8, 0), **PENDING)
     c("C1", 1, "VBUS"); c("C1", 2, "GND")
 
     # ---- Dim sense from the raw AC lines (row 1)
     heading(s, "DIM SENSE: full-wave AC → PA7", 0, 1)
-    s.add("D7", "Diode:BAT54C", "BAT54C", FP["SOT23"], at(0, 1))
-    c("D7", 1, "AC1F"); c("D7", 2, "AC2"); c("D7", 3, "VSENSE")  # BAT54C: 1 A1, 2 A2, 3 K (common)
+    s.add("D7", "Diode:BAV70", "BAV70", FP["SOT23"], at(0, 1))
+    c("D7", 1, "AC1F"); c("D7", 2, "AC2"); c("D7", 3, "VSENSE")  # BAV70: 1 A1, 2 A2, 3 K (common), 100 V
     s.add("R1", "Device:R", "100k", FP["R0603"], at(1, 1), **PENDING)
     c("R1", 1, "VSENSE"); c("R1", 2, "SENSE")
-    s.add("R2", "Device:R", "22k", FP["R0603"], at(2, 1), **PENDING)
+    s.add("R2", "Device:R", "18k", FP["R0603"], at(2, 1), **PENDING)
     c("R2", 1, "SENSE"); c("R2", 2, "GND")
     s.add("C9", "Device:C", "1nF", FP["C0603"], at(3, 1))
     c("C9", 1, "SENSE"); c("C9", 2, "GND")
@@ -85,21 +82,21 @@ def driver() -> Sheet:
     # ---- MCU hold-up rail + 5 V regulator (row 1, right)
     heading(s, "MCU RAIL: hold-up + 5 V", 5, 1)
     s.add("D6", "Device:D_Schottky", "BAT54WS", FP["SOD323"], at(5, 1))
-    c("D6", 2, "VBUS"); c("D6", 1, "VHOLD")
+    c("D6", 2, "VHOLD_IN"); c("D6", 1, "VHOLD")
     s.add("C2", "Device:C_Polarized", "100µF 35V", FP["CP6"], at(6, 1))
     c("C2", 1, "VHOLD"); c("C2", 2, "GND")
     s.add("C3", "Device:C", "1µF 50V", FP["C0603"], at(7, 1))
     c("C3", 1, "VHOLD"); c("C3", 2, "GND")
     s.add("U1", "Regulator_Linear:L78L05_SOT89", "78L05", FP["SOT89"], at(8, 1))
     c("U1", "@IN", "VHOLD"); c("U1", "@OUT", "+5V"); c("U1", "@GND", "GND")
-    s.add("C4", "Device:C", "100nF", FP["C0603"], at(9, 1))
+    s.add("C4", "Device:C", "1µF 16V", FP["C0603"], at(9, 1))
     c("C4", 1, "+5V"); c("C4", 2, "GND")
 
     # ---- MCU (row 2)
     heading(s, "MCU: ATtiny1614 — flame + dim decode", 0, 2)
     s.add("U2", "MCU_Microchip_ATtiny:ATtiny1614-SS", "ATtiny1614-SSNR", FP["SOIC14"], at(1, 2))
     for pin, net in [("@VCC", "+5V"), ("@GND", "GND"), ("@PB0", "CTRL1"), ("@PB1", "CTRL2"), ("@PB2", "CTRL3"),
-                     ("@PA7", "SENSE"), ("@PA5", "NTC"), ("@PA0", "UPDI")]:
+                     ("@PA7", "SENSE"), ("@PA5", "NTC"), ("@PA0", "UPDI_MCU")]:
         c("U2", pin, net)
     for pin in ["@PA1", "@PA2", "@PA3", "@PA4", "@PA6", "@PB3"]:
         s.no_connect("U2", pin)
@@ -114,18 +111,47 @@ def driver() -> Sheet:
     # ---- LED channels (rows 3–4): AL8860 hysteretic buck, high-side sense
     for n in (1, 2, 3):
         col = (n - 1) * 3
-        heading(s, f"LED CHANNEL {n}: 233 mA", col, 3)
+        heading(s, f"LED CHANNEL {n}: 196 mA", col, 3)
         u = f"U{n + 2}"
         s.add(u, "Driver_LED:AL8860WT", "AL8860WT-7", FP["TSOT5"], at(col, 3))
         c(u, "@VIN", "VBUS"); c(u, "@SET", f"LED{n}+"); c(u, "@CTRL", f"CTRL{n}"); c(u, "@SW", f"LX{n}"); c(u, "@GND", "GND")
-        s.add(f"Rs{n}", "Device:R", "0R43 1%", FP["R1206"], at(col + 1, 3))
+        s.add(f"Rs{n}", "Device:R", "0R51 1%", FP["R1206"], at(col + 1, 3))
         c(f"Rs{n}", 1, "VBUS"); c(f"Rs{n}", 2, f"LED{n}+")
-        s.add(f"L{n}", "Device:L", "33µH ≥1A", FP["IND6045"], at(col + 2, 3))
+        s.add(f"L{n}", "Device:L", "100µH (SRN6045TA-101M)", FP["IND6045"], at(col + 2, 3))
         c(f"L{n}", 1, f"LED{n}-"); c(f"L{n}", 2, f"LX{n}")
-        s.add(f"D{8 + n}", "Device:D_Schottky", "SS34", FP["SMA"], at(col + 1, 4))
+        s.add(f"D{8 + n}", "Device:D_Schottky", "SS36", FP["SMA"], at(col + 1, 4))
         c(f"D{8 + n}", 2, f"LX{n}"); c(f"D{8 + n}", 1, "VBUS")
         s.add(f"C{4 + n}", "Device:C", "10µF 50V X7R", FP["C1206"], at(col + 2, 4))
         c(f"C{4 + n}", 1, "VBUS"); c(f"C{4 + n}", 2, "GND")
+        # CTRL pull-down: the AL8860's internal pull-up would run the channel at 100%
+        # while the MCU is in reset, being flashed, or unprogrammed.
+        s.add(f"R{4 + n}", "Device:R", "4k7", FP["R0603"], at(col, 4))
+        c(f"R{4 + n}", 1, f"CTRL{n}"); c(f"R{4 + n}", 2, "GND")
+        s.add(f"C{10 + n}", "Device:C", "100nF 50V", FP["C0603"], at(col + 1, 5))  # tight at VIN
+        c(f"C{10 + n}", 1, "VBUS"); c(f"C{10 + n}", 2, "GND")
+
+    # ---- Inrush limiter (row 6): R9 limits the bulk-cap charge; Q1 shorts it out ~50 ms later.
+    heading(s, "INRUSH LIMITER: 10 Ω, FET bypass after ~30–50 ms", 0, 6)
+    s.add("R9", "Device:R", "10Ω 1W", "Resistor_SMD:R_2512_6332Metric", at(0, 6))
+    c("R9", 1, "VNEG"); c("R9", 2, "GND")
+    s.add("Q1", "Transistor_FET:DMN6075S", "DMN6075S", FP["SOT23"], at(1, 6))
+    c("Q1", "@S", "VNEG"); c("Q1", "@D", "GND"); c("Q1", "@G", "GATE")
+    # τ = 470k × 470nF ≈ 220 ms → Vgs(th) ≈ 2.5 V after ~29 ms (20 V bus) to ~52 ms (12 V),
+    # i.e. > 5 × the 10 Ω × 470 µF charge time constant, so C1 is full before R9 is bypassed.
+    s.add("R10", "Device:R", "470k", FP["R0603"], at(2, 6))
+    c("R10", 1, "VBUS"); c("R10", 2, "GATE")
+    s.add("C10", "Device:C", "470nF 25V", FP["C0603"], at(3, 6))
+    c("C10", 1, "GATE"); c("C10", 2, "VNEG")
+    s.add("D12", "Device:D_Zener", "12V (MM3Z12)", FP["SOD323"], at(4, 6))
+    c("D12", 1, "GATE"); c("D12", 2, "VNEG")
+    s.add("D13", "Device:D", "1N4148WS", FP["SOD323"], at(5, 6))  # dumps gate charge on power loss
+    c("D13", 2, "GATE"); c("D13", 1, "VBUS")
+
+    # ---- Series parts (row 6, right): hold-up surge limit, UPDI protection
+    s.add("R4", "Device:R", "47Ω", FP["R0603"], at(7, 6))
+    c("R4", 1, "VBUS"); c("R4", 2, "VHOLD_IN")
+    s.add("R8", "Device:R", "470Ω", FP["R0603"], at(8, 6))
+    c("R8", 1, "UPDI_MCU"); c("R8", 2, "UPDI")
 
     # ---- LED disc link (row 4, right)
     s.add("J2", "Connector_Generic:Conn_01x08", "To LED disc", FP["JST8"], at(9, 4))

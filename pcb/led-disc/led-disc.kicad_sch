@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "liberty-gen")
 	(generator_version "1")
-	(uuid "c062bf70-d142-4228-a1a1-a731567b1ef9")
+	(uuid "7c328fee-71de-4f95-82fe-1c95c2999901")
 	(paper "A4")
 	(title_block
 		(title "Liberty Lamp — LED disc (aluminum-core)")
@@ -851,7 +851,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "acd31a4c-0b57-4bda-8ec9-567b495c64cc")
+		(uuid "cab81564-d9ea-436b-a66e-bfc2dc6e0034")
 	)
 	(label "LED1-"
 		(at 20.32 33.02 0)
@@ -861,7 +861,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "71b10175-f0f1-45cf-8cf4-8adc3fb92ffb")
+		(uuid "3ef1eb96-b1cc-446d-9df9-588d06f35106")
 	)
 	(label "LED2+"
 		(at 20.32 35.56 0)
@@ -871,7 +871,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "523b2353-3026-4849-99fc-d02e80586fcc")
+		(uuid "c500f13c-58e4-4fe8-9510-362b9ac29eae")
 	)
 	(label "LED2-"
 		(at 20.32 38.1 0)
@@ -881,7 +881,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "32fd27d5-cab9-40b7-b595-7c8976b172a0")
+		(uuid "830b0090-9e93-4e13-ab25-f1bdbea6f6f5")
 	)
 	(label "LED3+"
 		(at 20.32 40.64 0)
@@ -891,7 +891,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cd5a23ed-a369-4468-9549-bda8162d5aad")
+		(uuid "ae1d2afc-b602-4f2d-b2d3-6684ffb20531")
 	)
 	(label "LED3-"
 		(at 20.32 43.18 0)
@@ -901,7 +901,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "36bda3fc-d2ce-40c3-9b02-12bbf0fd1158")
+		(uuid "c62b8d30-3535-4b91-b810-bfba205a9ca6")
 	)
 	(label "NTC"
 		(at 20.32 45.72 0)
@@ -911,7 +911,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "986afb3c-84c4-4988-b5e2-b96cf7ae6fac")
+		(uuid "f55af20a-6d0c-466f-9bb9-438a12d7a7e4")
 	)
 	(label "GND"
 		(at 20.32 48.26 0)
@@ -921,7 +921,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d959b88a-d3e1-45fd-85ab-8833759fca2a")
+		(uuid "094cbd0d-c6dd-4f38-97b8-387e6d04611d")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
@@ -931,7 +931,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4ecb6c95-03b8-4eda-90c4-b4d9a6ef840b")
+		(uuid "ae7c4ef4-8d9e-4dd6-a2a1-965d1be386ce")
 		(property "Reference" "J1"
 			(at 25.4 30.48 0)
 			(effects
@@ -967,32 +967,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "ae036f22-2ad6-49a6-8948-a95e7fc66b2a")
+			(uuid "ba960766-a103-4a4b-a38f-8610cc98acd4")
 		)
 		(pin "2"
-			(uuid "e24703e9-7f04-488d-aabf-b6d4f8d94272")
+			(uuid "d39b9d7a-649d-4df1-8dd1-c53c28aec494")
 		)
 		(pin "3"
-			(uuid "0e726c17-d21c-4bd6-8a12-d87b8c26102d")
+			(uuid "77abf872-0fe3-41d6-bf9b-67b8fc0b15ee")
 		)
 		(pin "4"
-			(uuid "4b896039-fa6d-4a74-896a-021057178865")
+			(uuid "4bc8a4c2-61f9-403b-a1a8-03213c819116")
 		)
 		(pin "5"
-			(uuid "bb21adea-db95-4297-9974-80592c6d401d")
+			(uuid "3932c746-e981-4d7e-8942-9e3a55734a9a")
 		)
 		(pin "6"
-			(uuid "03f8bfaa-9367-401a-9d8c-96c8ece04181")
+			(uuid "827bf742-998f-4a3c-ace5-ab7a46edd140")
 		)
 		(pin "7"
-			(uuid "40668a41-8aef-41eb-85e3-a7e7941157e0")
+			(uuid "2bae6535-a8c5-438b-8dea-eb021fd92cdd")
 		)
 		(pin "8"
-			(uuid "c84b10ee-9d16-4b26-8948-fe5acd3c9eb2")
+			(uuid "437916ce-bad4-47a0-b1e6-dc0a7de0e180")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "J1")
 					(unit 1)
 				)
@@ -1007,7 +1007,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ad5785a8-9603-47a9-9966-289bf8045e6b")
+		(uuid "579b90c1-7b3f-475d-9def-a234525e8208")
 	)
 	(label "LED1+"
 		(at 69.85 38.1 0)
@@ -1017,7 +1017,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ccc1d7b1-2fc0-4060-887d-fdb97b960b27")
+		(uuid "443a668e-0d1b-4f1d-acf2-632db80fca90")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1027,7 +1027,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7effde56-2140-4d4f-be3e-6ef6f8500d79")
+		(uuid "6eab7b5f-93e3-4482-ae22-60cea98acf4c")
 		(property "Reference" "D1"
 			(at 66.04 30.48 0)
 			(effects
@@ -1063,14 +1063,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "df789725-47d6-48ef-931f-3463caf693b9")
+			(uuid "f464de8a-8c15-4ca4-991c-27092a59aa6b")
 		)
 		(pin "2"
-			(uuid "d54e393d-ebeb-487a-b8b2-89916942d38d")
+			(uuid "7b0e3684-8111-4ccf-9846-ffde08f57881")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D1")
 					(unit 1)
 				)
@@ -1085,7 +1085,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eb52d4dd-87f2-4741-867c-442616a5d591")
+		(uuid "ba41d096-385a-46be-9a8d-0160abf98b1a")
 	)
 	(label "S1"
 		(at 110.49 38.1 0)
@@ -1095,7 +1095,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3cbb724d-c8b5-4cb3-b221-060d03becd84")
+		(uuid "fa6a359e-fb7c-4991-bf1f-b88edb666039")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1105,7 +1105,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "69a78f00-a688-411b-ac6e-47d2cf95fc61")
+		(uuid "e17b2f49-e372-4d94-a9f4-c4b9a09b8920")
 		(property "Reference" "D2"
 			(at 106.68 30.48 0)
 			(effects
@@ -1141,14 +1141,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "593df4dc-d7f9-41aa-88cb-fcb27e571793")
+			(uuid "13fc570c-e538-44e5-84f1-c3a56b5b436a")
 		)
 		(pin "2"
-			(uuid "b0d5cdd7-c85d-4b03-9b1f-bfb44cf9fdb5")
+			(uuid "2d76b94c-187c-49d2-8b70-ea4655bb7a45")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D2")
 					(unit 1)
 				)
@@ -1163,7 +1163,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3c107db4-4ee1-4bba-aec7-43f08ed47126")
+		(uuid "e3eeb2fb-e39f-431f-b243-de36afb47257")
 	)
 	(label "LED2+"
 		(at 69.85 78.74 0)
@@ -1173,7 +1173,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9fbda5cc-c5c0-4ffe-894e-ea6c6f0336ef")
+		(uuid "34ab9868-53f2-4428-905d-0825752c8117")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1183,7 +1183,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f1a7578d-ea25-44c3-a6d4-879c7e5d8c3f")
+		(uuid "31718108-fa7f-4168-a694-de0523a0b522")
 		(property "Reference" "D3"
 			(at 66.04 71.12 0)
 			(effects
@@ -1219,14 +1219,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f25f7c6f-6762-46f7-91c6-7d7d5cf0609d")
+			(uuid "e085d167-19fe-430f-acfa-dbbf7365e4fa")
 		)
 		(pin "2"
-			(uuid "bfb1ae33-bc9b-4031-bf67-efc792bc50e0")
+			(uuid "9f6884c6-ebab-4cbe-bf00-031d7bd2a271")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D3")
 					(unit 1)
 				)
@@ -1241,7 +1241,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "48c6b814-6515-4004-9c51-4714949990f7")
+		(uuid "b5689630-af6c-46e8-8bb1-acdce8021999")
 	)
 	(label "S2"
 		(at 110.49 78.74 0)
@@ -1251,7 +1251,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "22723775-5f1f-42cb-ad58-3de4c2650d06")
+		(uuid "95abb1c4-a629-4082-a4d4-a19d645af786")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1261,7 +1261,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "64aa7864-c950-4090-b78c-2644cfe4cb12")
+		(uuid "2cfed3c9-62cd-4a02-8878-8a4548cd6a1a")
 		(property "Reference" "D4"
 			(at 106.68 71.12 0)
 			(effects
@@ -1297,14 +1297,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f30e872f-617a-44e7-9b06-9b364bd9a88e")
+			(uuid "47201efb-1d44-4193-8153-2620f564b613")
 		)
 		(pin "2"
-			(uuid "c83a0bd4-b8a8-487b-89f5-e8ff39703ff9")
+			(uuid "f5d3b1f4-072e-481b-9079-8accb0727982")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D4")
 					(unit 1)
 				)
@@ -1319,7 +1319,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0593a7bf-a889-474d-92f5-2af57a9f34d3")
+		(uuid "a82c51cd-776e-4bb4-bd29-db0e086ae991")
 	)
 	(label "LED3+"
 		(at 69.85 119.38 0)
@@ -1329,7 +1329,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7e738c1f-6c7b-491b-a5d9-bf3e50c70898")
+		(uuid "f2db2796-0619-46fc-b00c-133a2b016b6c")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1339,7 +1339,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "45df656c-22da-4123-b123-8d6027366373")
+		(uuid "57b269f8-000c-4469-8110-30d948a21c1d")
 		(property "Reference" "D5"
 			(at 66.04 111.76 0)
 			(effects
@@ -1375,14 +1375,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f23ea35-ba71-4b48-ac30-cae3540dcdfe")
+			(uuid "52b4ce30-f5bd-49ed-95ee-8f5d8845fe89")
 		)
 		(pin "2"
-			(uuid "fcb45417-c86b-46f1-aa55-7c515447f6af")
+			(uuid "7fcaf4ef-a6f8-4055-b42b-9738a0dafd3e")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D5")
 					(unit 1)
 				)
@@ -1397,7 +1397,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "687bbf7d-d843-4a2b-9b4c-bb71fa99bbf3")
+		(uuid "85c39f5f-fafe-4e11-b7b4-e9b19801363b")
 	)
 	(label "S3"
 		(at 110.49 119.38 0)
@@ -1407,7 +1407,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5092fe77-48aa-47cf-b8af-29cde5ec8bf0")
+		(uuid "c4ccdb7f-d5e3-4880-99d7-d63fab1ba364")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -1417,7 +1417,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "12efb77e-1663-48b1-8fcb-f2c30f0e68a5")
+		(uuid "39c0e55e-59fe-4ef3-9ced-c82cbc4762ba")
 		(property "Reference" "D6"
 			(at 106.68 111.76 0)
 			(effects
@@ -1453,14 +1453,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "77b391e3-3806-42b9-9f30-547a3bf7429e")
+			(uuid "f31d55d5-c06f-4eee-9391-b4f3b8922c11")
 		)
 		(pin "2"
-			(uuid "5205ac21-2742-4baa-b187-6cf67e3c75a8")
+			(uuid "960ea709-cd12-481a-b8e6-2400b04f0561")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "D6")
 					(unit 1)
 				)
@@ -1475,7 +1475,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8833e44f-3d80-4f1e-9a11-73f1061821df")
+		(uuid "65e1294d-0283-4638-9a99-6e4389991873")
 	)
 	(label "GND"
 		(at 147.32 41.91 0)
@@ -1485,7 +1485,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "96ef185e-c580-4787-ac93-b507b81f6057")
+		(uuid "acfe40e7-25ef-4202-8855-b2e3d447c7b1")
 	)
 	(symbol
 		(lib_id "Device:Thermistor_NTC")
@@ -1495,7 +1495,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "76f96a4a-6a2f-4b29-9643-c48bb29b95b5")
+		(uuid "8477760b-3034-49b9-aba2-4ee666046363")
 		(property "Reference" "TH1"
 			(at 147.32 30.48 0)
 			(effects
@@ -1531,14 +1531,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9564ea90-9e29-48f0-8984-9598817185af")
+			(uuid "9fc74961-cc58-4fdd-acb2-75340b8dfd41")
 		)
 		(pin "2"
-			(uuid "4c2f77fc-b602-4a18-b07e-709aec8d0e98")
+			(uuid "3f283097-55dd-4332-a376-6073ef6b19ea")
 		)
 		(instances
 			(project "led-disc"
-				(path "/c062bf70-d142-4228-a1a1-a731567b1ef9"
+				(path "/7c328fee-71de-4f95-82fe-1c95c2999901"
 					(reference "TH1")
 					(unit 1)
 				)
@@ -1555,7 +1555,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "76eb240c-3f35-4d41-9c70-8e85e7488f2d")
+		(uuid "3c96155b-a614-4d2e-8e1a-fb9532fb1c0a")
 	)
 	(sheet_instances
 		(path "/"

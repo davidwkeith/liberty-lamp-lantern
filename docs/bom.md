@@ -78,20 +78,22 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | Block | Part | Spec | Per board | ×20 | Notes |
 |-------|------|------|-----------|-----|-------|
 | Cord connection | Solder pads + strain-relief slot | 2 pads for 2 × 20 AWG | 1 set | — | Cord is tied through the board slot before soldering |
-| Input fuse | Resettable PTC | 0.5 A hold, ≥ 30 V rating | 1 | 20 | Rectified Cube peak is ~21 V at the 15 V tap |
-| Surge protection | **SMBJ24CA** (bidirectional TVS) | 24 V standoff, SMB | 1 | 20 | Above the ~21 V peak; clamps surges on long outdoor runs |
-| Rectifier | **SS34** Schottky ×4 (or B340A) | 40 V, 3 A, SMA | 4 | 80 | A Schottky bridge wastes ~0.4 W less than a silicon bridge at 4 W |
-| Inrush limit | NTC thermistor | ~5 Ω cold, ≥ 1 A | 1 | 20 | Keeps 13 boards switching on together inside the Cube's tolerance |
-| Bulk capacitor ⏳ | Aluminum electrolytic, 105 °C long-life | 470 µF, 35 V | 1 | 20 | Value depends on the Cube's dimming waveform (hold-up time) |
-| MCU hold-up | Diode + capacitor | BAT54 + 100 µF / 25 V | 1 + 1 | 20 + 20 | Isolated rail, so the MCU rides through supply chopping while the LEDs dip |
+| Input fuse | Resettable PTC, 1812 | 1.1 A hold, ≥ 30 V rating | 1 | 20 | ~0.5–0.7 A RMS input per board; PTC hold current falls with heat in the cup |
+| Surge protection | **SMBJ24CA** (bidirectional TVS) | 24 V standoff, SMB | 1 | 20 | Clamps at ~39 V, under the AL8860's 40 V maximum (don't use a 26 V part) |
+| Rectifier | **SS36** Schottky ×4 | 60 V, 3 A, SMA | 4 | 80 | Surge margin above the TVS clamp (~39 V) |
+| Inrush limit | 10 Ω 1 W 2512 resistor + **DMN6075S** N-MOSFET bypass | Gate RC 470 kΩ / 470 nF, 12 V zener clamp (MM3Z12), 1N4148WS gate discharge | 1 + 1 + 4 | 20 each | Low-side limiter; the FET shorts out the resistor ~30–50 ms after power-up. Replaces the NTC |
+| Bulk capacitor ⏳ | Aluminum electrolytic, 105 °C long-life | 470 µF, 35 V | 1 | 20 | Value depends on the Cube's dimming waveform; use the smallest that holds up, to cut inrush |
+| MCU hold-up | 47 Ω + BAT54WS + capacitor | 47 Ω 0603, BAT54WS (SOD-323), 100 µF / 35 V | 1 + 1 + 1 | 20 each | Isolated rail, so the MCU rides through supply chopping. The 47 Ω limits D6's surge current |
 | MCU regulator | **78L05**, SOT-89 (e.g. MC78L05ACHT1G) | 5 V, ≥ 30 V input | 1 | 20 | ~3 mA quiescent; the MCU draws only a few mA |
 | MCU | **ATtiny1614**-SSNR, SOIC-14 | megaTinyCore, UPDI | 1 | 20 | 3 PWM channels + ADC + analog comparator for dim sensing |
-| Dim sense ⏳ | Divider + clamp | ~100 kΩ / 22 kΩ, 5.1 V zener | 1 set | 20 | Reads the rectified waveform before the bulk cap; values set after measurement |
+| Dim sense ⏳ | **BAV70** + divider + clamp | BAV70 (100 V, SOT-23), 100 kΩ / 18 kΩ, 5.1 V zener, 1 nF | 1 set | 20 | Reads the raw AC; values confirmed after measurement |
 | LED drivers | **AL8860WT-7** buck LED driver, TSOT-25 | 40 V, 1 A, PWM dimming | 3 | 60 | One per channel |
-| Driver inductors | Shielded power inductor (e.g. Bourns SRN6045TA-330M) | 33 µH, ≥ 1 A, 6 × 6 mm | 3 | 60 | |
-| Driver diodes | **SS34** Schottky | 40 V, 3 A | 3 | 60 | |
-| Current sense | Resistor, 1% | ~0.43 Ω, giving ~230 mA per channel (AL8860: I = 0.1 V / R) | 3 | 60 | 3 ch × 2 LEDs × ~2.9 V × 0.23 A ≈ 4 W, so the hardware itself can't exceed 4 W. The firmware's 3 W default cap sits below that |
-| Passives | Decoupling and driver caps | 100 nF, 1 µF, 10 µF / 50 V X7R | ~10 | ~200 | |
+| Driver inductors | Bourns **SRN6045TA-101M** | 100 µH, 6 × 6 mm | 3 | 60 | ~600 kHz switching (33 µH ran ~1.9 MHz) |
+| Driver diodes | **SS36** Schottky | 60 V, 3 A, SMA | 3 | 60 | |
+| Current sense | Resistor, 1%, 1206 | 0.51 Ω, giving ~196 mA per channel (AL8860: I = 0.1 V / R) | 3 | 60 | 3 ch × 2 LEDs × ~3.1 V × 0.196 A ≈ 3.65 W (≤ ~3.8 W worst case), so the hardware can't exceed 4 W. The firmware's 3 W default cap sits below that |
+| CTRL pull-downs | Resistor 0603 | 4.7 kΩ | 3 | 60 | Keep LEDs off while the MCU is in reset or unflashed |
+| UPDI protection | Resistor 0603 | 470 Ω | 1 | 20 | In series with the exposed UPDI pad |
+| Passives | Decoupling and driver caps | 100 nF, 1 µF, 10 µF / 50 V X7R, plus 100 nF at each AL8860 VIN | ~13 | ~260 | |
 | Programming | UPDI test pads | 3 pads (UPDI, 5 V, GND) | 1 set | — | Pogo-pin or clip programming |
 | LED link | 6-pin header or pads | 3 channels × (+, −) | 1 | 20 | To the LED disc |
 

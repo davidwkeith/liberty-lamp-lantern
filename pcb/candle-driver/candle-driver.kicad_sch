@@ -2,8 +2,8 @@
 	(version 20250114)
 	(generator "liberty-gen")
 	(generator_version "1")
-	(uuid "920ecc0e-0f2d-447a-a377-f750e83f7c35")
-	(paper "A3")
+	(uuid "5b99e417-60cf-41fc-b34c-f0f4d149aa7e")
+	(paper "A2")
 	(title_block
 		(title "Liberty Lamp — candle driver")
 		(company "Liberty Lamp")
@@ -942,6 +942,199 @@
 					(at 0 -3.81 90)
 					(length 2.794)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1967,295 +2160,9 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Thermistor_NTC"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Diode:BAV70"
 			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TH"
-				(at -4.445 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Thermistor_NTC"
-				(at 3.175 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Temperature dependent resistor, negative temperature coefficient"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "thermistor NTC resistor sensor RTD"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "R_* RV_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Thermistor_NTC_0_1"
-				(arc
-					(start -3.175 2.413)
-					(mid -3.0506 2.3165)
-					(end -3.048 2.159)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.048 2.794)
-					(mid -2.9736 2.9736)
-					(end -2.794 3.048)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.794 3.048)
-					(mid -2.6144 2.9736)
-					(end -2.54 2.794)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.794 2.54)
-					(mid -2.9736 2.6144)
-					(end -3.048 2.794)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.794 1.905)
-					(mid -2.9736 1.9794)
-					(end -3.048 2.159)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.54 2.159)
-					(mid -2.6144 1.9794)
-					(end -2.794 1.905)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.159 2.794)
-					(mid -2.434 2.5608)
-					(end -2.794 2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 2.159)
-						(xy -2.54 2.794)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -3.683)
-						(xy -2.54 -1.397)
-						(xy -2.794 -2.159)
-						(xy -2.286 -2.159)
-						(xy -2.54 -1.397)
-						(xy -2.54 -1.651)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 2.54)
-						(xy -1.778 1.524)
-						(xy 1.778 -1.524)
-						(xy 1.778 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -1.397)
-						(xy -1.778 -3.683)
-						(xy -2.032 -2.921)
-						(xy -1.524 -2.921)
-						(xy -1.778 -3.683)
-						(xy -1.778 -3.429)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.016 2.54)
-					(end 1.016 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Thermistor_NTC_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Diode:BAT54C"
-			(pin_names
-				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2263,7 +2170,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "D"
-				(at 0.635 -3.81 0)
+				(at 0.635 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2273,41 +2180,17 @@
 					(justify left)
 				)
 			)
-			(property "Value" "BAT54C"
-				(at -6.35 3.175 0)
+			(property "Value" "BAV70"
+				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 1.905 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "http://www.diodes.com/_files/datasheets/ds11005.pdf"
-				(at -2.032 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "dual schottky barrier diode, common cathode"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2318,7 +2201,29 @@
 					)
 				)
 			)
-			(property "ki_keywords" "schottky diode common cathode"
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAV70_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Dual 100V 215mA high-speed switching diodes, common cathode, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2340,16 +2245,18 @@
 					)
 				)
 			)
-			(symbol "BAT54C_0_1"
+			(symbol "BAV70_0_1"
 				(polyline
 					(pts
-						(xy -3.175 -1.27)
-						(xy -3.175 1.27)
+						(xy -3.81 1.27)
 						(xy -1.27 0)
-						(xy -3.175 -1.27)
+						(xy -3.81 -1.27)
+						(xy -3.81 1.27)
+						(xy -3.81 1.27)
+						(xy -3.81 1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2358,60 +2265,8 @@
 				)
 				(polyline
 					(pts
-						(xy -1.905 1.27)
-						(xy -1.905 1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 0)
-						(xy 1.905 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27)
-						(xy -1.905 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27)
-						(xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0)
 						(xy -3.81 0)
+						(xy 3.81 0)
 					)
 					(stroke
 						(width 0)
@@ -2424,10 +2279,11 @@
 				(polyline
 					(pts
 						(xy -1.27 -1.27)
-						(xy -0.635 -1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2436,8 +2292,8 @@
 				)
 				(polyline
 					(pts
-						(xy -0.635 -1.27)
-						(xy -0.635 -1.016)
+						(xy 0 0)
+						(xy 0 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -2460,37 +2316,12 @@
 				)
 				(polyline
 					(pts
-						(xy 0.635 -1.27)
-						(xy 0.635 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27)
 						(xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 1.27 1.27)
-						(xy 1.905 1.27)
+						(xy 1.27 1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2499,64 +2330,25 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27)
-						(xy 0.635 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 1.27)
-						(xy 1.905 1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 -1.27)
-						(xy 3.175 1.27)
+						(xy 3.81 -1.27)
 						(xy 1.27 0)
-						(xy 3.175 -1.27)
+						(xy 3.81 1.27)
+						(xy 3.81 -1.27)
+						(xy 3.81 -1.27)
+						(xy 3.81 -1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 3.81 0)
-						(xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "BAT54C_1_1"
 				(pin passive line
 					(at -7.62 0 0)
 					(length 3.81)
-					(name ""
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2574,7 +2366,7 @@
 				(pin passive line
 					(at 7.62 0 180)
 					(length 3.81)
-					(name ""
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2591,8 +2383,8 @@
 				)
 				(pin passive line
 					(at 0 -5.08 90)
-					(length 5.08)
-					(name ""
+					(length 2.54)
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3308,6 +3100,339 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Transistor_FET:DMN6075S"
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "DMN6075S"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.diodes.com/assets/Datasheets/DMN6075S.pdf"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "2.5A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(symbol "DMN6075S_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905)
+						(xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0)
+						(xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508)
+						(xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27)
+						(xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778)
+						(xy 3.302 -1.778)
+						(xy 3.302 1.778)
+						(xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0)
+						(xy 2.032 0.381)
+						(xy 2.032 -0.381)
+						(xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54)
+						(xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54)
+						(xy 2.54 0)
+						(xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381)
+						(xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381)
+						(xy 2.921 -0.254)
+						(xy 3.683 -0.254)
+						(xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DMN6075S_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:PWR_FLAG"
 			(power global)
 			(pin_numbers
@@ -3437,7 +3562,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7a2971be-a4b0-41fb-a1b6-97cfdb255d25")
+		(uuid "44c4518b-0fb0-44cd-8b28-d19c5bf14004")
 	)
 	(label "AC2"
 		(at 20.32 40.64 0)
@@ -3447,7 +3572,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "82295773-6fb9-4f4c-a06d-c5bc2e7efe76")
+		(uuid "a6c21e58-a1bf-430d-b031-c73e62b04858")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
@@ -3457,7 +3582,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "97f540fb-edbd-4707-940a-a0a241552aa4")
+		(uuid "80923900-568e-4634-9494-aaf35f1514c9")
 		(property "Reference" "J1"
 			(at 25.4 30.48 0)
 			(effects
@@ -3493,14 +3618,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b0a8df2-73ec-43c9-85e4-924282acc86a")
+			(uuid "a7889eae-241e-4eb5-8ddc-91194cb92f54")
 		)
 		(pin "2"
-			(uuid "495879fb-3b34-4be5-8fd8-e242f00ac95d")
+			(uuid "6f4f24d4-29c9-4971-932f-8c5ad4590753")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "J1")
 					(unit 1)
 				)
@@ -3515,7 +3640,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "12e4add3-e121-4781-9327-3ff0498cf3c2")
+		(uuid "9220a42f-115c-48d8-a8af-a588e8907e9d")
 	)
 	(label "AC1F"
 		(at 66.04 41.91 0)
@@ -3525,7 +3650,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1f559105-2454-479a-9ac0-c70342f7741f")
+		(uuid "ff92f30a-9f53-4d78-8ec3-6c368a2dd787")
 	)
 	(symbol
 		(lib_id "Device:Polyfuse")
@@ -3535,7 +3660,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bdab82ca-e203-4a1a-8428-3129a404b56f")
+		(uuid "64996e7b-22bc-43ae-b9d8-a6ddd78163e4")
 		(property "Reference" "F1"
 			(at 66.04 30.48 0)
 			(effects
@@ -3544,7 +3669,7 @@
 				)
 			)
 		)
-		(property "Value" "PTC 0.5 A hold, ≥30 V"
+		(property "Value" "PTC 1.1 A hold, ≥30 V"
 			(at 66.04 45.72 0)
 			(effects
 				(font
@@ -3571,14 +3696,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "a64b2909-e544-4a21-82e7-6e7e6e8d4afe")
+			(uuid "c4d24693-9b76-4c21-bc52-88801e7458fe")
 		)
 		(pin "2"
-			(uuid "f81c45f9-e07b-439e-bf17-c72ee037b326")
+			(uuid "12e4b463-8c82-4632-9746-a33e74117795")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "F1")
 					(unit 1)
 				)
@@ -3593,7 +3718,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "378523a8-1112-4192-b464-2adbeff05e1b")
+		(uuid "75faa260-41fe-425b-9103-5a01ed694a59")
 	)
 	(label "AC2"
 		(at 110.49 38.1 0)
@@ -3603,7 +3728,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "de7edffa-23cd-41b4-99f7-bcefde1dfc55")
+		(uuid "eb2fbc04-2e81-4b22-909a-dfcdbcbc0d8f")
 	)
 	(symbol
 		(lib_id "Device:D_TVS")
@@ -3613,7 +3738,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "21086e82-92a8-450b-8fcb-013371a9cbb5")
+		(uuid "145ac179-e4e4-4e7d-a6c5-d808a35ca593")
 		(property "Reference" "D1"
 			(at 106.68 30.48 0)
 			(effects
@@ -3649,21 +3774,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f4ef848-679f-42e2-b046-dcf021abf9a9")
+			(uuid "32336d46-a4e6-493a-a0b1-e8ebab9d68fe")
 		)
 		(pin "2"
-			(uuid "3e47b085-0fac-4eeb-8f7b-5ba3b2a0ebd5")
+			(uuid "88d0ec93-2c43-416f-81e7-54c8b7b94b9b")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D1")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(label "VRAW"
+	(label "VBUS"
 		(at 143.51 38.1 0)
 		(effects
 			(font
@@ -3671,7 +3796,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1eb23509-1486-46d1-bbd2-069b39c4c530")
+		(uuid "c52acab4-3b41-4f41-96aa-4a50ece978a8")
 	)
 	(label "AC1F"
 		(at 151.13 38.1 0)
@@ -3681,7 +3806,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e17fba36-84db-4ebb-b7a7-0c13dc086894")
+		(uuid "b53276f1-35b2-4c9d-a103-db8eba4c4a97")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -3691,7 +3816,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "47ea59b8-aba8-4ba5-b104-e2e28082137c")
+		(uuid "43c9cf03-6a2a-408d-aa20-76844c962085")
 		(property "Reference" "D2"
 			(at 147.32 30.48 0)
 			(effects
@@ -3700,7 +3825,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 147.32 45.72 0)
 			(effects
 				(font
@@ -3727,21 +3852,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "5cdf2b8b-a76d-47cd-9637-45e9d41e2b16")
+			(uuid "19df7f88-df6f-496e-b937-2d93c1fd42a8")
 		)
 		(pin "2"
-			(uuid "3dfcea12-b018-4d7b-9e44-9cfc9141229f")
+			(uuid "8aecdaf1-e516-45dd-b037-a1baf1c9f563")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D2")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(label "VRAW"
+	(label "VBUS"
 		(at 184.15 38.1 0)
 		(effects
 			(font
@@ -3749,7 +3874,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "182fd134-597c-48d5-9d15-6ca00b3061b7")
+		(uuid "d61c0e7b-b761-4085-b2ae-b3a6ab5a976f")
 	)
 	(label "AC2"
 		(at 191.77 38.1 0)
@@ -3759,7 +3884,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "17158016-7adf-4279-8ebe-061ef421bc41")
+		(uuid "cdb98f6c-c927-4530-9c05-e5d72cb87c12")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -3769,7 +3894,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "730eebbc-89ca-4403-96a8-a0bdaa94ef95")
+		(uuid "fa4580a4-becd-4db5-ad0c-db2834099d37")
 		(property "Reference" "D3"
 			(at 187.96 30.48 0)
 			(effects
@@ -3778,7 +3903,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 187.96 45.72 0)
 			(effects
 				(font
@@ -3805,14 +3930,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe5339e0-8507-40c8-adfb-d1971aab86d3")
+			(uuid "962218f1-7313-4bf8-a248-3ba8559aa0c5")
 		)
 		(pin "2"
-			(uuid "e4f98d8e-c191-4870-9e53-34ea7577f030")
+			(uuid "ae21231f-95b8-4bfa-b5ac-fc9f181e59a2")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D3")
 					(unit 1)
 				)
@@ -3827,9 +3952,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "92bbb399-be8c-43cc-bc73-a6f2440d131d")
+		(uuid "b1670abd-9a55-40f7-8e05-531c9a83c6ea")
 	)
-	(label "GND"
+	(label "VNEG"
 		(at 232.41 38.1 0)
 		(effects
 			(font
@@ -3837,7 +3962,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "43f42eda-238d-46f2-917b-b6c09b342267")
+		(uuid "7c8ee442-b5d8-492d-adb7-372f10e53099")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -3847,7 +3972,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "34a4a132-17ac-4573-ae0a-4a50c8992e24")
+		(uuid "397717c2-5251-440f-8acb-020e9bcadaaf")
 		(property "Reference" "D4"
 			(at 228.6 30.48 0)
 			(effects
@@ -3856,7 +3981,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 228.6 45.72 0)
 			(effects
 				(font
@@ -3883,14 +4008,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "910e6779-4543-48c4-bd09-c21c21065b22")
+			(uuid "bb6fc980-fe8e-4dab-93d8-7824ab1d24fa")
 		)
 		(pin "2"
-			(uuid "0663dbea-2074-4dfd-880e-8eefff8ab05b")
+			(uuid "6f3e1ecf-0a2c-4a64-8711-e4e9b8139d0a")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D4")
 					(unit 1)
 				)
@@ -3905,9 +4030,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c05e8c29-a5c6-4beb-a475-7944ee117523")
+		(uuid "b2f38396-8009-46b7-a113-8637553e4090")
 	)
-	(label "GND"
+	(label "VNEG"
 		(at 273.05 38.1 0)
 		(effects
 			(font
@@ -3915,7 +4040,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e66b95b8-d63d-44a6-9550-94994a02a99a")
+		(uuid "cd5bab2a-6cc0-4e86-aa47-022e9615092c")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -3925,7 +4050,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5e264a86-e841-48fc-a53d-49336379d394")
+		(uuid "ef124afc-a9a4-4f4e-a876-529868e92609")
 		(property "Reference" "D5"
 			(at 269.24 30.48 0)
 			(effects
@@ -3934,7 +4059,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 269.24 45.72 0)
 			(effects
 				(font
@@ -3961,93 +4086,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8427fb85-ad2e-4d15-967b-4876f1e3caf9")
+			(uuid "9f0e808a-b9b4-417a-82f6-a47cd847cc4b")
 		)
 		(pin "2"
-			(uuid "aabd4a6e-c63b-4cc8-959d-a3505aaf44ab")
+			(uuid "7d5022d0-a613-46e9-8aed-c8662fd22e68")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(label "VRAW"
-		(at 309.88 34.29 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "e90c09cd-7bdb-4d20-a5ea-dd8a7f155d89")
-	)
-	(label "VBUS"
-		(at 309.88 41.91 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "a1c4070a-3f32-4035-92e9-7c521ad5cc8d")
-	)
-	(symbol
-		(lib_id "Device:Thermistor_NTC")
-		(at 309.88 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "77ab72e9-eb27-462f-84ea-f938f3ca1c7b")
-		(property "Reference" "RT1"
-			(at 309.88 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NTC 5 Ω, ≥1 A (inrush)"
-			(at 309.88 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Varistor:RV_Disc_D7mm_W3.4mm_P5mm"
-			(at 309.88 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 309.88 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "75be8e14-fb69-44a4-b284-d07cbad1aeba")
-		)
-		(pin "2"
-			(uuid "baee61d8-051c-4ba2-a023-811f4fe1fe4f")
-		)
-		(instances
-			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
-					(reference "RT1")
 					(unit 1)
 				)
 			)
@@ -4061,7 +4108,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "02958372-8dfd-4860-88b5-b8524a8e78c9")
+		(uuid "65739b3c-bede-4b9d-8691-9d04cb103be1")
 	)
 	(label "GND"
 		(at 350.52 41.91 0)
@@ -4071,7 +4118,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "184f6d5c-e78d-49cb-95a4-c6d6471ca960")
+		(uuid "8cff55ca-f40c-4931-9035-b399d1bab78d")
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
@@ -4081,7 +4128,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2ffebc6a-2352-4a35-ae47-45f909fdac20")
+		(uuid "32f0fa72-8738-4f4a-93a4-e775c93524cf")
 		(property "Reference" "C1"
 			(at 350.52 30.48 0)
 			(effects
@@ -4126,14 +4173,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "27c85958-b396-4d78-ae8a-da42b1485ed7")
+			(uuid "0cb31e72-05ae-4b69-9397-253758dcf0a1")
 		)
 		(pin "2"
-			(uuid "b16c058d-4dd0-40a2-8668-7bb0ef0026d9")
+			(uuid "1c4ab525-03d1-49bb-bba2-491f14c81250")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C1")
 					(unit 1)
 				)
@@ -4148,7 +4195,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "24db801e-ac7a-47ec-baf4-03b6a0c087d7")
+		(uuid "07121978-4b9d-4450-8d36-2c7b064c0a8a")
 	)
 	(label "AC2"
 		(at 33.02 78.74 0)
@@ -4158,7 +4205,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f936c086-320d-45a8-b18f-780a87125c63")
+		(uuid "ef4e71fd-91aa-4652-9bde-c3564bb5f511")
 	)
 	(label "VSENSE"
 		(at 25.4 83.82 0)
@@ -4168,17 +4215,17 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "052be767-0fe4-419c-bd45-f2cd4b4e37e4")
+		(uuid "6001ce1f-3ee1-4dfe-803a-56f1a9df64ff")
 	)
 	(symbol
-		(lib_id "Diode:BAT54C")
+		(lib_id "Diode:BAV70")
 		(at 25.4 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "21706604-b79b-4e52-8688-1f230a8601a5")
+		(uuid "b747711f-a235-4ead-9558-12a8d58561e2")
 		(property "Reference" "D7"
 			(at 25.4 71.12 0)
 			(effects
@@ -4187,7 +4234,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT54C"
+		(property "Value" "BAV70"
 			(at 25.4 86.36 0)
 			(effects
 				(font
@@ -4214,17 +4261,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "bf0a8fd5-29a7-4e51-80d1-3165e8e3e7b5")
+			(uuid "faab6ff6-5521-40cd-aaa0-2c85348b8064")
 		)
 		(pin "2"
-			(uuid "04d93f1a-5599-47ff-8913-f6c36037b0c7")
+			(uuid "c75caf52-56b6-4423-907e-ea6dbbd5298d")
 		)
 		(pin "3"
-			(uuid "c8e707cc-15b4-4cbe-8eae-bfbe472600bd")
+			(uuid "9cd983d5-ce67-4a45-a6ba-74aa9bd9182a")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D7")
 					(unit 1)
 				)
@@ -4239,7 +4286,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0e6b1167-f81a-4f50-afee-1d2679df3606")
+		(uuid "daaeb3dd-c78c-41be-8eee-1e97dbdce7ec")
 	)
 	(label "SENSE"
 		(at 66.04 82.55 0)
@@ -4249,7 +4296,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "49d5d740-f3d5-42b1-b5a9-a03327470621")
+		(uuid "7ece8051-2a09-4ae0-9b4a-3f2d2664bb71")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4259,7 +4306,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e3852a2f-f507-4a0f-b9da-6b9db581103f")
+		(uuid "69becd84-0ca0-4fea-b18d-9976bc5f4f93")
 		(property "Reference" "R1"
 			(at 66.04 71.12 0)
 			(effects
@@ -4304,14 +4351,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "5b52ea38-3454-4c3d-bf60-5f2a65e1ee1f")
+			(uuid "59d57dcb-67cf-4323-b49d-fffc3063c691")
 		)
 		(pin "2"
-			(uuid "c67af01d-0b0d-4257-a107-b20b7bb0e113")
+			(uuid "d8df6bb8-c703-45df-8fac-f9f3019c96b0")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "R1")
 					(unit 1)
 				)
@@ -4326,7 +4373,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1abc8101-0723-42f5-8c9f-443fd3e1ac82")
+		(uuid "01f74d31-6cb1-437e-a6f9-85bc749097c3")
 	)
 	(label "GND"
 		(at 106.68 82.55 0)
@@ -4336,7 +4383,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "319b4adc-9d16-4a1a-b79c-a634ef58ce0f")
+		(uuid "5691d587-738a-438c-b050-27345a4f385c")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4346,7 +4393,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ddfe53a2-eeeb-40f1-a42b-220eb0fd64de")
+		(uuid "50a56be7-340a-4a70-a435-90380bd9a811")
 		(property "Reference" "R2"
 			(at 106.68 71.12 0)
 			(effects
@@ -4355,7 +4402,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "18k"
 			(at 106.68 86.36 0)
 			(effects
 				(font
@@ -4391,14 +4438,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "bedf9da6-67c5-48a4-a841-931bf54653c9")
+			(uuid "a2d15f0c-59c4-4116-8622-c159f3372fc1")
 		)
 		(pin "2"
-			(uuid "1ae982c9-3022-4159-a14f-a2c08e9f8dad")
+			(uuid "23e0492a-1873-4186-ab4a-6d4211b4b518")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "R2")
 					(unit 1)
 				)
@@ -4413,7 +4460,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0a0c217a-2199-49f1-be98-b6d68232f734")
+		(uuid "1c7d5bdd-b87a-4cd0-aefb-93f3e13ed60f")
 	)
 	(label "GND"
 		(at 147.32 82.55 0)
@@ -4423,7 +4470,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "74fa6131-6ee7-448e-ab53-36d1880b3c2c")
+		(uuid "bc25d44d-948f-441a-8d8c-7998b060cb9b")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4433,7 +4480,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b57723dc-2446-4bad-b6b0-ff0db73e5f2e")
+		(uuid "a5a9650f-704c-4c7f-b1fe-c0e54b66177f")
 		(property "Reference" "C9"
 			(at 147.32 71.12 0)
 			(effects
@@ -4469,14 +4516,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "206155c1-24d0-4a21-bbd7-9775ffac665a")
+			(uuid "409160ad-7eaf-44cd-bae8-1a6d7ad29521")
 		)
 		(pin "2"
-			(uuid "0dee4e87-e632-4699-80c6-7c6f79fb2028")
+			(uuid "acf16deb-9260-4cdf-9ae7-1bbb27b34867")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C9")
 					(unit 1)
 				)
@@ -4491,7 +4538,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "117fdd68-1950-447a-9311-b3bf151d07d9")
+		(uuid "1fc3779c-270d-42e6-9b34-ab6d4850e9fe")
 	)
 	(label "GND"
 		(at 191.77 78.74 0)
@@ -4501,7 +4548,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e02402a9-6373-4845-aaa1-4847f3c68ce3")
+		(uuid "85ea44af-dc16-489b-9af7-d04bd07a3e06")
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
@@ -4511,7 +4558,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2e837bc1-3fc9-40c1-bb7d-824a16ff4e5c")
+		(uuid "68ff3d49-6823-474c-96b0-c5bf20e98daa")
 		(property "Reference" "D8"
 			(at 187.96 71.12 0)
 			(effects
@@ -4547,14 +4594,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "28cc8fe4-0ff1-471d-88cd-4f7c4b5c7f11")
+			(uuid "9d8540c3-c2e5-40fe-87e4-e76534978d26")
 		)
 		(pin "2"
-			(uuid "662b895d-8a8e-4ac4-90f1-a63860c18af7")
+			(uuid "27bfbd52-218a-4b6f-a8ba-8e70e7e71d8b")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D8")
 					(unit 1)
 				)
@@ -4569,9 +4616,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d3ad54f9-5af9-4569-9467-583f2f13e22c")
+		(uuid "d11adcaf-6c3f-4112-a46a-a8c60b7af1d0")
 	)
-	(label "VBUS"
+	(label "VHOLD_IN"
 		(at 232.41 78.74 0)
 		(effects
 			(font
@@ -4579,7 +4626,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ea2a3cda-233f-4629-9663-9973cee3afe9")
+		(uuid "b0570a71-52da-4bb0-8e7b-c8a0bf9b27fa")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -4589,7 +4636,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b83a2fa9-ac73-4c2a-a72e-918b42ef6a1a")
+		(uuid "10c152b4-313a-47e5-86e4-c55b3d62d1e9")
 		(property "Reference" "D6"
 			(at 228.6 71.12 0)
 			(effects
@@ -4625,14 +4672,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "a86957fe-2b33-4601-b0f2-8f1fe0e3329c")
+			(uuid "bf61cd9e-ebfe-41b7-b26a-282ec10e4d44")
 		)
 		(pin "2"
-			(uuid "0651c00b-64e7-42c7-bdee-4cdcf52a8b0f")
+			(uuid "186f5a88-987e-42f3-98e2-35d92a709674")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D6")
 					(unit 1)
 				)
@@ -4647,7 +4694,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a54bf2dd-db5b-4b06-b3f5-7d04186d36ea")
+		(uuid "01d668dd-e627-43b7-915b-5fb913de191f")
 	)
 	(label "GND"
 		(at 269.24 82.55 0)
@@ -4657,7 +4704,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c5aeba75-0dd9-4de8-936c-71567238e6e0")
+		(uuid "625a5b5c-2f93-427b-a68c-d7e0eb70ec0d")
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
@@ -4667,7 +4714,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "186f517d-3392-4cf9-b59c-6ff25e4d7c81")
+		(uuid "05201702-3233-4cb5-8a94-862ba61e0458")
 		(property "Reference" "C2"
 			(at 269.24 71.12 0)
 			(effects
@@ -4703,14 +4750,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "0f08b4ab-cf40-486a-93cf-9682533def82")
+			(uuid "088e63b4-ac6c-46a7-aafa-f682514b5f5d")
 		)
 		(pin "2"
-			(uuid "47071c9f-0ebe-482a-adf6-f76b312d99d7")
+			(uuid "7dc62277-25ea-4c55-bfa6-e8d354535ffb")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C2")
 					(unit 1)
 				)
@@ -4725,7 +4772,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "987425c0-59fb-49de-8da0-79a17f3d9d5a")
+		(uuid "d982598f-08d3-4928-ac7c-9ad7a0bfda44")
 	)
 	(label "GND"
 		(at 309.88 82.55 0)
@@ -4735,7 +4782,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b818737b-3ead-4993-bc78-05ebe365c1e8")
+		(uuid "5fffcccc-fae8-43c0-9fd7-9e6dd08a99eb")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4745,7 +4792,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c41dcb5c-e8ee-4734-b66c-632f0560261b")
+		(uuid "cb787af2-cb8f-4077-b1c3-fa2bf16a38fd")
 		(property "Reference" "C3"
 			(at 309.88 71.12 0)
 			(effects
@@ -4781,14 +4828,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "eafee818-5975-4b5b-a91d-08da55037e1f")
+			(uuid "4953e862-1f31-4fe8-ba93-878ce34abb96")
 		)
 		(pin "2"
-			(uuid "bc34029a-d9fc-4097-ae2d-61d86f4a7b7a")
+			(uuid "d194ecfa-0d45-4f7c-aff0-61d7d4ff54a2")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C3")
 					(unit 1)
 				)
@@ -4803,7 +4850,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2cb68d63-0852-4b48-bae3-9ef10d771a1f")
+		(uuid "82b4c126-e222-4384-aced-03be9b81b989")
 	)
 	(label "GND"
 		(at 350.52 86.36 0)
@@ -4813,7 +4860,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "00a7a908-5d05-4979-84a4-c4ad90c600d3")
+		(uuid "566aa58d-66cb-4f30-a18c-9fb1886d7774")
 	)
 	(label "VHOLD"
 		(at 342.9 78.74 0)
@@ -4823,7 +4870,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cd26d4e3-4a6c-4314-b7bb-f840f3817482")
+		(uuid "be36d865-0b51-4a41-adf8-95d8581e0116")
 	)
 	(symbol
 		(lib_id "Regulator_Linear:L78L05_SOT89")
@@ -4833,7 +4880,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "326c6bb3-5fd2-4cd0-9304-aa84af7e718d")
+		(uuid "39b2b06d-1c6c-44c0-aedd-6add3aedf5d6")
 		(property "Reference" "U1"
 			(at 350.52 71.12 0)
 			(effects
@@ -4869,17 +4916,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "9a6aebf3-3988-4d70-a696-d0cb699c6cb9")
+			(uuid "6b65e381-8f9d-4cab-a04b-433e37241f7d")
 		)
 		(pin "2"
-			(uuid "278fecf5-91c2-46b0-8638-35d7d39482b2")
+			(uuid "d2542853-2c6a-4176-b96b-858f04126e51")
 		)
 		(pin "3"
-			(uuid "3234b855-8fe8-4b85-bdfb-3606f5370a22")
+			(uuid "1658a28b-8a7f-4df4-8051-9290a1a6b5ba")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "U1")
 					(unit 1)
 				)
@@ -4894,7 +4941,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2bc4ad55-b012-43db-ae31-8304f401e955")
+		(uuid "0155d05c-93d9-47d8-a382-c604ad4762e5")
 	)
 	(label "GND"
 		(at 391.16 82.55 0)
@@ -4904,7 +4951,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "61bd7ac6-7e1b-465d-9590-7ed53acf147e")
+		(uuid "111b70b7-bc67-470b-bd9b-ac54142537df")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4914,7 +4961,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "861a64ff-dc66-45dd-88e4-29635d466fd1")
+		(uuid "2b9146cc-9fcb-4fc1-b38b-cce3263d00d7")
 		(property "Reference" "C4"
 			(at 391.16 71.12 0)
 			(effects
@@ -4923,7 +4970,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1µF 16V"
 			(at 391.16 86.36 0)
 			(effects
 				(font
@@ -4950,14 +4997,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "e9ff97a3-bbf6-4c3b-9501-24967a10a8bb")
+			(uuid "dce9f371-aa9a-4213-879a-70f09a3834a3")
 		)
 		(pin "2"
-			(uuid "57b2c7ed-0f66-44dc-b018-17d4507e8c6e")
+			(uuid "8903909d-9e80-49ad-b568-9f4df876becd")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C4")
 					(unit 1)
 				)
@@ -4972,11 +5019,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8b75c5bf-b9a9-4470-8e98-5cb20b16434c")
+		(uuid "1715c9da-aad4-4695-ba32-0af8df745fa9")
 	)
 	(no_connect
 		(at 81.28 119.38)
-		(uuid "aee978ce-146e-45c6-91b0-2ecd5f5ba8b2")
+		(uuid "c44f8aa1-e08f-4893-980a-b9a060d5f59c")
 	)
 	(label "NTC"
 		(at 81.28 121.92 0)
@@ -4986,11 +5033,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "be52ad00-42b0-4b6b-a1d6-4cc00a822d92")
+		(uuid "8903d12e-fc96-40f8-87f4-a9cedf7c95e1")
 	)
 	(no_connect
 		(at 81.28 124.46)
-		(uuid "1b381e41-ff67-4d25-a5ef-b0facb127842")
+		(uuid "3d81f9d2-33f2-48ed-a052-47f505091eee")
 	)
 	(label "SENSE"
 		(at 81.28 127 0)
@@ -5000,11 +5047,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "af1a21ee-8efe-4dcc-a988-96b9d15acede")
+		(uuid "43f85296-de46-447d-a2b3-d4bc8c05699a")
 	)
 	(no_connect
 		(at 50.8 116.84)
-		(uuid "202ca65d-07d2-4fac-9513-8dfbe4003814")
+		(uuid "9250af37-7949-4c99-9c02-b40916fcadbf")
 	)
 	(label "CTRL3"
 		(at 50.8 114.3 0)
@@ -5014,7 +5061,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a6a6c90f-a598-41b7-b8a9-ec3f114db96a")
+		(uuid "14cff071-1b53-46cc-aa51-84f541045cac")
 	)
 	(label "CTRL2"
 		(at 50.8 111.76 0)
@@ -5024,7 +5071,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5af62e86-b5eb-4cbd-a60d-8a06f3cf6534")
+		(uuid "dda7af17-5f61-425a-997c-471a47cd4165")
 	)
 	(label "CTRL1"
 		(at 50.8 109.22 0)
@@ -5034,9 +5081,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "144b64e0-0fd3-4f26-82ed-bdb2cfb38fa8")
+		(uuid "958e71ba-a995-4a2b-a259-17443cef8a65")
 	)
-	(label "UPDI"
+	(label "UPDI_MCU"
 		(at 81.28 109.22 0)
 		(effects
 			(font
@@ -5044,19 +5091,19 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "941bac2b-df86-4a22-a95f-e52dad07fec9")
+		(uuid "e389e4dc-95e2-4a10-8934-e186e3a75621")
 	)
 	(no_connect
 		(at 81.28 111.76)
-		(uuid "45e80b97-1726-47e2-8dde-99aa83ba1d40")
+		(uuid "396db1c8-dd2a-433a-a7aa-90945bc96638")
 	)
 	(no_connect
 		(at 81.28 114.3)
-		(uuid "5ee26672-1439-4e7c-9793-ffb54c214517")
+		(uuid "528beccc-b7d0-4f43-9c4c-59b553236bbf")
 	)
 	(no_connect
 		(at 81.28 116.84)
-		(uuid "5649ee53-c71c-41ec-bcbb-a3488671d6e0")
+		(uuid "bccc8492-cdec-42c1-8de1-a1ac4b0ae51a")
 	)
 	(label "GND"
 		(at 66.04 137.16 0)
@@ -5066,7 +5113,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "514dab99-485d-4a90-a3fa-3b4718f3b918")
+		(uuid "a64f0455-546c-46d3-abf7-6eabe3b2555c")
 	)
 	(symbol
 		(lib_id "MCU_Microchip_ATtiny:ATtiny1614-SS")
@@ -5076,7 +5123,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "15021b66-c66d-4b9f-8677-7dd16137f883")
+		(uuid "407fa3cc-a7e5-47a4-b58f-cf3e576fcc73")
 		(property "Reference" "U2"
 			(at 66.04 111.76 0)
 			(effects
@@ -5112,50 +5159,50 @@
 			)
 		)
 		(pin "1"
-			(uuid "3b9dbeea-09c3-4179-9c0c-a2771e106cc3")
+			(uuid "2fdea0a5-4f6d-42e2-bcf5-e240930f1889")
 		)
 		(pin "2"
-			(uuid "0b26c284-04e3-497c-9d7e-b0ed8fee0afc")
+			(uuid "dc0f2390-2325-40e4-9510-abff15240ac4")
 		)
 		(pin "3"
-			(uuid "f8d0d81f-5b93-4bd3-b8e6-4bac3b641aca")
+			(uuid "4270a2e5-0cd6-4c24-bbe5-83c1d8227d98")
 		)
 		(pin "4"
-			(uuid "2c65f1b3-2eec-402a-a92f-f83bdb4be88c")
+			(uuid "bdc093d7-aef9-4cd4-925c-e8fe4d743669")
 		)
 		(pin "5"
-			(uuid "15610c64-28fc-4db8-a30a-da1fd69f8402")
+			(uuid "dd35b176-af53-4e3d-a11c-2e4dafa20ac0")
 		)
 		(pin "6"
-			(uuid "ed1d237d-067b-4ca6-ac8e-e0bed8139898")
+			(uuid "39b7d9aa-9803-40dd-952f-847ad5d8f86a")
 		)
 		(pin "7"
-			(uuid "7a17ad77-269d-4485-9e97-e9e11f822572")
+			(uuid "b40f3528-7e20-49a2-bfac-d8c67b73d30b")
 		)
 		(pin "8"
-			(uuid "1d6385af-9a71-4f2a-b6e0-cda8f7f0f2cd")
+			(uuid "76fe7505-63d6-4515-9e21-be6a7be26a7a")
 		)
 		(pin "9"
-			(uuid "fc5f7ed3-387f-44eb-8a3a-828bce619ada")
+			(uuid "706c358e-fabf-495c-af3c-9d15d97d0d6b")
 		)
 		(pin "10"
-			(uuid "f7b2e0e0-882a-4af0-bd69-14c9cd7b4c4f")
+			(uuid "12ed41eb-f940-4f4f-9ea4-004ae721dbac")
 		)
 		(pin "11"
-			(uuid "123c3c8d-75b2-44ae-9fc3-8707c37320f8")
+			(uuid "e24f182d-6388-4179-9c90-1672b4193ce8")
 		)
 		(pin "12"
-			(uuid "0ac84ab2-f3df-4198-ae65-2e7f769b5e15")
+			(uuid "30cc0d11-1064-4838-a686-eafe81ac563f")
 		)
 		(pin "13"
-			(uuid "207b90b6-4935-45bc-b8b8-c5eb4ca11701")
+			(uuid "976d7aa5-9354-4602-aba6-e618f4b5440a")
 		)
 		(pin "14"
-			(uuid "c547caf1-7a4c-4fd7-aa7d-116827b80e71")
+			(uuid "e5635182-7135-4e8e-a9a3-dc52f3cf3cc2")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "U2")
 					(unit 1)
 				)
@@ -5170,7 +5217,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b540e93d-4dc1-44a6-95db-463b13d47ade")
+		(uuid "372b07e6-31a6-4f59-8305-ef933a64e652")
 	)
 	(label "GND"
 		(at 147.32 123.19 0)
@@ -5180,7 +5227,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec909680-bf87-40e2-b192-2f50d3a19dd7")
+		(uuid "d73fb171-415a-4521-a3d7-9265130ec5d8")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -5190,7 +5237,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "82e9d828-3797-4b4a-95dd-a37979c12149")
+		(uuid "384dbf8f-4b00-4889-9374-0f989f5c4d5e")
 		(property "Reference" "C8"
 			(at 147.32 111.76 0)
 			(effects
@@ -5226,14 +5273,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "6aaf3af1-99f2-4f7e-a3ae-0000c2b66662")
+			(uuid "7f94563d-a40b-4941-a237-7262d1b7c29d")
 		)
 		(pin "2"
-			(uuid "be82e23d-1454-4863-a556-32a625b41b00")
+			(uuid "00b58445-5561-4be7-9129-b790ecaccd35")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C8")
 					(unit 1)
 				)
@@ -5248,7 +5295,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "94f2c43a-a701-4f3a-a608-720fa92e7447")
+		(uuid "be928570-a459-4c4d-84e4-56d0e76d3696")
 	)
 	(label "NTC"
 		(at 187.96 123.19 0)
@@ -5258,7 +5305,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9fd6f41d-93d2-4c68-81d5-60b97402d288")
+		(uuid "cf56d73f-db1d-4364-be1e-3ffab813f7b7")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5268,7 +5315,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ecb4966c-3d48-4411-b4f4-17a0a44a3eaa")
+		(uuid "4bc72641-e07c-43e2-af21-2c6b4d5f001c")
 		(property "Reference" "R3"
 			(at 187.96 111.76 0)
 			(effects
@@ -5304,14 +5351,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "22d4ba3c-ea95-4699-a9c5-f9911f468a83")
+			(uuid "b492c9b0-e50b-45f2-b17a-d77627063571")
 		)
 		(pin "2"
-			(uuid "ba959e05-f720-4f1c-ad30-ee3f2ffbd915")
+			(uuid "c39a18fe-c71c-43db-bd20-a0695249d8da")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "R3")
 					(unit 1)
 				)
@@ -5326,7 +5373,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b954e90d-267d-4010-8f47-323433a0ba06")
+		(uuid "02005977-77b0-445a-af7a-eed4e8a5d979")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -5336,7 +5383,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1c371e6b-f31e-4fe9-9148-813aae0fe3e8")
+		(uuid "5f702046-8fff-47b7-96b1-9060fa159d63")
 		(property "Reference" "TP1"
 			(at 228.6 111.76 0)
 			(effects
@@ -5372,11 +5419,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "8600ba95-28e4-4bbd-a6ed-44c941347924")
+			(uuid "f952e309-a6e1-44af-9ab3-cb5c335f1e71")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "TP1")
 					(unit 1)
 				)
@@ -5391,7 +5438,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "126c59f3-dce7-4a54-8f0d-b621ed3b36f0")
+		(uuid "1acf2772-0a48-4dcf-b1da-ee317bcff6f8")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -5401,7 +5448,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7db96ea0-0e6d-4461-9cb9-b391967ddeba")
+		(uuid "7c216623-fe46-4da3-8857-e32c8a1a08f0")
 		(property "Reference" "TP2"
 			(at 269.24 111.76 0)
 			(effects
@@ -5437,11 +5484,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c37450b1-31fd-4936-b567-67e37e334917")
+			(uuid "34ffce52-07c6-4c4e-9289-5564afe722f5")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "TP2")
 					(unit 1)
 				)
@@ -5456,7 +5503,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e5952bfa-73d3-470d-add2-a1c9000dfb83")
+		(uuid "a5b5959c-dea7-4f22-a36e-3ef3f9619187")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -5466,7 +5513,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0e1082e9-bf3f-4e05-abbf-e998b3860c8a")
+		(uuid "53647718-23ec-4d5f-9174-c0ce90cbfe92")
 		(property "Reference" "TP3"
 			(at 309.88 111.76 0)
 			(effects
@@ -5502,11 +5549,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "565f5649-8a77-42b7-b0e8-39098b39e771")
+			(uuid "01dd4dd0-e986-4192-970a-46ee9cfec5eb")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "TP3")
 					(unit 1)
 				)
@@ -5521,7 +5568,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fbc39eea-ad9b-417f-a5c6-c40272f5134d")
+		(uuid "f7af264c-4901-4886-99a1-2b4f6dab3e9e")
 	)
 	(label "GND"
 		(at 25.4 167.64 0)
@@ -5531,7 +5578,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "14d554be-b31d-4bdc-ac80-51efb723d6e1")
+		(uuid "d27b21ef-9027-4dac-9178-9913d7100c98")
 	)
 	(label "CTRL1"
 		(at 15.24 157.48 0)
@@ -5541,7 +5588,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "88396d86-d2df-4e6f-b27e-240a9f1604eb")
+		(uuid "94e8ac7f-b127-4d49-8a83-d397e9915873")
 	)
 	(label "LED1+"
 		(at 35.56 157.48 0)
@@ -5551,7 +5598,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c3ae72f8-411f-4592-ae4e-ba347b7bba45")
+		(uuid "64d5e5d4-e4bc-4d24-ac16-ad68abf289f5")
 	)
 	(label "VBUS"
 		(at 25.4 152.4 0)
@@ -5561,7 +5608,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a97a415f-c635-4800-92b7-12979600a18a")
+		(uuid "af85154c-3949-4677-8f1b-eee8245bad91")
 	)
 	(symbol
 		(lib_id "Driver_LED:AL8860WT")
@@ -5571,7 +5618,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f8e56bad-78ab-498e-9b42-6062eb6e56b6")
+		(uuid "41cc4b54-2c94-4eec-8230-ef6af4b15bc4")
 		(property "Reference" "U3"
 			(at 25.4 152.4 0)
 			(effects
@@ -5607,23 +5654,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "350812c2-d349-4ae4-b560-545d6d60e5d8")
+			(uuid "218df095-7f3a-46fc-86fb-e64cb523a904")
 		)
 		(pin "2"
-			(uuid "c3b9fc06-ff7b-43d9-b770-c2aef02fc364")
+			(uuid "453ee5e9-9fde-457b-a2de-184f40a1848e")
 		)
 		(pin "3"
-			(uuid "2af3f22b-7c6d-4dd2-a69a-a871d67228c0")
+			(uuid "f2d7e14b-bc1e-40d5-a8c9-a33a323b0973")
 		)
 		(pin "4"
-			(uuid "32b670fc-ea51-4ccf-8a51-fac7db049985")
+			(uuid "45ed77be-34c8-4f9c-9e4c-219465a05b45")
 		)
 		(pin "5"
-			(uuid "fff26b85-6498-4b33-a563-19a3d550d09b")
+			(uuid "8dc9165c-57c8-4fe6-af23-53a9ec987f39")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "U3")
 					(unit 1)
 				)
@@ -5638,7 +5685,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f5e417b1-ae54-4a84-9453-8dfd6c75c084")
+		(uuid "5404be8c-6a70-400e-91b5-14119fde12a4")
 	)
 	(label "LED1+"
 		(at 66.04 163.83 0)
@@ -5648,7 +5695,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "09985e67-f1c1-4064-98c6-e87cc4911a7c")
+		(uuid "fc023cea-d8f4-4808-b79c-8f1ac68b325a")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5658,7 +5705,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "55c50fee-c9df-4e09-a2f8-d252956bf857")
+		(uuid "983dc53c-c0c0-4402-a79b-aed11e9d4f11")
 		(property "Reference" "Rs1"
 			(at 66.04 152.4 0)
 			(effects
@@ -5667,7 +5714,7 @@
 				)
 			)
 		)
-		(property "Value" "0R43 1%"
+		(property "Value" "0R51 1%"
 			(at 66.04 167.64 0)
 			(effects
 				(font
@@ -5694,14 +5741,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "73a51dd5-1b46-4d4d-b421-fb5346adc742")
+			(uuid "47eaaf01-3645-4eb9-a0e3-b1151e00c66a")
 		)
 		(pin "2"
-			(uuid "1ea3bcee-b301-45a8-86b6-f0a0f2ab7d77")
+			(uuid "2ebd1a0d-e840-4e65-8a23-2f5321ea3aee")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "Rs1")
 					(unit 1)
 				)
@@ -5716,7 +5763,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "77845962-d92b-4213-b39d-605e0a721ad0")
+		(uuid "c75684e3-a629-450e-b75c-397387522598")
 	)
 	(label "LX1"
 		(at 106.68 163.83 0)
@@ -5726,7 +5773,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "53083f7e-f0d8-4e94-93e8-c868daca5312")
+		(uuid "fa5b601e-a386-4fbd-bf21-412c29caa673")
 	)
 	(symbol
 		(lib_id "Device:L")
@@ -5736,7 +5783,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f6fd32f5-aedf-4804-88d0-b1c12594e49e")
+		(uuid "b95db019-5a82-4280-9c67-c331a5ae56c8")
 		(property "Reference" "L1"
 			(at 106.68 152.4 0)
 			(effects
@@ -5745,7 +5792,7 @@
 				)
 			)
 		)
-		(property "Value" "33µH ≥1A"
+		(property "Value" "100µH (SRN6045TA-101M)"
 			(at 106.68 167.64 0)
 			(effects
 				(font
@@ -5772,14 +5819,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "b64dc04e-7bb8-4673-89e3-88ffb9846940")
+			(uuid "bfa1983b-4b24-4749-b397-86902bbde45d")
 		)
 		(pin "2"
-			(uuid "116b87f1-7784-4105-b6c7-1c7264baeaef")
+			(uuid "9f143b6a-3a4c-4a64-b821-72d8e033aefb")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "L1")
 					(unit 1)
 				)
@@ -5794,7 +5841,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0b92f3b9-e341-40ca-9278-cc907d899b8f")
+		(uuid "3563e0f8-14f4-483c-a7df-b59abd78329b")
 	)
 	(label "LX1"
 		(at 69.85 200.66 0)
@@ -5804,7 +5851,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eb9bb22d-f488-426d-817a-fad2bdeff8ee")
+		(uuid "61538d79-9937-42d6-8889-02c5b6ed2d90")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -5814,7 +5861,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a695ebcd-7232-4213-8166-255551cd89ad")
+		(uuid "6dbd1dcc-4a58-44a1-92f9-7511dfce6ce1")
 		(property "Reference" "D9"
 			(at 66.04 193.04 0)
 			(effects
@@ -5823,7 +5870,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 66.04 208.28 0)
 			(effects
 				(font
@@ -5850,14 +5897,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "328abdb7-bf16-4091-ae7f-7c9e0ce4d68a")
+			(uuid "1872ceef-0f58-452a-a943-2ecb76a06bdf")
 		)
 		(pin "2"
-			(uuid "d901c0dd-5fc0-4001-b16e-ae5a8f8e658e")
+			(uuid "71b6b51e-dbab-4135-8e77-32fae9875ed0")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D9")
 					(unit 1)
 				)
@@ -5872,7 +5919,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "85e32cde-edb5-45c9-8aa3-445410e08d29")
+		(uuid "1c7fcb5d-cf61-42fd-905d-2eacc2992d36")
 	)
 	(label "GND"
 		(at 106.68 204.47 0)
@@ -5882,7 +5929,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "abcdaef6-39d6-47bd-b8d1-a4ddbe07667b")
+		(uuid "76d88d23-339f-404c-a39a-ddbc7ab98d53")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -5892,7 +5939,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ff054d52-445d-46c1-9847-f5581c47acbc")
+		(uuid "e39dda62-cbee-4f5b-87c4-90125b4ad0b0")
 		(property "Reference" "C5"
 			(at 106.68 193.04 0)
 			(effects
@@ -5928,15 +5975,171 @@
 			)
 		)
 		(pin "1"
-			(uuid "86076a31-c5df-487e-baf8-f6305b33dc9c")
+			(uuid "c35438f5-3bcb-4a2f-880b-72b8ecb7d40b")
 		)
 		(pin "2"
-			(uuid "949c2f8a-2e19-44a2-b701-6003733c4be7")
+			(uuid "f1467c1d-a744-401c-9e4a-cbab0ab7a7de")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "CTRL1"
+		(at 25.4 196.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c64081be-8439-4ef6-aaa1-6487dfabc06c")
+	)
+	(label "GND"
+		(at 25.4 204.47 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "75bac5d6-a804-48dc-97a7-6e12d5427d2c")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 25.4 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6fb417ac-650a-4584-9cf1-036dd51aa219")
+		(property "Reference" "R5"
+			(at 25.4 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k7"
+			(at 25.4 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 25.4 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d075a9ff-f1ba-4811-b924-043a72ccac19")
+		)
+		(pin "2"
+			(uuid "abec56a9-7c17-471f-96f1-973c289da7c2")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 66.04 237.49 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2b5be61-ab1f-45d4-aad8-7956a7c8a5c7")
+	)
+	(label "GND"
+		(at 66.04 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "8fa6ea03-f0df-481a-bf65-bf64c470f04b")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 66.04 241.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "76c81601-d1a3-4e5f-8739-294952705970")
+		(property "Reference" "C11"
+			(at 66.04 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF 50V"
+			(at 66.04 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 66.04 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "08f22423-eba2-4d1d-a262-e676d16001f5")
+		)
+		(pin "2"
+			(uuid "9102a9ba-ffc1-4dad-8b00-92497e2a1222")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -5950,7 +6153,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "86d07896-43c7-4208-a0cf-4976fc37d883")
+		(uuid "c35e321a-3015-4252-90e6-a5871131295d")
 	)
 	(label "GND"
 		(at 147.32 167.64 0)
@@ -5960,7 +6163,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1a8eb5a4-8c7f-4c34-826c-a57e69266485")
+		(uuid "9794c0ce-de24-4ddf-bf7d-ea8546abb3e4")
 	)
 	(label "CTRL2"
 		(at 137.16 157.48 0)
@@ -5970,7 +6173,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "19788b6c-262f-4662-8916-ca08502a38f3")
+		(uuid "c2a763b7-8b35-45d8-a34c-b71d1725322f")
 	)
 	(label "LED2+"
 		(at 157.48 157.48 0)
@@ -5980,7 +6183,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "44580b93-c97e-42f5-8af5-fb591a74d084")
+		(uuid "20fbef3a-1a91-40a0-8278-299b7365fd24")
 	)
 	(label "VBUS"
 		(at 147.32 152.4 0)
@@ -5990,7 +6193,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cb362934-1926-4d44-8d3c-d6feca1b070f")
+		(uuid "a0853577-3a9e-4e26-b2aa-81c60cd4e241")
 	)
 	(symbol
 		(lib_id "Driver_LED:AL8860WT")
@@ -6000,7 +6203,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4e0895bc-9577-4c05-95a0-51bde7cb9aea")
+		(uuid "13587384-ad10-41ca-ae8a-13c5117e7e2f")
 		(property "Reference" "U4"
 			(at 147.32 152.4 0)
 			(effects
@@ -6036,23 +6239,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "04c85644-24d9-44f7-9158-4bd1aecd1011")
+			(uuid "26ff676f-2c40-4bc2-a0ac-134ea2f70b55")
 		)
 		(pin "2"
-			(uuid "5343a0d7-0b77-4a9d-8be6-d4a3ba77675d")
+			(uuid "af37505e-e104-4b5d-90b5-77185e669b11")
 		)
 		(pin "3"
-			(uuid "0d55c5df-bba6-4193-90f7-a9fe57a0677d")
+			(uuid "690d9882-c9b3-40d8-be67-3d7dd4d162d7")
 		)
 		(pin "4"
-			(uuid "278f3316-3951-4127-a895-1bf91c560990")
+			(uuid "b1308d9d-5542-4601-8342-266d972610f1")
 		)
 		(pin "5"
-			(uuid "7d439a56-1b14-48d0-8fb4-b61250b7fea9")
+			(uuid "dfc6d3b9-788a-40ea-a47d-1099ae272f8f")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "U4")
 					(unit 1)
 				)
@@ -6067,7 +6270,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7e0fdbc9-adae-4c23-9d7d-4a2eb4aa48e9")
+		(uuid "c27686f0-c403-4d5a-9d03-19e6aae8af79")
 	)
 	(label "LED2+"
 		(at 187.96 163.83 0)
@@ -6077,7 +6280,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ed6b263d-49d5-4596-b4bc-d044e72f6f02")
+		(uuid "214de753-88c0-4ca4-bf0f-560d191a1563")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6087,7 +6290,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dc5f34a7-d962-4aa9-8f27-590668fb321b")
+		(uuid "fdf803b2-cfd4-4a25-8013-f8624a989552")
 		(property "Reference" "Rs2"
 			(at 187.96 152.4 0)
 			(effects
@@ -6096,7 +6299,7 @@
 				)
 			)
 		)
-		(property "Value" "0R43 1%"
+		(property "Value" "0R51 1%"
 			(at 187.96 167.64 0)
 			(effects
 				(font
@@ -6123,14 +6326,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "d83bca6c-b60e-40cc-8fbf-3bf974bbe140")
+			(uuid "5e99631d-51e7-472c-843c-9d2e15a94ede")
 		)
 		(pin "2"
-			(uuid "91005244-4d78-4a49-bb7e-a99caa29e27c")
+			(uuid "82164476-b59a-45da-baa5-f0235f0d542d")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "Rs2")
 					(unit 1)
 				)
@@ -6145,7 +6348,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "42f0defd-6621-49fd-9a08-3f5941daf214")
+		(uuid "ff1d60b1-72dd-4115-b56d-5924e778a07d")
 	)
 	(label "LX2"
 		(at 228.6 163.83 0)
@@ -6155,7 +6358,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e41f48f2-abba-4bf6-9d19-7783121711ab")
+		(uuid "b8ba758e-48e4-4d87-84a9-85039dd0d4b3")
 	)
 	(symbol
 		(lib_id "Device:L")
@@ -6165,7 +6368,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "00d66862-f548-4307-bbbf-903765205935")
+		(uuid "140dc5a5-f0af-42cb-a78c-c1c3c64ba14e")
 		(property "Reference" "L2"
 			(at 228.6 152.4 0)
 			(effects
@@ -6174,7 +6377,7 @@
 				)
 			)
 		)
-		(property "Value" "33µH ≥1A"
+		(property "Value" "100µH (SRN6045TA-101M)"
 			(at 228.6 167.64 0)
 			(effects
 				(font
@@ -6201,14 +6404,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "c30b253c-c2eb-42e1-b1c1-22b3343def05")
+			(uuid "74b47a80-6013-4cda-8e13-5fe34b9f2d82")
 		)
 		(pin "2"
-			(uuid "7c998e28-be97-4371-a4a7-49897fe17515")
+			(uuid "e3102046-3752-4d57-a5fe-245c3802a283")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "L2")
 					(unit 1)
 				)
@@ -6223,7 +6426,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "67393889-105f-4eb8-968e-a1b090068ed7")
+		(uuid "04c868c9-5397-4419-aaa4-c2f19c4823c5")
 	)
 	(label "LX2"
 		(at 191.77 200.66 0)
@@ -6233,7 +6436,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "04d4a5ab-9332-4fba-a3c3-efea2c88322f")
+		(uuid "fd03f350-2c36-40d3-9b70-4683b2cce61f")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -6243,7 +6446,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "92259791-023a-4cde-b2dd-3a4f326f975c")
+		(uuid "b2071b7d-f09f-4090-9c65-1b0cce721382")
 		(property "Reference" "D10"
 			(at 187.96 193.04 0)
 			(effects
@@ -6252,7 +6455,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 187.96 208.28 0)
 			(effects
 				(font
@@ -6279,14 +6482,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "dbcb7987-fd51-4958-b39d-0253ea0d737a")
+			(uuid "71a33b4b-f60e-4cb0-b28b-dfd18d9127de")
 		)
 		(pin "2"
-			(uuid "10c7d03a-a7a7-4138-8b2c-5b82b8c75fb6")
+			(uuid "9f931aa0-0fa3-40d0-87b4-50ec7a4e8718")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D10")
 					(unit 1)
 				)
@@ -6301,7 +6504,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fe6499c0-722e-4faf-b534-9c216f558578")
+		(uuid "9f2a8dad-e198-4d7c-9e04-64a6f0d931b5")
 	)
 	(label "GND"
 		(at 228.6 204.47 0)
@@ -6311,7 +6514,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ebcfe404-500b-4bf0-89d0-77efbf72f873")
+		(uuid "b38c5e46-cbde-400d-bc9c-9b768577ac12")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -6321,7 +6524,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0b06df13-69d6-44bb-b828-9abcb3383c75")
+		(uuid "7a5e4c7f-e692-425f-af01-61457c41fead")
 		(property "Reference" "C6"
 			(at 228.6 193.04 0)
 			(effects
@@ -6357,15 +6560,171 @@
 			)
 		)
 		(pin "1"
-			(uuid "0794a497-0405-453a-95b7-4f5d4b05ff28")
+			(uuid "6a84837f-6c32-444c-9811-bac631d13361")
 		)
 		(pin "2"
-			(uuid "44996d16-446f-4dd7-ad6b-94ed76762f54")
+			(uuid "a6ea0883-d85d-43d3-8c2b-0b578a3fab43")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "CTRL2"
+		(at 147.32 196.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e60832b7-f865-4c46-b3af-cd0edae3ca50")
+	)
+	(label "GND"
+		(at 147.32 204.47 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e9fa180a-3d02-484b-89fa-7cd50645148b")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3ad569b2-463e-405b-8075-303a9fb12986")
+		(property "Reference" "R6"
+			(at 147.32 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k7"
+			(at 147.32 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 147.32 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4086a3ae-6682-45a3-a453-f10673d8a6f8")
+		)
+		(pin "2"
+			(uuid "b59bfdfb-318b-4718-a206-7848d9ffdf81")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 187.96 237.49 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "73e50445-e72b-4390-ab5a-94c1feb1d790")
+	)
+	(label "GND"
+		(at 187.96 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "3d5a556f-ff1a-4274-9d08-107db690ac9c")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 187.96 241.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7d40e746-c2f5-429d-bbfe-7677ba0281c3")
+		(property "Reference" "C12"
+			(at 187.96 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF 50V"
+			(at 187.96 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 187.96 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "61080911-f3f4-40f7-bb5c-bda7ddb3e994")
+		)
+		(pin "2"
+			(uuid "65b330c3-164a-4741-97c8-38ea4ced4ae4")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -6379,7 +6738,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "87e9a8e7-9802-4d2a-91db-2d5f5a2a2eb2")
+		(uuid "c6cd2ae4-1f17-49b4-9a22-0dd20135cef9")
 	)
 	(label "GND"
 		(at 269.24 167.64 0)
@@ -6389,7 +6748,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "95661eb0-4342-445f-9a93-f801e6ec50b6")
+		(uuid "41547f32-9359-46fa-af0a-9cd1ca911ac4")
 	)
 	(label "CTRL3"
 		(at 259.08 157.48 0)
@@ -6399,7 +6758,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8886e32d-e7bc-4f62-baf7-ac7652f70062")
+		(uuid "c93c5418-e219-4f2c-a63c-647e476db10e")
 	)
 	(label "LED3+"
 		(at 279.4 157.48 0)
@@ -6409,7 +6768,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3051362a-6e6b-4492-a143-a2a1e57dea55")
+		(uuid "132034fd-d4c6-4ff3-aaf4-69a585da7c1d")
 	)
 	(label "VBUS"
 		(at 269.24 152.4 0)
@@ -6419,7 +6778,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3a9aa61b-9c30-4419-83c0-e860c32f8dce")
+		(uuid "059bbcf6-b03c-43ef-a2ec-ca57b7ab2476")
 	)
 	(symbol
 		(lib_id "Driver_LED:AL8860WT")
@@ -6429,7 +6788,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "75cc1d02-baf2-448a-8a8e-11734af0ca10")
+		(uuid "5e9018df-e684-4b4a-a76c-2ac827224756")
 		(property "Reference" "U5"
 			(at 269.24 152.4 0)
 			(effects
@@ -6465,23 +6824,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "f171412a-de7c-444f-82a4-e74ffbde47d4")
+			(uuid "7a807e01-1823-47c4-843b-b35c1f49e266")
 		)
 		(pin "2"
-			(uuid "7783ab9f-b9b4-4ec0-8939-9f23c6b8bd25")
+			(uuid "47cd53a2-54da-4a77-a678-2f7751371a54")
 		)
 		(pin "3"
-			(uuid "647ef13f-a989-4a39-a510-ec24b79a6986")
+			(uuid "562c8761-0737-481d-b089-a59cc8538827")
 		)
 		(pin "4"
-			(uuid "df5170de-0bac-4e15-9736-c43a4f148877")
+			(uuid "37fb519a-9e41-4f64-aa5d-8a71abfc1cc2")
 		)
 		(pin "5"
-			(uuid "edd673fe-8cbd-49fb-9397-ecc6b104028b")
+			(uuid "161c3fba-3f93-4523-8c76-1d0eab4f5b09")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "U5")
 					(unit 1)
 				)
@@ -6496,7 +6855,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1646f8cf-5220-464d-a98f-c651eeaa3cde")
+		(uuid "790def14-aed3-435d-87c7-f45ba3103a54")
 	)
 	(label "LED3+"
 		(at 309.88 163.83 0)
@@ -6506,7 +6865,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c03a224e-93ed-4348-802a-554c59aa3674")
+		(uuid "d46926f2-f3b1-4aa6-937e-94a5ad84fd2c")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6516,7 +6875,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9d6e0bf4-3ea0-45c2-9c3c-20340e3a88d9")
+		(uuid "7a96b2fc-6dae-4841-80fb-00ba14ab4424")
 		(property "Reference" "Rs3"
 			(at 309.88 152.4 0)
 			(effects
@@ -6525,7 +6884,7 @@
 				)
 			)
 		)
-		(property "Value" "0R43 1%"
+		(property "Value" "0R51 1%"
 			(at 309.88 167.64 0)
 			(effects
 				(font
@@ -6552,14 +6911,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f2c4b5d-fe25-49ac-96e3-2d220540eb63")
+			(uuid "55bc4d35-fee7-4c51-9cff-7c1d39d44180")
 		)
 		(pin "2"
-			(uuid "7fc7ab01-17ad-46e3-80fc-d04d270dbe7d")
+			(uuid "e03e0744-e02e-4a8a-9a29-8f467b94146e")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "Rs3")
 					(unit 1)
 				)
@@ -6574,7 +6933,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "070ec1b0-f7a7-445a-8ea8-7f2f6e436639")
+		(uuid "1c6cbaa5-9a96-4605-8466-d0d327dd03b2")
 	)
 	(label "LX3"
 		(at 350.52 163.83 0)
@@ -6584,7 +6943,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9be43b09-d5af-4b69-bca7-298469501073")
+		(uuid "8bea467a-a9d6-426b-ac82-94f70e41f0c0")
 	)
 	(symbol
 		(lib_id "Device:L")
@@ -6594,7 +6953,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "998e23cf-0732-4afe-9ad7-b6792f618f91")
+		(uuid "3359b2de-a99f-4415-afd6-29962ffeb6c5")
 		(property "Reference" "L3"
 			(at 350.52 152.4 0)
 			(effects
@@ -6603,7 +6962,7 @@
 				)
 			)
 		)
-		(property "Value" "33µH ≥1A"
+		(property "Value" "100µH (SRN6045TA-101M)"
 			(at 350.52 167.64 0)
 			(effects
 				(font
@@ -6630,14 +6989,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a19af6f-7b2b-4878-9e0f-9c82d59596ac")
+			(uuid "ce24500b-0783-4b67-b2bd-d1475514cc0a")
 		)
 		(pin "2"
-			(uuid "f4e29661-228e-433e-b338-2a15fe426281")
+			(uuid "5ab5fa10-332d-4f57-951c-8fababdee1ae")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "L3")
 					(unit 1)
 				)
@@ -6652,7 +7011,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b8f1c69e-547d-453a-92f8-8d1becb87d5d")
+		(uuid "66fa019f-10e8-4e8b-acb9-474a12d5900e")
 	)
 	(label "LX3"
 		(at 313.69 200.66 0)
@@ -6662,7 +7021,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c9df4510-2c04-4f03-896b-4329ce330321")
+		(uuid "ea2f2f74-78f6-43a1-9763-52fd28da1565")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -6672,7 +7031,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "87a51da0-e804-4083-93bb-3908367f1429")
+		(uuid "e807f30d-33e8-4358-bae2-84011da467de")
 		(property "Reference" "D11"
 			(at 309.88 193.04 0)
 			(effects
@@ -6681,7 +7040,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34"
+		(property "Value" "SS36"
 			(at 309.88 208.28 0)
 			(effects
 				(font
@@ -6708,14 +7067,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "3e7b01c7-20ea-49ef-b04f-d49e0c592051")
+			(uuid "1fa9174e-1407-4760-8619-314f91fa2394")
 		)
 		(pin "2"
-			(uuid "dccb8218-14e3-4eaa-a488-01073a073a28")
+			(uuid "b622e397-31de-48b8-8da5-764d60262142")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "D11")
 					(unit 1)
 				)
@@ -6730,7 +7089,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "075d39b3-c369-4266-a2f0-a45cdafab43c")
+		(uuid "49d94be3-578b-4a1f-9b2a-a540d4a0997b")
 	)
 	(label "GND"
 		(at 350.52 204.47 0)
@@ -6740,7 +7099,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "76f5c012-59c0-41e6-89e0-5179330a087b")
+		(uuid "0d79a7ad-a48b-4c02-881b-e5a6b175a557")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -6750,7 +7109,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d1a5e03d-341d-48f0-9c7b-53a5fb16ca6c")
+		(uuid "2e5714d2-85ce-435d-acaf-84907e69f5c5")
 		(property "Reference" "C7"
 			(at 350.52 193.04 0)
 			(effects
@@ -6786,15 +7145,808 @@
 			)
 		)
 		(pin "1"
-			(uuid "b06a7b59-ec21-457a-80ea-25637d102a0a")
+			(uuid "539a160e-e81d-4fc6-9493-bb48f02b994a")
 		)
 		(pin "2"
-			(uuid "a19b07f6-7172-4612-ab19-7b002243ea9b")
+			(uuid "c45c3559-e0c4-4656-a207-84eae3442505")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "CTRL3"
+		(at 269.24 196.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "17148f90-42c1-4884-b353-8464596662c0")
+	)
+	(label "GND"
+		(at 269.24 204.47 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "11ad40d2-5c9e-4fcb-9e78-6f11bcf58e0e")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 269.24 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0609f829-06b5-4888-aea4-153bfd8ddf9d")
+		(property "Reference" "R7"
+			(at 269.24 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k7"
+			(at 269.24 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 269.24 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9afd8fb1-43a5-4101-b7c1-19068c5358b9")
+		)
+		(pin "2"
+			(uuid "9d5c0c65-bebb-4f5f-8208-e067808de6fa")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 309.88 237.49 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "98f96015-472b-4e71-8410-b4e349311657")
+	)
+	(label "GND"
+		(at 309.88 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "2fc8c1f9-663c-496b-a30c-1b52edc1ec0f")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 309.88 241.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5c343f62-6320-417c-b469-2a0ea9677780")
+		(property "Reference" "C13"
+			(at 309.88 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF 50V"
+			(at 309.88 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 309.88 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 309.88 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "013301ef-a80d-4f92-9871-d394afece753")
+		)
+		(pin "2"
+			(uuid "e59fca67-e2a0-47bd-92d5-0f2b883e75ad")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VNEG"
+		(at 25.4 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a19a4a0-cf15-42f8-87ff-9e0a2971383e")
+	)
+	(label "GND"
+		(at 25.4 285.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "8a91fd8a-a974-4924-b016-226d7673e9fc")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 25.4 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c5323abd-888d-4299-9044-bc8c3882676a")
+		(property "Reference" "R9"
+			(at 25.4 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10Ω 1W"
+			(at 25.4 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 25.4 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c8984d5b-c135-47a0-9ec7-f9cfcc68b368")
+		)
+		(pin "2"
+			(uuid "2ca46652-5267-4ba7-bda5-7ba4629a23f0")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "GATE"
+		(at 60.96 281.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "fb888803-e41a-4805-ac64-41bb2380edea")
+	)
+	(label "VNEG"
+		(at 68.58 287.02 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c7dbe34b-9acd-42f6-8161-d648be8f19a1")
+	)
+	(label "GND"
+		(at 68.58 276.86 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd798fd8-d14e-4002-b67d-bab4708853e6")
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMN6075S")
+		(at 66.04 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4541301c-f2a7-4b2a-8b00-948f77a81517")
+		(property "Reference" "Q1"
+			(at 66.04 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DMN6075S"
+			(at 66.04 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 66.04 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e308be46-1601-4360-bca1-dc95d192141d")
+		)
+		(pin "2"
+			(uuid "f9f5bac1-2702-46bc-9eeb-933290537b39")
+		)
+		(pin "3"
+			(uuid "ab268ed0-e4ce-4318-94aa-8674047d7a45")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 106.68 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "d79f84d4-3b83-410c-bee4-a1b628437cac")
+	)
+	(label "GATE"
+		(at 106.68 285.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ab3b9d68-2c72-45fb-aaeb-8e3d338cf06e")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0a749c6f-2c9b-4301-a400-7845459d88a6")
+		(property "Reference" "R10"
+			(at 106.68 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470k"
+			(at 106.68 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 106.68 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d162ad87-ac64-4677-bedb-7236e5d6101e")
+		)
+		(pin "2"
+			(uuid "48c0d1c8-ea01-413a-a85e-7b664d268402")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "GATE"
+		(at 147.32 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "cdeab79f-076a-467b-9325-5402c6528356")
+	)
+	(label "VNEG"
+		(at 147.32 285.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "b1b64897-a221-42f3-9e6e-59c46a75cb28")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 147.32 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "896f57eb-048a-4bf0-b395-ad2f132605b6")
+		(property "Reference" "C10"
+			(at 147.32 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470nF 25V"
+			(at 147.32 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 147.32 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3dbe9ce-e3fb-4f25-8882-029390c5e2f1")
+		)
+		(pin "2"
+			(uuid "873aa37a-9562-47a6-a968-646e5dcbbcdd")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "GATE"
+		(at 184.15 281.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "59d64e5e-896a-4514-bf05-f7735d18a3a5")
+	)
+	(label "VNEG"
+		(at 191.77 281.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "741ecf7a-3ef4-4cac-ab75-2b3bb210b1e7")
+	)
+	(symbol
+		(lib_id "Device:D_Zener")
+		(at 187.96 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c7808d47-0548-4e96-8cf0-30450b1b0df9")
+		(property "Reference" "D12"
+			(at 187.96 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12V (MM3Z12)"
+			(at 187.96 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 187.96 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83f918d4-1abd-46f6-a029-7f848fe4e45e")
+		)
+		(pin "2"
+			(uuid "9f20f381-000c-4fbb-9c5a-74237f58c5a6")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 224.79 281.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "5675ff0b-ebae-4ae5-bb7b-55de733c49db")
+	)
+	(label "GATE"
+		(at 232.41 281.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "5314bc27-bccd-4e9e-a7a9-18bc20902484")
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 228.6 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d294eb08-0cb2-4379-967e-c4f6f545ca5b")
+		(property "Reference" "D13"
+			(at 228.6 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148WS"
+			(at 228.6 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 228.6 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1dff3316-a87a-4f12-b313-1bcd010cbad3")
+		)
+		(pin "2"
+			(uuid "29aaf47f-44cd-4e8a-876d-5d3741bc09f4")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBUS"
+		(at 309.88 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "af18ac8b-8960-4275-86f7-a65a7ed218e7")
+	)
+	(label "VHOLD_IN"
+		(at 309.88 285.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc3da705-58d8-444a-b41e-2d7c1483251c")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 309.88 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "22a34f9c-6d2d-45be-9d1c-68b0bd3754e3")
+		(property "Reference" "R4"
+			(at 309.88 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "47Ω"
+			(at 309.88 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 309.88 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 309.88 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "84ecc031-7eb0-4495-835f-35df230073a7")
+		)
+		(pin "2"
+			(uuid "9c013d26-60dd-451b-add5-68d1d2230097")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "UPDI_MCU"
+		(at 350.52 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "b9b93aaf-161d-4c37-b746-c96d87080b1d")
+	)
+	(label "UPDI"
+		(at 350.52 285.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "1625e586-8618-4b4c-bcad-0d168a81ded9")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 350.52 281.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "493baa8f-2f67-418d-8d6b-5e5e7d7146bf")
+		(property "Reference" "R8"
+			(at 350.52 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 350.52 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 350.52 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 350.52 281.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d1268e7-be2b-4db8-9c5a-11880820d83e")
+		)
+		(pin "2"
+			(uuid "25508cea-059f-4317-8eaa-5c6995770019")
+		)
+		(instances
+			(project "candle-driver"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -6808,7 +7960,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d7e4cd4b-3c7a-4233-82cc-55bb49ad0434")
+		(uuid "c9c1a505-e1d8-4a9e-b25b-60270ee7a880")
 	)
 	(label "LED1-"
 		(at 386.08 195.58 0)
@@ -6818,7 +7970,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2c5b5685-40f7-4edc-9410-d109b10e601f")
+		(uuid "7370bbf4-ef5b-4455-8f1a-6b9684deb81d")
 	)
 	(label "LED2+"
 		(at 386.08 198.12 0)
@@ -6828,7 +7980,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "86b9cd42-7588-4a7b-bfb9-ab01cd73e9b7")
+		(uuid "6cf8e7b4-05dd-464b-9747-7de3350cee55")
 	)
 	(label "LED2-"
 		(at 386.08 200.66 0)
@@ -6838,7 +7990,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "db2cbb18-cbf2-4890-9701-6fafae07cabf")
+		(uuid "79e1dcfd-85af-4329-a627-60b3b9021b31")
 	)
 	(label "LED3+"
 		(at 386.08 203.2 0)
@@ -6848,7 +8000,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a2e55c64-21d8-4577-99be-32db0ca9d2f4")
+		(uuid "f98316a4-21e6-460c-87e5-312c60e89744")
 	)
 	(label "LED3-"
 		(at 386.08 205.74 0)
@@ -6858,7 +8010,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e68be4f8-6ea4-4cdf-ab62-690ccb31f926")
+		(uuid "7155954c-db9a-4f99-a8a2-4c67d83023ac")
 	)
 	(label "NTC"
 		(at 386.08 208.28 0)
@@ -6868,7 +8020,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2229be42-9d2c-45b9-a772-a6fefa7f8fb0")
+		(uuid "f7d02c4c-76e2-4b95-9d45-e282feccd7ff")
 	)
 	(label "GND"
 		(at 386.08 210.82 0)
@@ -6878,7 +8030,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ae5d93ec-ca07-493f-99c3-9a1f8793cb3a")
+		(uuid "debc8045-f932-4aeb-8ad0-811527d2fe4a")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
@@ -6888,7 +8040,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "11eb5a5a-6dc1-44fa-b0f9-6428e4722c09")
+		(uuid "048afd70-cd7e-4485-8096-3701b79e2310")
 		(property "Reference" "J2"
 			(at 391.16 193.04 0)
 			(effects
@@ -6924,32 +8076,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2070311-2505-4c7c-96aa-d94604d60b1d")
+			(uuid "86838c37-0fd8-4070-ad2d-223135a292b7")
 		)
 		(pin "2"
-			(uuid "e7fa795d-b2a7-41c7-8a23-c95cdfef09ac")
+			(uuid "052a3f6b-b30f-4956-8af3-2dc0918f273d")
 		)
 		(pin "3"
-			(uuid "34f10500-285e-49d9-91ab-506974608211")
+			(uuid "5d7b8c65-2e15-4418-930c-9abb8397b4d0")
 		)
 		(pin "4"
-			(uuid "c2cfbd23-77d4-4639-a4d3-cac9315af887")
+			(uuid "df05c6e6-0823-4c1a-b828-0c52dcda9f87")
 		)
 		(pin "5"
-			(uuid "4dd324ec-3c09-4ae8-9973-4fd384a7928a")
+			(uuid "e3fa2def-e318-49a6-a51e-91383273dc26")
 		)
 		(pin "6"
-			(uuid "74438340-918c-472f-98d1-20b5b9e3017d")
+			(uuid "9159579b-e4d9-43da-b87c-285078eae49e")
 		)
 		(pin "7"
-			(uuid "27d6e142-8028-4963-835e-f83b64d0935b")
+			(uuid "00625bfd-7486-455c-91a5-5af1148d334d")
 		)
 		(pin "8"
-			(uuid "5d4da252-e404-4285-9ff2-2ac43f6ba46c")
+			(uuid "b7cdf17c-fa8c-4c24-a447-95eab7cf2609")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "J2")
 					(unit 1)
 				)
@@ -6964,7 +8116,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e6de40d3-4809-4702-96d2-6bad188147bc")
+		(uuid "97b1fdbd-6ada-45aa-bda3-7e76023ba410")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -6974,7 +8126,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "770da7b8-0a18-443f-b847-ceb18a878ba7")
+		(uuid "537d296b-71fd-4051-a4cd-351c9bbd179b")
 		(property "Reference" "#FLG01"
 			(at 391.16 111.76 0)
 			(effects
@@ -7010,11 +8162,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "17aa08ab-5490-464c-a9e2-2e73167877ab")
+			(uuid "11bc2c07-e880-4ac6-bc5d-3ca3d36680cd")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "#FLG01")
 					(unit 1)
 				)
@@ -7029,7 +8181,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d571e036-0212-4cf6-97d5-3751952bae9b")
+		(uuid "475d21a5-a794-4c2f-885e-03c7aa84b196")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -7039,7 +8191,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e8909244-6a13-4fda-80f3-bd44d965851a")
+		(uuid "7b604a20-12bf-46bd-a1ba-52b9c63206af")
 		(property "Reference" "#FLG02"
 			(at 391.16 121.92 0)
 			(effects
@@ -7075,11 +8227,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c7bbd523-4dc3-490b-8bdc-93e946504d0a")
+			(uuid "af0be37f-739a-4d97-b2ee-493b4bd34d9f")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "#FLG02")
 					(unit 1)
 				)
@@ -7094,7 +8246,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4c4a68cb-4cf9-4df3-a666-4232d8249891")
+		(uuid "500174a7-9a4d-4e3b-a695-4b29c1fbedae")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -7104,7 +8256,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b231dc53-0c97-4370-8252-8551eefb098a")
+		(uuid "c466ed22-4bcc-49e1-9c7e-59c46c98dabf")
 		(property "Reference" "#FLG03"
 			(at 391.16 132.08 0)
 			(effects
@@ -7140,11 +8292,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "40c3c794-149f-422d-b701-b3797f56dcc8")
+			(uuid "5b9c2c72-c2d5-4b0f-9725-19d5514d14f1")
 		)
 		(instances
 			(project "candle-driver"
-				(path "/920ecc0e-0f2d-447a-a377-f750e83f7c35"
+				(path "/5b99e417-60cf-41fc-b34c-f0f4d149aa7e"
 					(reference "#FLG03")
 					(unit 1)
 				)
@@ -7161,7 +8313,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a30e501b-efb3-4604-ad26-c0981f16f0b0")
+		(uuid "7a632e13-3f19-4aa2-bcbe-408a23c9b5a6")
 	)
 	(text "DIM SENSE: full-wave AC → PA7"
 		(exclude_from_sim no)
@@ -7173,7 +8325,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8221967b-0320-4c86-870c-11d066fc3c0e")
+		(uuid "63d3d55a-3487-4e62-98b4-05b6a219d97d")
 	)
 	(text "MCU RAIL: hold-up + 5 V"
 		(exclude_from_sim no)
@@ -7185,7 +8337,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b5cea214-6c28-4fd4-a124-0faf11b9ca21")
+		(uuid "0e72a7a0-da01-4f87-9597-7f86e51bdb3c")
 	)
 	(text "MCU: ATtiny1614 — flame + dim decode"
 		(exclude_from_sim no)
@@ -7197,9 +8349,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "637ae882-7536-41b1-8d6d-f7a17f979301")
+		(uuid "7c42d5a2-0e22-4f8d-8242-efe05153d774")
 	)
-	(text "LED CHANNEL 1: 233 mA"
+	(text "LED CHANNEL 1: 196 mA"
 		(exclude_from_sim no)
 		(at 25.4 144.78 0)
 		(effects
@@ -7209,9 +8361,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eb9aded0-9ce7-4233-a1a6-28eae8f42b7a")
+		(uuid "439febb2-4fbb-4e1d-b19e-e4d07dc987d6")
 	)
-	(text "LED CHANNEL 2: 233 mA"
+	(text "LED CHANNEL 2: 196 mA"
 		(exclude_from_sim no)
 		(at 147.32 144.78 0)
 		(effects
@@ -7221,9 +8373,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a2db05aa-77b3-49ea-bf0a-26932e06f785")
+		(uuid "13c112aa-5669-46b8-864e-5fb935559158")
 	)
-	(text "LED CHANNEL 3: 233 mA"
+	(text "LED CHANNEL 3: 196 mA"
 		(exclude_from_sim no)
 		(at 269.24 144.78 0)
 		(effects
@@ -7233,7 +8385,19 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "87015299-8f32-433d-b7b2-6f9eea5c6cf0")
+		(uuid "2ac19fa3-277e-4e48-be56-08c18ffa7eba")
+	)
+	(text "INRUSH LIMITER: 10 Ω, FET bypass after ~30–50 ms"
+		(exclude_from_sim no)
+		(at 25.4 266.7 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "05e6562b-73db-4c05-99ad-f8cbc51b6f84")
 	)
 	(sheet_instances
 		(path "/"

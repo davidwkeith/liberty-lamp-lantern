@@ -39,21 +39,21 @@ class DriverNets(unittest.TestCase):
 
     def test_bridge(self):
         # Device:D_Schottky: 1 = K, 2 = A
-        for ref, anode, cathode in [("D2", "AC1F", "VRAW"), ("D3", "AC2", "VRAW"), ("D4", "GND", "AC1F"), ("D5", "GND", "AC2")]:
+        for ref, anode, cathode in [("D2", "AC1F", "VBUS"), ("D3", "AC2", "VBUS"), ("D4", "VNEG", "AC1F"), ("D5", "VNEG", "AC2")]:
             self.on(anode, ref, "2")
             self.on(cathode, ref, "1")
 
     def test_bulk_and_holdup_polarity(self):
         self.on("VBUS", "C1", "1"); self.on("GND", "C1", "2")
         self.on("VHOLD", "C2", "1"); self.on("GND", "C2", "2")
-        self.on("VBUS", "D6", "2"); self.on("VHOLD", "D6", "1")
+        self.on("VHOLD_IN", "D6", "2"); self.on("VHOLD", "D6", "1")
 
     def test_sense_is_common_cathode_from_ac(self):
         self.on("AC1F", "D7", "1"); self.on("AC2", "D7", "2"); self.on("VSENSE", "D7", "3")  # BAT54C: 1 A1, 2 A2, 3 K
         self.on("SENSE", "U2", "@PA7")
 
     def test_mcu_pins(self):
-        for pin, net in [("@PB0", "CTRL1"), ("@PB1", "CTRL2"), ("@PB2", "CTRL3"), ("@PA5", "NTC"), ("@PA0", "UPDI"), ("@VCC", "+5V")]:
+        for pin, net in [("@PB0", "CTRL1"), ("@PB1", "CTRL2"), ("@PB2", "CTRL3"), ("@PA5", "NTC"), ("@PA0", "UPDI_MCU"), ("@VCC", "+5V")]:
             self.on(net, "U2", pin)
 
     def test_channels(self):
@@ -66,6 +66,72 @@ class DriverNets(unittest.TestCase):
     def test_led_link_order(self):
         for pin, net in enumerate(["LED1+", "LED1-", "LED2+", "LED2-", "LED3+", "LED3-", "NTC", "GND"], start=1):
             self.on(net, "J2", str(pin))
+
+
+@unittest.skipUnless(HAVE_LIBS, "KiCad symbol libraries not installed")
+class ReviewFixes(unittest.TestCase):
+    """Findings from the 2026-11-17 schematic review."""
+
+    @classmethod
+    def setUpClass(cls):
+        import boards
+        cls.s = boards.driver()
+        cls.s.check()
+        cls.nets = cls.s.netlist()
+
+    def nets_of(self, ref):
+        return {net for net, members in self.nets.items() for r, _ in members if r == ref}
+
+    def pin_net(self, ref, pin):
+        num = self.s.pin_number(ref, pin)
+        return next(net for net, m in self.nets.items() if (ref, num) in m)
+
+    def value(self, ref):
+        return self.s.parts[ref].value
+
+    def test_ntc_replaced_by_active_inrush_limiter(self):
+        self.assertNotIn("RT1", self.s.parts)
+        self.assertEqual(self.pin_net("D4", "2"), "VNEG")  # bridge low side returns via the limiter
+        self.assertEqual(self.pin_net("D5", "2"), "VNEG")
+        self.assertEqual(self.nets_of("R9"), {"VNEG", "GND"})
+        self.assertTrue(self.value("R9").startswith("10Ω"))
+        self.assertEqual((self.pin_net("Q1", "@S"), self.pin_net("Q1", "@D"), self.pin_net("Q1", "@G")), ("VNEG", "GND", "GATE"))
+        self.assertEqual(self.nets_of("R10"), {"VBUS", "GATE"})
+        self.assertEqual(self.nets_of("C10"), {"GATE", "VNEG"})
+        self.assertEqual((self.pin_net("D12", "1"), self.pin_net("D12", "2")), ("GATE", "VNEG"))  # zener K, A
+        self.assertEqual((self.pin_net("D13", "2"), self.pin_net("D13", "1")), ("GATE", "VBUS"))  # discharge A, K
+
+    def test_inductors_100uH(self):
+        for n in (1, 2, 3):
+            self.assertTrue(self.value(f"L{n}").startswith("100µH"), self.value(f"L{n}"))
+
+    def test_ctrl_pulldowns(self):
+        for n in (1, 2, 3):
+            pulls = [r for r, p in self.s.parts.items() if r.startswith("R") and self.nets_of(r) == {f"CTRL{n}", "GND"}]
+            self.assertEqual(len(pulls), 1, f"CTRL{n} pull-down")
+
+    def test_sense_resistors_cap_hardware_at_4W(self):
+        for n in (1, 2, 3):
+            self.assertTrue(self.value(f"Rs{n}").startswith("0R51"))
+
+    def test_surge_ratings(self):
+        self.assertEqual(self.s.parts["D7"].lib_id, "Diode:BAV70")
+        for ref in ["D2", "D3", "D4", "D5", "D9", "D10", "D11"]:
+            self.assertEqual(self.value(ref), "SS36", ref)
+        self.assertEqual(self.value("D1"), "SMBJ24CA")  # kept: a 26 V standoff would clamp past the AL8860's 40 V
+
+    def test_holdup_series_resistor(self):
+        self.assertEqual(self.nets_of("R4"), {"VBUS", "VHOLD_IN"})
+        self.assertEqual(self.pin_net("D6", "2"), "VHOLD_IN")
+
+    def test_minor_fixes(self):
+        self.assertTrue(self.value("C4").startswith("1µF"))
+        for ref in ("C11", "C12", "C13"):
+            self.assertEqual(self.nets_of(ref), {"VBUS", "GND"})
+        self.assertEqual(self.pin_net("U2", "@PA0"), "UPDI_MCU")
+        self.assertEqual(self.nets_of("R8"), {"UPDI_MCU", "UPDI"})
+        self.assertTrue(self.value("R2").startswith("18k"))
+        self.assertIn("1.1 A", self.value("F1"))
 
 
 @unittest.skipUnless(HAVE_LIBS, "KiCad symbol libraries not installed")
