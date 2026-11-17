@@ -13,12 +13,16 @@ except FileNotFoundError:
     HAVE_LIBS = False
 
 
+@unittest.skipUnless(HAVE_LIBS, "KiCad symbol libraries not installed")
 class AL8860Symbol(unittest.TestCase):
     def test_pinout_matches_datasheet(self):
-        """TSOT-25: 1 LX, 2 GND, 3 CTRL, 4 ISENSE, 5 VIN (Diodes Inc. AL8860)."""
-        pins = kisch.symbol_pins(kisch.load_symbol("liberty:AL8860"))
+        """TSOT-25: 1 SW (LX), 2 GND, 3 CTRL, 4 SET (ISENSE), 5 VIN (Diodes Inc. AL8860)."""
+        sym = kisch.load_symbol("Driver_LED:AL8860WT")
+        pins = kisch.symbol_pins(sym)
         self.assertEqual({n: p["name"] for n, p in pins.items()},
-                         {"1": "LX", "2": "GND", "3": "CTRL", "4": "ISENSE", "5": "VIN"})
+                         {"1": "SW", "2": "GND", "3": "CTRL", "4": "SET", "5": "VIN"})
+        fp = [x[2] for x in kisch.find(sym, "property") if x[1] == "Footprint"]
+        self.assertEqual(fp, ["Package_TO_SOT_SMD:TSOT-23-5"])
 
 
 @unittest.skipUnless(HAVE_LIBS, "KiCad symbol libraries not installed")
@@ -45,7 +49,7 @@ class DriverNets(unittest.TestCase):
         self.on("VBUS", "D6", "2"); self.on("VHOLD", "D6", "1")
 
     def test_sense_is_common_cathode_from_ac(self):
-        self.on("AC1F", "D7", "@A1"); self.on("AC2", "D7", "@A2"); self.on("VSENSE", "D7", "@K")
+        self.on("AC1F", "D7", "1"); self.on("AC2", "D7", "2"); self.on("VSENSE", "D7", "3")  # BAT54C: 1 A1, 2 A2, 3 K
         self.on("SENSE", "U2", "@PA7")
 
     def test_mcu_pins(self):
@@ -55,8 +59,8 @@ class DriverNets(unittest.TestCase):
     def test_channels(self):
         for n in (1, 2, 3):
             self.on("VBUS", f"Rs{n}", "1"); self.on(f"LED{n}+", f"Rs{n}", "2")
-            self.on(f"LED{n}+", f"U{n + 2}", "@ISENSE"); self.on("VBUS", f"U{n + 2}", "@VIN")
-            self.on(f"LX{n}", f"U{n + 2}", "@LX"); self.on(f"LX{n}", f"L{n}", "2"); self.on(f"LED{n}-", f"L{n}", "1")
+            self.on(f"LED{n}+", f"U{n + 2}", "@SET"); self.on("VBUS", f"U{n + 2}", "@VIN")
+            self.on(f"LX{n}", f"U{n + 2}", "@SW"); self.on(f"LX{n}", f"L{n}", "2"); self.on(f"LED{n}-", f"L{n}", "1")
             self.on(f"LX{n}", f"D{8 + n}", "2"); self.on("VBUS", f"D{8 + n}", "1")
 
     def test_led_link_order(self):
@@ -80,6 +84,22 @@ class DiscNets(unittest.TestCase):
         self.assertIn(("TH1", "1"), nets["NTC"])
 
 
+def _strip_flags(nets):
+    return {k: frozenset(x for x in v if not x[0].startswith("#")) for k, v in nets.items()}
+
+
+def _kicad_nets(path):
+    tree = kisch.parse(Path(path).read_text())
+    out = {}
+    for n in kisch.find(kisch.find1(tree, "nets"), "net"):
+        name = kisch.find1(n, "name")[1].lstrip("/")
+        nodes = frozenset((kisch.find1(x, "ref")[1], kisch.find1(x, "pin")[1]) for x in kisch.find(n, "node"))
+        nodes = frozenset(x for x in nodes if not x[0].startswith("#"))
+        if nodes and not name.startswith("unconnected-"):
+            out[name] = nodes
+    return out
+
+
 @unittest.skipUnless(HAVE_LIBS and kisch.kicad_cli(), "KiCad not installed")
 class ERC(unittest.TestCase):
     def test_both_boards_pass_erc(self):
@@ -93,6 +113,12 @@ class ERC(unittest.TestCase):
                 r = subprocess.run([kisch.kicad_cli(), "sch", "erc", "--severity-error", "--exit-code-violations", "-o", str(rpt), str(sch)],
                                    capture_output=True, text=True)
                 self.assertEqual(r.returncode, 0, f"{name} ERC errors:\n{rpt.read_text() if rpt.exists() else r.stderr}")
+                # KiCad's own connectivity must equal the generator's netlist exactly:
+                # a label one grid step off a pin would silently connect nothing.
+                net = tmp / f"{name}.net"
+                subprocess.run([kisch.kicad_cli(), "sch", "export", "netlist", "--format", "kicadsexpr", "-o", str(net), str(sch)],
+                               check=True, capture_output=True)
+                self.assertEqual(_kicad_nets(net), _strip_flags(sheet.netlist()), f"{name}: KiCad netlist differs")
         finally:
             shutil.rmtree(tmp)
 

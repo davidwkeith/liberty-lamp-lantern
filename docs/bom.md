@@ -97,7 +97,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | Block | Part | Spec | Per board | ×20 | Notes |
 |-------|------|------|-----------|-----|-------|
 | PCB | Aluminum-core (MCPCB), 1-layer | ~20 mm round | 1 | 20 | Spreads the heat; mounts on the candle pillar |
-| LEDs | Mid-power warm white | **2200 K**, CRI ≥ 90, 3030 (or 2835), ~1 W class | 6 (3 ch × 2 in series) | 120 | Chosen at the schematic stage for a warm "flame" color bin |
+| LEDs | Mid-power warm white | **2200 K**, CRI ≥ 90, 2835 (schematic footprint `LED_SMD:LED_PLCC_2835`; switch if a 3030 part is chosen), ~0.7–1 W class | 6 (3 ch × 2 in series) | 120 | Exact part chosen at layout for a warm "flame" color bin |
 
 ### Finishing, tools and fab
 

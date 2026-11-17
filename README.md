@@ -80,12 +80,30 @@ The roof screw wells are open on top; a dab of sealant or a printed plug keeps r
 
 Wiring and hanging the lanterns in the tree, plus the yearly maintenance checklist, are covered in [docs/install.md](docs/install.md).
 
+## Candle PCB
+
+Two KiCad 10 schematics are generated from Python:
+- `pcb/candle-driver/`: rectifier, dim sensing, ATtiny1614, and three AL8860 LED channels
+- `pcb/led-disc/`: an aluminum-core disc with 3 × 2 warm LEDs and a thermistor
+
+The design is in [the candle PCB design doc](docs/superpowers/specs/2026-11-17-candle-pcb-design.md). Review copies are in `pcb/*/…-schematic.pdf`.
+
+```bash
+make pcb        # tests → generate → KiCad ERC → PDF
+make pcb-test   # generator + netlist tests only
+```
+
+Edit `pcb/gen/boards.py`, not the `.kicad_sch` files; they're regenerated. The tests check that KiCad's netlist matches the generator exactly, and that both boards pass the electrical rules check (ERC) with 0 errors. Values marked ⏳ wait on the Cube measurements in [TODO.md](TODO.md).
+
 ## Layout
 
 ```
 src/lantern.scad          parametric model (body, roof, assembly)
 scripts/check-stl.mjs     STL validator (empty / non-manifold / bed size / overhang area)
 scripts/*.test.mjs        checker unit tests + OpenSCAD geometry tests
+pcb/gen/                  KiCad schematic generator + tests
+pcb/candle-driver/        driver board schematic (generated) + PDF
+pcb/led-disc/             LED disc schematic (generated) + PDF
 docs/spec.md              project spec
 docs/superpowers/         design + implementation plan
 build/                    generated (gitignored)

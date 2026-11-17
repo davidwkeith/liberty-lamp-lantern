@@ -72,7 +72,7 @@ def driver() -> Sheet:
     # ---- Dim sense from the raw AC lines (row 1)
     heading(s, "DIM SENSE: full-wave AC → PA7", 0, 1)
     s.add("D7", "Diode:BAT54C", "BAT54C", FP["SOT23"], at(0, 1))
-    c("D7", "@A1", "AC1F"); c("D7", "@A2", "AC2"); c("D7", "@K", "VSENSE")
+    c("D7", 1, "AC1F"); c("D7", 2, "AC2"); c("D7", 3, "VSENSE")  # BAT54C: 1 A1, 2 A2, 3 K (common)
     s.add("R1", "Device:R", "100k", FP["R0603"], at(1, 1), **PENDING)
     c("R1", 1, "VSENSE"); c("R1", 2, "SENSE")
     s.add("R2", "Device:R", "22k", FP["R0603"], at(2, 1), **PENDING)
@@ -91,7 +91,7 @@ def driver() -> Sheet:
     s.add("C3", "Device:C", "1µF 50V", FP["C0603"], at(7, 1))
     c("C3", 1, "VHOLD"); c("C3", 2, "GND")
     s.add("U1", "Regulator_Linear:L78L05_SOT89", "78L05", FP["SOT89"], at(8, 1))
-    c("U1", "@VI", "VHOLD"); c("U1", "@VO", "+5V"); c("U1", "@GND", "GND")
+    c("U1", "@IN", "VHOLD"); c("U1", "@OUT", "+5V"); c("U1", "@GND", "GND")
     s.add("C4", "Device:C", "100nF", FP["C0603"], at(9, 1))
     c("C4", 1, "+5V"); c("C4", 2, "GND")
 
@@ -116,8 +116,8 @@ def driver() -> Sheet:
         col = (n - 1) * 3
         heading(s, f"LED CHANNEL {n}: 233 mA", col, 3)
         u = f"U{n + 2}"
-        s.add(u, "liberty:AL8860", "AL8860WT-7", FP["TSOT5"], at(col, 3))
-        c(u, "@VIN", "VBUS"); c(u, "@ISENSE", f"LED{n}+"); c(u, "@CTRL", f"CTRL{n}"); c(u, "@LX", f"LX{n}"); c(u, "@GND", "GND")
+        s.add(u, "Driver_LED:AL8860WT", "AL8860WT-7", FP["TSOT5"], at(col, 3))
+        c(u, "@VIN", "VBUS"); c(u, "@SET", f"LED{n}+"); c(u, "@CTRL", f"CTRL{n}"); c(u, "@SW", f"LX{n}"); c(u, "@GND", "GND")
         s.add(f"Rs{n}", "Device:R", "0R43 1%", FP["R1206"], at(col + 1, 3))
         c(f"Rs{n}", 1, "VBUS"); c(f"Rs{n}", 2, f"LED{n}+")
         s.add(f"L{n}", "Device:L", "33µH ≥1A", FP["IND6045"], at(col + 2, 3))
