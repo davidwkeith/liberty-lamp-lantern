@@ -288,7 +288,7 @@ def _drop_islands(cut: np.ndarray, h: dict) -> np.ndarray:
     field = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
     for i in range(1, n):
         a = stats[i, cv2.CC_STAT_AREA] / PX**2
-        if i != field and a > MAX_DROPPED:
+        if i != field and a > h.get("allow_drop_mm2", MAX_DROPPED):
             h.setdefault("_problems", []).append(
                 f"would drop a {a:.0f} mm² metal island at ({stats[i, 0] / PX:.0f}, {stats[i, 1] / PX:.0f}) mm — add a bridge")
     return lab != field
