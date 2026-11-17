@@ -16,7 +16,7 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
   | 10%  |  |  |  |  |
 
 - [ ] **Luxor transformer tap** for the cedar's run: 12, 13, 14, or 15 V?
-- [ ] **Base enclosure:** the inside dimensions, and a photo showing the Cube and the incoming wire.
+- [ ] **Base enclosure:** the inside dimensions, and a photo showing the Cube and the incoming wire. Only needed if the ESP32 fallback is used.
 
 ## Survey the tree
 

@@ -18,13 +18,13 @@ Thirteen matching Craftsman-style hanging lanterns ("Liberty lamps"), each repre
 
 - Per-lantern flicker IC (not a central flicker controller) — each lantern is independently driven
 - New candle/LED module sourced for this build (not reusing the existing flicker-candle module)
-- 12V DC distributed to all 13 lanterns
+- Luxor-dimmed 12–15 V AC (via the FX Luxor Cube) distributed to all 13 lanterns; each lantern's board rectifies its own supply and reads the dim level from it. See [power & wiring design](superpowers/specs/2026-11-16-power-wiring-design.md)
 
 ## 4. Power
 
 - Source: existing FX Luminaire Luxor low-voltage landscape lighting circuit
 - A line from the Luxor controller already runs to the base of the tree, terminating in an empty off-the-shelf outdoor project enclosure
-- AC–DC conversion centralizes in that base enclosure; DC distributes out to all 13 lantern positions
+- An FX Luxor Cube at the base of the tree gives the lanterns their own dimmable Luxor group; the enclosure is the junction box for 2–3 trunk runs (AC–DC conversion happens per lantern, not centrally; fallback: central DC + ESP32 dimming)
 - Longest run: base enclosure → farthest lantern position = 30 ft (sizes wire gauge / voltage drop budget)
 
 ## 5. Colony Table — Bird & Color Key
@@ -50,6 +50,6 @@ Each state's palette is a desaturated, warmed-down derivative of its actual flag
 ## 6. Open / Not Yet Decided
 
 - Insert panel fabrication method (etched acrylic vs. printed mica-style film vs. other) — not finalized
-- Exact candle/LED module part
+- Exact candle/LED module part — decided: custom MCU candle PCB (design pending Cube measurements)
 - Mounting hardware for hanging in the tree
-- Wire gauge for the 30 ft run (pending load calc across 13 lanterns)
+- Wire gauge for the 30 ft run — decided: 14/2 trunks, 2×20 AWG drops (see power & wiring design)
