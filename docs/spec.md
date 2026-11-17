@@ -51,5 +51,5 @@ Each state's palette is a desaturated, warmed-down derivative of its actual flag
 
 - Insert panel fabrication method (etched acrylic vs. printed mica-style film vs. other) — not finalized
 - Exact candle/LED module part — decided: custom MCU candle PCB (design pending Cube measurements)
-- Mounting hardware for hanging in the tree
+- Mounting hardware for hanging in the tree — decided: polyester webbing slings + 316 stainless quick link and chain, nothing fastened into the tree (see power & wiring design)
 - Wire gauge for the 30 ft run — decided: 14/2 trunks, 2×20 AWG drops (see power & wiring design)
