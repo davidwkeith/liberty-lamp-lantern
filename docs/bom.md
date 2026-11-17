@@ -87,7 +87,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | LED drivers | **AL8860WT-7** buck LED driver, TSOT-25 | 40 V, 1 A, PWM dimming | 3 | 60 | One per channel |
 | Driver inductors | Shielded power inductor (e.g. Bourns SRN6045TA-330M) | 33 µH, ≥ 1 A, 6 × 6 mm | 3 | 60 | |
 | Driver diodes | **SS34** Schottky | 40 V, 3 A | 3 | 60 | |
-| Current sense | Resistor, 1% | Sets ~350 mA per channel; ~0.29 Ω | 3 | 60 | Final value set by the LED choice and the 4 W ceiling |
+| Current sense | Resistor, 1% | ~0.43 Ω, giving ~230 mA per channel (AL8860: I = 0.1 V / R) | 3 | 60 | 3 ch × 2 LEDs × ~2.9 V × 0.23 A ≈ 4 W, so the hardware itself can't exceed 4 W. The firmware's 3 W default cap sits below that |
 | Passives | Decoupling and driver caps | 100 nF, 1 µF, 10 µF / 50 V X7R | ~10 | ~200 | |
 | Programming | UPDI test pads | 3 pads (UPDI, 5 V, GND) | 1 set | — | Pogo-pin or clip programming |
 | LED link | 6-pin header or pads | 3 channels × (+, −) | 1 | 20 | To the LED disc |
