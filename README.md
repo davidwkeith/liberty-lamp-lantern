@@ -65,11 +65,9 @@ ECHO: "PANEL (w × h × t): 83.4 × 113.7 × 3 mm, qty 4"
 - PETG or ASA (it hangs outdoors; avoid PLA)
 - 0.2 mm layers, 3 walls, 20% gyroid infill
 
-## Hardware (per lantern)
+## Bill of materials
 
-- 2× M3 heat-set inserts, installed into the two bosses in the top corners of the body
-- 2× M3×10 socket-head screws, driven down through the wells in the roof
-- 4× panels, 83.4 × 113.7 mm (panel material is still TBD)
+All parts, hardware, cable and hanging gear, per lantern and ×13, are in [docs/bom.md](docs/bom.md). Per lantern, the frame takes 2 M3 heat-set inserts, 2 M3×10 screws and 4 panels (83.4 × 113.7 mm).
 
 ## Assembly
 
