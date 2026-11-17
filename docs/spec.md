@@ -11,7 +11,9 @@ Thirteen matching Craftsman-style hanging lanterns ("Liberty lamps"), each repre
 
 - Single candle per lantern (not a 3-up cluster)
 - Acrylic/mica-style insert panels (not a pierced-shell design)
-- All four insert panels on a lantern bear the same bird silhouette (the colony's bird, in its palette); colony name and number (1–13, Continental Congress signing order) placement TBD
+- All four insert panels on a lantern are identical: the colony's bird **cut out of a dark stencil so the bird glows**, like the tree silhouettes in the Grand Californian lanterns. Birds stand alone, with no name or number on the panels
+- Panel stack (outside → in, ≤ 3 mm): ~1 mm laser-cut aluminum stencil, powder-coated in the palette's dark color · 0.75 mm clear UV-stabilized polycarbonate · ~0.25 mm mica-look film tinted to the palette's light color (no natural mica: its shellac binder fails in rain) · 0.75 mm polycarbonate. Edges sealed with clear outdoor adhesive or tape
+- Stencil artwork: every cut-out region must stay attached to the sheet, so islands (eye, wing gaps) get ~1 mm bridges or are dropped
 - FDM-printed frame/housing; insert panels are the swappable/etched element
 
 ## 3. Electronics
@@ -49,7 +51,7 @@ Each state's palette is a desaturated, warmed-down derivative of its actual flag
 
 ## 6. Open / Not Yet Decided
 
-- Insert panel fabrication method (etched acrylic vs. printed mica-style film vs. other) — not finalized
+- Insert panel fabrication method — decided: mica-sandwich with a glowing cut-out bird stencil (see §2)
 - Exact candle/LED module part — decided: custom MCU candle PCB (design pending Cube measurements)
 - Mounting hardware for hanging in the tree — decided: polyester webbing slings + 316 stainless quick link and chain, nothing fastened into the tree (see power & wiring design)
 - Wire gauge for the 30 ft run — decided: 14/2 trunks, 2×20 AWG drops (see power & wiring design)

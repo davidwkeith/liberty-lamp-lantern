@@ -32,7 +32,10 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | Sealing washer | M6 bonded EPDM/stainless sealing washer | 1 | 15 | Under the top nut; seals the bolt hole |
 | Fender washer | M6 × 18 × 1.6, stainless | 1 | 15 | Inside the roof, on the printed seat |
 | Nyloc nut | M6, stainless | 1 | 15 | Inside the roof; reachable before the roof is screwed on |
-| Panel | 83.4 × 113.7 × 3 mm; material TBD | 4 | 54 | One per lantern carries the colony's art |
+| Panel stencil | ~1 mm aluminum, laser-cut bird cut-out, powder-coated in the colony's dark palette color | 4 | 54 | 83.4 × 113.7 mm; all 4 on a lantern identical; 12 unique artworks |
+| Panel cover | 0.75 mm clear UV-stabilized polycarbonate | 8 | 108 | Front and back of each stack |
+| Panel glow film | ~0.25 mm mica-look PET/polyester film, tinted to the colony's light palette color | 4 | 54 | Behind the stencil; not natural mica |
+| Panel edge seal | Clear outdoor adhesive or clear tape | — | 1 roll/tube | Holds each 4-layer stack together |
 
 ## Lantern cord and connector
 

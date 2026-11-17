@@ -26,9 +26,7 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
 
 ## Decide
 
-- [ ] **Panel numbering order:** ratification order (DE = 1 … RI = 13), or the alphabetical order the spec's table uses now?
-- [ ] **North Carolina and Virginia both use the Northern Cardinal.** Keep the same silhouette, or vary the pose?
-- [ ] **Panel material:** etched acrylic, printed mica-style film, or something else? This sets `panel_thickness`.
+- [ ] **North Carolina and Virginia both use the Northern Cardinal.** Keep the same silhouette, or vary the pose? (Their palettes already differ.)
 
 ## Build and test
 
