@@ -77,6 +77,8 @@ All parts, hardware, cable and hanging gear, per lantern and ×13, are in [docs/
 
 The roof screw wells are open on top; a dab of sealant or a printed plug keeps rain out.
 
+Wiring and hanging the lanterns in the tree, plus the yearly maintenance checklist, are covered in [docs/install.md](docs/install.md).
+
 ## Layout
 
 ```
