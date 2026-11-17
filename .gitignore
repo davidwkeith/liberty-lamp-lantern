@@ -4,3 +4,6 @@ __pycache__/
 *-backups/
 fp-info-cache
 *.kicad_prl
+stencils/.venv/
+stencils/sources/*.jpg
+stencils/out/*-mask.png

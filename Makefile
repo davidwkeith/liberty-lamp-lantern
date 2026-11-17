@@ -7,7 +7,7 @@ VIEWS    := $(PARTS) assembly
 STLS     := $(PARTS:%=build/stl/%.stl)
 PNGS     := $(VIEWS:%=build/png/%.png)
 
-.PHONY: all stl check png test clean pcb pcb-test
+.PHONY: all stl check png test clean pcb pcb-test stencils stencils-test
 .DELETE_ON_ERROR:
 all: check png
 
@@ -43,6 +43,19 @@ pcb: pcb-test
 	  $(KICAD_CLI) sch erc --severity-error --exit-code-violations -o build/$$b-erc.rpt pcb/$$b/$$b.kicad_sch || { cat build/$$b-erc.rpt; exit 1; }; \
 	  $(KICAD_CLI) sch export pdf -o pcb/$$b/$$b-schematic.pdf pcb/$$b/$$b.kicad_sch; \
 	done
+
+# ---- Bird stencils ----
+PY := stencils/.venv/bin/python
+
+stencils/.venv:
+	python3 -m venv stencils/.venv && $(PY) -m pip install -q opencv-python-headless numpy
+
+stencils-test: stencils/.venv
+	cd stencils/gen && ../.venv/bin/python -m unittest -v test_check
+
+stencils: stencils-test
+	$(PY) -I stencils/gen/fetch.py
+	$(PY) -I stencils/gen/stencil.py
 
 clean:
 	rm -rf build
