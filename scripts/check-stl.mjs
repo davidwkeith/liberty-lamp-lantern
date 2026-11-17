@@ -3,7 +3,7 @@
 // two triangles), and within the printer bed on every axis.
 // Usage: node scripts/check-stl.mjs [--bed <mm>] <file.stl...>
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 /** Parse binary or ASCII STL into { triangles: [[x,y,z],[x,y,z],[x,y,z]][] }. */
@@ -54,12 +54,33 @@ export function analyze(triangles) {
   return { count, size, nonManifoldEdges };
 }
 
+/**
+ * Area (mm²) of facets that face down steeper than ~48° and sit entirely above
+ * `minZ` — i.e. surfaces a slicer would need supports or a long bridge for.
+ */
+export function overhangArea(triangles, minZ = 0.5) {
+  let area = 0;
+  for (const [a, b, c] of triangles) {
+    if (Math.min(a[2], b[2], c[2]) <= minZ) continue;
+    const u = b.map((v, i) => v - a[i]);
+    const w = c.map((v, i) => v - a[i]);
+    const n = [u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]];
+    const len = Math.hypot(...n);
+    if (len && n[2] / len < -0.75) area += len / 2;
+  }
+  return area;
+}
+
 function main(argv) {
   let bed = 250;
   const files = [];
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--bed') bed = Number(argv[++i]);
     else files.push(argv[i]);
+  }
+  if (!Number.isFinite(bed) || bed <= 0) {
+    console.error(`--bed must be a positive number of mm (got "${argv[argv.indexOf('--bed') + 1]}")`);
+    return 2;
   }
   if (!files.length) {
     console.error('usage: check-stl.mjs [--bed <mm>] <file.stl...>');
@@ -88,4 +109,11 @@ function main(argv) {
   return failed ? 1 : 0;
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) process.exitCode = main(process.argv.slice(2));
+const isMain = () => {
+  try {
+    return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return false;
+  }
+};
+if (isMain()) process.exitCode = main(process.argv.slice(2));

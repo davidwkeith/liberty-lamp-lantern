@@ -16,7 +16,8 @@ band       = 1.5;   // top-rail band projection, per side
 /* [Panels] */
 panel_thickness = 3.0;  // acrylic default; set for mica film carrier etc.
 panel_clearance = 0.3;  // added to slot width and removed from panel size
-slot_depth      = 4;    // how far panel edges sit into the posts
+slot_depth      = 3;    // how far panel edges sit into the posts
+panel_skin      = 3;    // post wall outside the panel (sets the panel plane)
 
 /* [Candle / wiring] */
 led_d  = 38;   // candle cup diameter (LED module TBD)
@@ -34,11 +35,14 @@ eye_od       = 16;
 eye_id       = 8;
 eye_t        = 5;
 insert_d     = 4.2;  // M3 heat-set insert hole
-insert_depth = 6;
+insert_depth = 8;    // ≥ screw reach below the well floor + 1
+screw_len    = 10;   // M3 screw length
 boss_d       = 9;
 screw_d      = 3.4;  // M3 clearance
 screw_head_d = 6.5;  // counterbore for M3 socket head
 well_floor   = 3;    // roof material clamped under the screw head
+ledge_h      = 3;    // roof corner ledges that bear on the standoffs
+cord_elbow   = 7;    // 45° chord easing the cord's turn from post into base
 
 $fn = 48;
 eps = 0.01;
@@ -47,10 +51,11 @@ eps = 0.01;
 body_h   = base_h + panel_h + top_rail_h;
 half     = W / 2;
 inner    = half - post_w;                         // interior half-width
-plane    = half - post_w / 2;                     // panel mid-plane offset
+plane    = half - panel_skin - (panel_thickness + panel_clearance) / 2; // panel mid-plane
 slot_w   = panel_thickness + panel_clearance;
 slot_end = inner + slot_depth;                    // panel edge reach into post
-cord_c   = half - (post_w - slot_depth) / 2;      // cord channel center (x = y)
+web      = plane - slot_w / 2 - slot_end;         // post material between the two grooves
+cord_c   = (slot_end + half) / 2;                 // cord channel center (x = y)
 boss_c   = inner - 3.5;                           // insert boss center (x = y)
 roof_half = half + eave;
 roof_rise = roof_half - cap_w / 2;                // 45° from eave to cap
@@ -58,7 +63,11 @@ panel_size = [2 * slot_end - 2 * panel_clearance, body_h - (base_h - 2) - panel_
 
 assert(slot_depth < post_w - 2, "slot_depth must leave ≥2 mm of post");
 assert(led_d < 2 * inner, "led_d larger than interior");
-assert(cord_d + 2.4 <= post_w - slot_depth, "cord channel too wide for post");
+assert(cord_d + 2.4 <= half - slot_end, "cord channel too wide for post");
+assert(web >= 1.6, str("post web between panel grooves is ", web, " mm; need ≥1.6 (thinner panels, shallower slot_depth, or wider post_w)"));
+assert(panel_skin >= 1.6, "panel_skin too thin");
+assert(led_h <= base_h - 3, "led_h cuts through (or nearly through) the base floor");
+assert(insert_depth >= screw_len - well_floor + 1, "screw longer than insert hole; raise insert_depth or use a shorter screw");
 assert(insert_d + 3 <= boss_d, "insert too large for boss");
 assert(screw_head_d + 2 <= boss_d, "screw head too large for roof well");
 
@@ -76,13 +85,6 @@ module post() {
   translate([inner, inner, 0]) cube([post_w, post_w, body_h]);
 }
 
-// Vertical groove pair for the +Y panel, in the two posts on that side.
-module side_slots() {
-  for (sx = [-1, 1])
-    translate([sx > 0 ? inner - eps : -slot_end, plane - slot_w / 2, base_h - 2])
-      cube([slot_depth + eps, slot_w, body_h]);
-}
-
 module base() {
   hull() {
     sq(W + 2 * plinth, 3);
@@ -91,19 +93,48 @@ module base() {
   sq(W, base_h);
 }
 
+// 45° haunches under both rail strips (either side of the panel slit) so the
+// rail underside needs no support or long bridge.
+module rail_haunches() {
+  z = body_h - top_rail_h;
+  pi = plane - slot_w / 2;  // inner strip's panel face
+  po = plane + slot_w / 2;  // outer strip's panel face
+  l = 2 * inner + 2 * eps;
+  hull() {
+    translate([-l / 2, inner - eps, z - eps]) cube([l, pi - inner + eps, eps]);
+    translate([-l / 2, pi - eps, z - (pi - inner)]) cube([l, eps, eps]);
+  }
+  hull() {
+    translate([-l / 2, po, z - eps]) cube([l, half - po, eps]);
+    translate([-l / 2, po, z - (half - po)]) cube([l, eps, eps]);
+  }
+}
+
 module top_rail() {
   z = body_h - top_rail_h;
+  four() rail_haunches();
   translate([0, 0, z]) difference() {
     sq(W, top_rail_h);
     translate([0, 0, -eps]) sq(2 * inner, top_rail_h + 2 * eps);
   }
-  // Craftsman band with a 45° underside so it prints without support
-  translate([0, 0, z - band]) difference() {
+  // Craftsman band: projects `band` past the posts, with a 45° underside that
+  // starts at the panel's outer face so it prints without support.
+  po = plane + slot_w / 2;
+  drop = half + band - po;
+  translate([0, 0, z - drop]) difference() {
     hull() {
-      sq(W, eps);
-      translate([0, 0, band]) sq(W + 2 * band, top_rail_h * 0.5);
+      sq(2 * po + 0.02, eps);
+      translate([0, 0, drop]) sq(W + 2 * band, top_rail_h * 0.5);
     }
-    translate([0, 0, -eps]) sq(W - 1, top_rail_h);
+    translate([0, 0, -eps]) sq(2 * po + 0.02, drop + top_rail_h);
+  }
+}
+
+// Cord-path node: a sphere with a 45° teardrop peak so tunnels print unsupported.
+module cord_node(p) {
+  translate(p) hull() {
+    sphere(d = cord_d);
+    translate([0, 0, cord_d / 2 * sqrt(2)]) cube(eps, center = true);
   }
 }
 
@@ -136,21 +167,23 @@ module body() {
       for (a = [0, 180]) rotate(a) boss();
     }
     // Panel grooves: posts + rail slits + base channel
-    four() {
-      side_slots();
-      translate([-slot_end, plane - slot_w / 2, base_h - 2]) cube([2 * slot_end, slot_w, body_h]);
-    }
+    four() translate([-slot_end, plane - slot_w / 2, base_h - 2]) cube([2 * slot_end, slot_w, body_h]);
     // Candle cup + center drain
     translate([0, 0, base_h - led_h]) cylinder(d = led_d + 0.4, h = led_h + eps);
     translate([0, 0, -eps]) cylinder(d = drain_d, h = base_h);
     // Floor drains on the axes (clear of the diagonal cord tunnel)
     four() translate([inner - 10, 0, -eps]) cylinder(d = drain_d, h = base_h + 2 * eps);
     // Cord: down the +X+Y post, then a diagonal tunnel into the candle cup
-    translate([cord_c, cord_c, base_h - led_h]) cylinder(d = cord_d, h = body_h + standoff_h);
     tz = base_h - led_h + cord_d / 2;
+    ek = cord_elbow / sqrt(2);
+    translate([cord_c, cord_c, tz + cord_elbow]) cylinder(d = cord_d, h = body_h + standoff_h);
     hull() {
-      translate([cord_c, cord_c, tz]) sphere(d = cord_d);
-      translate([0, 0, tz]) sphere(d = cord_d);
+      cord_node([cord_c, cord_c, tz + cord_elbow]);
+      cord_node([cord_c - ek, cord_c - ek, tz]);
+    }
+    hull() {
+      cord_node([cord_c - ek, cord_c - ek, tz]);
+      cord_node([0, 0, tz]);
     }
   }
 }
@@ -182,6 +215,11 @@ module roof() {
         roof_solid();
         for (a = [0, 180]) rotate(a) translate([boss_c, boss_c, 0]) cylinder(d = boss_d + 2 * roof_wall, h = fascia_h + roof_rise);
       }
+      // Corner ledges: the roof bears on all four standoffs, not just the bosses
+      intersection() {
+        roof_solid();
+        four() translate([slot_end + 0.5, slot_end + 0.5, 0]) cube([roof_half, roof_half, ledge_h]);
+      }
       // Flat cap + hanging eye (ring in the XZ plane)
       translate([0, 0, fascia_h + roof_rise - eps]) sq(cap_w, 3);
       translate([0, eye_t / 2, fascia_h + roof_rise + 3 + eye_od / 2 - 2])
@@ -194,6 +232,8 @@ module roof() {
       translate([0, 0, -eps]) cylinder(d = screw_d, h = well_floor + 2 * eps);
       translate([0, 0, well_floor]) cylinder(d = screw_head_d, h = fascia_h + roof_rise);
     }
+    // Cord drop through the +X+Y ledge into the hollow post
+    translate([cord_c, cord_c, -1]) cylinder(d = cord_d, h = ledge_h + 2);
     // Cord entry beside the eye
     translate([0, eye_t / 2 + cord_d / 2 + 1, fascia_h + roof_rise - 10]) cylinder(d = cord_d, h = 20);
   }
@@ -214,4 +254,4 @@ module assembly() {
 
 if (part == "body") body();
 else if (part == "roof") roof();
-else assembly();
+else if (part == "assembly") assembly();

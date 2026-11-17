@@ -8,6 +8,7 @@ STLS     := $(PARTS:%=build/stl/%.stl)
 PNGS     := $(VIEWS:%=build/png/%.png)
 
 .PHONY: all stl check png test clean
+.DELETE_ON_ERROR:
 all: check png
 
 stl: $(STLS)
@@ -26,7 +27,7 @@ check: stl
 png: $(PNGS)
 
 test:
-	node --test scripts/
+	node --test scripts/*.test.mjs
 
 clean:
 	rm -rf build

@@ -10,12 +10,14 @@ Prereqs: [OpenSCAD](https://openscad.org) (`brew install openscad`) and Node 20+
 
 ```bash
 make            # STLs → build/stl, validate, previews → build/png
-make test       # unit tests for the STL checker
+make test       # checker unit tests + geometry tests (renders the model)
 make clean
 make BED=220    # validate against a smaller print bed
 ```
 
-`make` fails if any part is empty, non-manifold, or larger than the bed. It also fails if parameters conflict: for example, a candle cup wider than the interior.
+`make` fails if any part is empty, non-manifold, or larger than the bed. It also fails if parameters conflict: for example, a candle cup wider than the interior, panel grooves that leave too little post between them, or a screw longer than its insert hole.
+
+`make test` also renders the model to check that the roof bears on all four standoffs and that the body has no unsupported overhangs.
 
 To try a different parameter without editing the file:
 
@@ -45,16 +47,17 @@ All of these live at the top of [`src/lantern.scad`](src/lantern.scad).
 | `panel_h` | 100 | visible panel height |
 | `panel_thickness` | 3.0 | set to match the chosen panel material |
 | `panel_clearance` | 0.3 | tune after a test print |
-| `slot_depth` | 4 | how far panel edges sit into the posts |
+| `slot_depth` | 3 | how far panel edges sit into the posts |
+| `panel_skin` | 3 | post wall outside each panel |
 | `led_d` / `led_h` | 38 / 10 | candle cup; set once the LED module is chosen |
 | `cord_d` | 4.5 | 12V cord channel |
 | `standoff_h` | 6 | vent gap under the roof |
-| `insert_d` / `insert_depth` | 4.2 / 6 | M3 heat-set insert hole |
+| `insert_d` / `insert_depth` | 4.2 / 8 | M3 heat-set insert hole |
 
 The panel size is computed from these and printed during each build:
 
 ```
-ECHO: "PANEL (w × h × t): 85.4 × 113.7 × 3 mm, qty 4"
+ECHO: "PANEL (w × h × t): 83.4 × 113.7 × 3 mm, qty 4"
 ```
 
 ## Print settings
@@ -66,13 +69,13 @@ ECHO: "PANEL (w × h × t): 85.4 × 113.7 × 3 mm, qty 4"
 
 - 2× M3 heat-set inserts, installed into the two bosses in the top corners of the body
 - 2× M3×10 socket-head screws, driven down through the wells in the roof
-- 4× panels, 85.4 × 113.7 mm (panel material is still TBD)
+- 4× panels, 83.4 × 113.7 mm (panel material is still TBD)
 
 ## Assembly
 
-1. Thread the 12V cord through the hole beside the hanging eye. Run it across the inside of the roof, down the hollow +X/+Y corner post, and out through the base tunnel into the candle cup.
+1. Thread the 12V cord through the hole beside the hanging eye and through the hole in the matching corner ledge under the roof. From there it runs down the hollow +X/+Y corner post, round a 45° elbow, and through the base tunnel into the candle cup. Leave a drip loop in the cord above the eye so rain doesn't follow it inside.
 2. Drop the 4 panels in through the slits in the top rail.
-3. Set the roof on the standoffs and screw it down. The lantern hangs from the roof eye, so these screws carry its weight.
+3. Set the roof on the standoffs (its corner ledges sit on them) and screw it down. The lantern hangs from the roof eye, so these screws carry its weight.
 
 The roof screw wells are open on top; a dab of sealant or a printed plug keeps rain out.
 
@@ -80,7 +83,8 @@ The roof screw wells are open on top; a dab of sealant or a printed plug keeps r
 
 ```
 src/lantern.scad          parametric model (body, roof, assembly)
-scripts/check-stl.mjs     STL validator (empty / non-manifold / bed size)
+scripts/check-stl.mjs     STL validator (empty / non-manifold / bed size / overhang area)
+scripts/*.test.mjs        checker unit tests + OpenSCAD geometry tests
 docs/spec.md              project spec
 docs/superpowers/         design + implementation plan
 build/                    generated (gitignored)

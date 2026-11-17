@@ -5,7 +5,7 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseStl, analyze } from './check-stl.mjs';
+import { parseStl, analyze, overhangArea } from './check-stl.mjs';
 
 const CLI = fileURLToPath(new URL('./check-stl.mjs', import.meta.url));
 
@@ -89,4 +89,29 @@ test('flags empty', () => {
 test('passes a valid part', () => {
   const r = runCli(['--bed', '250', tmpFile('ok.stl', toBinary(cubeTris(100)))]);
   assert.equal(r.code, 0);
+});
+
+test('runs when invoked through a symlink', async () => {
+  const { symlinkSync } = await import('node:fs');
+  const link = join(mkdtempSync(join(tmpdir(), 'stl-')), 'check-stl.mjs');
+  symlinkSync(CLI, link);
+  let code = 0;
+  try {
+    execFileSync(process.execPath, [link, '/nonexistent.stl'], { stdio: 'pipe' });
+  } catch (e) {
+    code = e.status;
+  }
+  assert.equal(code, 1);
+});
+
+test('rejects a non-numeric --bed', () => {
+  const r = runCli(['--bed', tmpFile('ok.stl', toBinary(cubeTris(100)))]);
+  assert.notEqual(r.code, 0);
+  assert.match(r.stderr, /--bed/);
+});
+
+test('overhangArea counts only raised down-facing area', () => {
+  const lifted = cubeTris(10).map((t) => t.map(([x, y, z]) => [x, y, z + 5]));
+  assert.equal(overhangArea(cubeTris(10), 0.5), 0); // bottom sits on the bed
+  assert.equal(Math.round(overhangArea(lifted, 0.5)), 100);
 });
