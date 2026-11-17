@@ -61,11 +61,51 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | Chain | 316 stainless, short | TBD (survey) | 13 × TBD (survey), +1 m | Quick link to the eye bolt |
 | Tree ties | Soft rubber-coated twist tie, bulk roll | — | 1 roll | Limbs about every 40 cm, plus padded limb loops at each crotch for the trunk cables. Never around the trunk |
 
-## Candle PCB
+## Candle PCB (provisional)
 
-| Item | Spec | Per lantern | ×13 (+spares) | Notes |
-|------|------|-------------|---------------|-------|
-| Candle PCB assembly | Custom: 10–16 V AC/DC input, MCU flame, designed for 4 W peak, firmware cap 3 W default, aluminum-core or heat-spreading LED section | 1 | 15+ | **Placeholder.** Waits on the Cube measurement; see the PCB sub-project |
+> **Provisional.** These parts come from the requirements in the [power & wiring design](superpowers/specs/2026-11-16-power-wiring-design.md). The schematic isn't drawn yet. Rows marked ⏳ depend on the Cube measurements in [TODO.md](../TODO.md). Where only a spec is given, the exact part gets chosen at the schematic stage. Quantities are per board; the build is **20 boards**: 13, plus 2 spares, plus 5 for the fab's minimum order and bring-up testing.
+
+**Architecture:** two boards per lantern.
+- A ~32 mm round **driver board** (FR4, 2-layer, factory-assembled) sits in the candle cup.
+- A ~20 mm round **LED disc** (aluminum-core) on a short candle pillar carries the LEDs and spreads their ~3 W of heat away from the printed cup.
+- Three independent LED channels let the firmware move the "flame" between them, rather than just flicker one point.
+
+### Driver board
+
+| Block | Part | Spec | Per board | ×20 | Notes |
+|-------|------|------|-----------|-----|-------|
+| Cord connection | Solder pads + strain-relief slot | 2 pads for 2 × 20 AWG | 1 set | — | Cord is tied through the board slot before soldering |
+| Input fuse | Resettable PTC | 0.5 A hold, ≥ 30 V rating | 1 | 20 | Rectified Cube peak is ~21 V at the 15 V tap |
+| Surge protection | **SMBJ24CA** (bidirectional TVS) | 24 V standoff, SMB | 1 | 20 | Above the ~21 V peak; clamps surges on long outdoor runs |
+| Rectifier | **SS34** Schottky ×4 (or B340A) | 40 V, 3 A, SMA | 4 | 80 | A Schottky bridge wastes ~0.4 W less than a silicon bridge at 4 W |
+| Inrush limit | NTC thermistor | ~5 Ω cold, ≥ 1 A | 1 | 20 | Keeps 13 boards switching on together inside the Cube's tolerance |
+| Bulk capacitor ⏳ | Aluminum electrolytic, 105 °C long-life | 470 µF, 35 V | 1 | 20 | Value depends on the Cube's dimming waveform (hold-up time) |
+| MCU hold-up | Diode + capacitor | BAT54 + 100 µF / 25 V | 1 + 1 | 20 + 20 | Isolated rail, so the MCU rides through supply chopping while the LEDs dip |
+| MCU regulator | **78L05**, SOT-89 (e.g. MC78L05ACHT1G) | 5 V, ≥ 30 V input | 1 | 20 | ~3 mA quiescent; the MCU draws only a few mA |
+| MCU | **ATtiny1614**-SSNR, SOIC-14 | megaTinyCore, UPDI | 1 | 20 | 3 PWM channels + ADC + analog comparator for dim sensing |
+| Dim sense ⏳ | Divider + clamp | ~100 kΩ / 22 kΩ, 5.1 V zener | 1 set | 20 | Reads the rectified waveform before the bulk cap; values set after measurement |
+| LED drivers | **AL8860WT-7** buck LED driver, TSOT-25 | 40 V, 1 A, PWM dimming | 3 | 60 | One per channel |
+| Driver inductors | Shielded power inductor (e.g. Bourns SRN6045TA-330M) | 33 µH, ≥ 1 A, 6 × 6 mm | 3 | 60 | |
+| Driver diodes | **SS34** Schottky | 40 V, 3 A | 3 | 60 | |
+| Current sense | Resistor, 1% | Sets ~350 mA per channel; ~0.29 Ω | 3 | 60 | Final value set by the LED choice and the 4 W ceiling |
+| Passives | Decoupling and driver caps | 100 nF, 1 µF, 10 µF / 50 V X7R | ~10 | ~200 | |
+| Programming | UPDI test pads | 3 pads (UPDI, 5 V, GND) | 1 set | — | Pogo-pin or clip programming |
+| LED link | 6-pin header or pads | 3 channels × (+, −) | 1 | 20 | To the LED disc |
+
+### LED disc
+
+| Block | Part | Spec | Per board | ×20 | Notes |
+|-------|------|------|-----------|-----|-------|
+| PCB | Aluminum-core (MCPCB), 1-layer | ~20 mm round | 1 | 20 | Spreads the heat; mounts on the candle pillar |
+| LEDs | Mid-power warm white | **2200 K**, CRI ≥ 90, 3030 (or 2835), ~1 W class | 6 (3 ch × 2 in series) | 120 | Chosen at the schematic stage for a warm "flame" color bin |
+
+### Finishing, tools and fab
+
+| Item | Spec | Qty | Notes |
+|------|------|-----|-------|
+| Conformal coating | Acrylic, e.g. MG Chemicals 419D | 1 can | Coat both boards after programming and testing (leave the UPDI pads masked) |
+| UPDI programmer | USB-serial adapter + 4.7 kΩ resistor (SerialUPDI), or an Adafruit UPDI Friend | 1 | Flashes all 20 boards |
+| PCB fab + assembly | JLCPCB or similar: FR4 driver board + aluminum LED disc | 20 of each | Order after the schematic and layout are reviewed |
 
 ## Already installed (nothing to buy)
 
