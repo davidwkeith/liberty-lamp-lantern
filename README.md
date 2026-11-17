@@ -50,7 +50,7 @@ All of these live at the top of [`src/lantern.scad`](src/lantern.scad).
 | `slot_depth` | 3 | how far panel edges sit into the posts |
 | `panel_skin` | 3 | post wall outside each panel |
 | `led_d` / `led_h` | 38 / 10 | candle cup; set once the LED module is chosen |
-| `cord_d` | 4.5 | 12V cord channel |
+| `cord_od` / `cord_d` | 5.0 / 5.5 | lantern cord OD and its channel (channel ≥ OD + 0.5) |
 | `standoff_h` | 6 | vent gap under the roof |
 | `insert_d` / `insert_depth` | 4.2 / 8 | M3 heat-set insert hole |
 

@@ -32,6 +32,7 @@ for (const [defs, msg] of [
   [{ led_h: 16 }, /led_h/],
   [{ panel_thickness: 6 }, /web/],
   [{ insert_depth: 5 }, /screw/],
+  [{ cord_d: 5 }, /cord/],
 ]) {
   test(`rejects ${JSON.stringify(defs)}`, () => {
     const r = render(SRC, { part: 'body', ...defs }, 'bad');

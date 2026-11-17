@@ -22,7 +22,8 @@ panel_skin      = 3;    // post wall outside the panel (sets the panel plane)
 /* [Candle / wiring] */
 led_d  = 38;   // candle cup diameter (LED module TBD)
 led_h  = 10;   // candle cup depth
-cord_d = 4.5;  // 12V cord channel diameter
+cord_od = 5.0; // lantern cord OD (2×20 AWG outdoor cable)
+cord_d  = 5.5; // cord channel diameter
 drain_d = 4;   // base drain holes
 
 /* [Roof + fastening] */
@@ -64,6 +65,7 @@ panel_size = [2 * slot_end - 2 * panel_clearance, body_h - (base_h - 2) - panel_
 assert(slot_depth < post_w - 2, "slot_depth must leave ≥2 mm of post");
 assert(led_d < 2 * inner, "led_d larger than interior");
 assert(cord_d + 2.4 <= half - slot_end, "cord channel too wide for post");
+assert(cord_d >= cord_od + 0.5, "cord_d must be ≥ cord_od + 0.5 mm");
 assert(web >= 1.6, str("post web between panel grooves is ", web, " mm; need ≥1.6 (thinner panels, shallower slot_depth, or wider post_w)"));
 assert(panel_skin >= 1.6, "panel_skin too thin");
 assert(led_h <= base_h - 3, "led_h cuts through (or nearly through) the base floor");
