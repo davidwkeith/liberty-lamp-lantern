@@ -212,9 +212,16 @@ def compose(h: dict, bird: np.ndarray) -> np.ndarray:
     hmm_ = h["height_mm"]
     scale = mm(hmm_) / bird.shape[0]
     b = cv2.resize(bird.astype(np.uint8), (max(1, int(bird.shape[1] * scale)), mm(hmm_)), interpolation=cv2.INTER_AREA)
-    if h.get("rotate"):
-        M = cv2.getRotationMatrix2D((b.shape[1] / 2, b.shape[0] / 2), h["rotate"], 1.0)
-        b = cv2.warpAffine(b, M, (b.shape[1], b.shape[0]))
+    if h.get("rotate"):  # degrees, counter-clockwise; canvas grows so nothing is cropped
+        hh_, ww_ = b.shape
+        M = cv2.getRotationMatrix2D((ww_ / 2, hh_ / 2), h["rotate"], 1.0)
+        cos, sin = abs(M[0, 0]), abs(M[0, 1])
+        nw, nh = int(hh_ * sin + ww_ * cos), int(hh_ * cos + ww_ * sin)
+        M[0, 2] += nw / 2 - ww_ / 2
+        M[1, 2] += nh / 2 - hh_ / 2
+        b = cv2.warpAffine(b, M, (nw, nh))
+        ys, xs = np.nonzero(b)
+        b = b[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
     x0, _, x1, _ = art_box()
     cx = (x0 + x1) / 2 + h.get("x_mm", 0.0)
     # feet_frac: where the feet are, as a fraction of the bird's height from its top. The feet
@@ -223,6 +230,14 @@ def compose(h: dict, bird: np.ndarray) -> np.ndarray:
     top = mm(feet - hmm_ * h.get("feet_frac", 1.0))
     left = mm(cx) - b.shape[1] // 2
     cut[top:top + b.shape[0], left:left + b.shape[1]] |= b
+    # Legs: 1.2 mm struts from the bird's underside down to the perch, at fractions of its width
+    # (plate legs are thinner than the 1 mm minimum and would vanish).
+    perch_top = mm(GROUND_Y - h.get("perch_half_mm", 2.0)) + mm(1.0)
+    for f in h.get("legs", []):
+        col = left + int(f * b.shape[1])
+        rows = np.nonzero(b[:, int(f * b.shape[1])])[0]
+        if len(rows):
+            cv2.line(cut, (col, top + rows.max() - mm(1)), (col, perch_top), 1, mm(1.2))
     cut = cut.astype(bool) | frame()
     # manufacturability fixes: drop metal islands (eye etc.) unless bridged, then bridges, then
     # erase sub-1 mm slivers of both kinds

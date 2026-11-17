@@ -33,4 +33,4 @@ for name, meta in json.loads((SRC / "sources.json").read_text()).items():
         raise SystemExit(f"{name}: not a JPEG")
     out.write_bytes(data)
     print(f"fetched {name} ({len(data) // 1024} KB) — {meta['license']}, {meta['page']}")
-    time.sleep(10)
+    time.sleep(20)
