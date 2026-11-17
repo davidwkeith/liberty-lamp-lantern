@@ -37,6 +37,45 @@ PALETTE = {
 
 GROUND_Y = WINDOW[3] - 25.0  # perch centerline, mm from panel top (same on all 12)
 
+# Prairie / Craftsman "leading" frame, cut as glowing slots (like the Grand Californian lantern
+# panels): two verticals and two horizontals inset from the art box, overshooting past their
+# crossings, with bridges so no metal is isolated, and diamond accents.
+FRAME_INSET_X = 4.0    # verticals inset from the art box sides
+FRAME_INSET_Y = 7.0    # horizontals inset from the art box top/bottom
+FRAME_W = 1.3          # slot width
+BRIDGE = 1.6           # gap left in each long side of the inner rectangle
+
+
+def inner_box() -> tuple[float, float, float, float]:
+    """Area inside the frame lines, with clearance, where the scene lives."""
+    x0, y0, x1, y1 = art_box()
+    c = FRAME_W / 2 + 2.0
+    return (x0 + FRAME_INSET_X + c, y0 + FRAME_INSET_Y + c, x1 - FRAME_INSET_X - c, y1 - FRAME_INSET_Y - c)
+
+
+def frame() -> np.ndarray:
+    c = np.zeros((mm(PANEL[1]), mm(PANEL[0])), np.uint8)
+    x0, y0, x1, y1 = art_box()
+    vx = (x0 + FRAME_INSET_X, x1 - FRAME_INSET_X)
+    hy = (y0 + FRAME_INSET_Y, y1 - FRAME_INSET_Y)
+    w = mm(FRAME_W)
+    for x in vx:
+        cv2.line(c, (mm(x), mm(y0 + 1)), (mm(x), mm(y1 - 1)), 1, w)
+    for y in hy:
+        cv2.line(c, (mm(x0 + 1), mm(y)), (mm(x1 - 1), mm(y)), 1, w)
+    # bridges: break each side of the inner rectangle (between the crossings) at its middle
+    midx, midy = (vx[0] + vx[1]) / 2, (hy[0] + hy[1]) / 2
+    for y in hy:
+        c[mm(y) - w:mm(y) + w, mm(midx - BRIDGE / 2):mm(midx + BRIDGE / 2)] = 0
+    for x in vx:
+        c[mm(midy - BRIDGE / 2):mm(midy + BRIDGE / 2), mm(x) - w:mm(x) + w] = 0
+    # diamond accents just inside the frame's top corners (as on the Grand Californian panels)
+    off = FRAME_W / 2 + 3.2
+    for cx in (vx[0] + off, vx[1] - off):
+        cy, d = hy[0] + off, 1.6
+        _poly(c, [(cx, cy - d), (cx + d, cy), (cx, cy + d), (cx - d, cy)])
+    return c.astype(bool)
+
 
 def mm(v: float) -> int:
     return int(round(v * PX))
@@ -125,7 +164,7 @@ def _band(canvas, path, w0, w1):
 
 def perch(kind: str, twig_at: float = 0.84, twig_lean: float = -3.0) -> np.ndarray:
     c = np.zeros((mm(PANEL[1]), mm(PANEL[0])), np.uint8)
-    x0, _, x1, _ = art_box()
+    x0, _, x1, _ = inner_box()
     g = GROUND_Y
     if kind == "branch":
         # gentle S-curve, thick at the left (trunk side), tapering right, one up-curving twig
@@ -184,28 +223,36 @@ def compose(h: dict, bird: np.ndarray) -> np.ndarray:
     top = mm(feet - hmm_ * h.get("feet_frac", 1.0))
     left = mm(cx) - b.shape[1] // 2
     cut[top:top + b.shape[0], left:left + b.shape[1]] |= b
-    cut = cut.astype(bool)
+    cut = cut.astype(bool) | frame()
     # manufacturability fixes: drop metal islands (eye etc.) unless bridged, then bridges, then
     # erase sub-1 mm slivers of both kinds
     for x_a, y_a, x_b, y_b in h.get("bridges", []):
         cv2.line(cut.view(np.uint8), (mm(x_a), mm(y_a)), (mm(x_b), mm(y_b)), 0, mm(1.1))
-    metal = (~cut).astype(np.uint8)
-    n, lab, stats, _ = cv2.connectedComponentsWithStats(metal, connectivity=4)
-    if n > 2:
-        field = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
-        cut = lab != field
+    cut = _drop_islands(cut, h)
     d = mm(check.MIN_FEATURE) | 1
     k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (d + 2, d + 2))
     c8 = cut.astype(np.uint8)
     c8 = cv2.morphologyEx(c8, cv2.MORPH_OPEN, k)   # remove thin cuts
     c8 = cv2.morphologyEx(c8, cv2.MORPH_CLOSE, k)  # remove thin metal
     cut = c8.astype(bool)
-    metal = (~cut).astype(np.uint8)  # closing can re-isolate metal; drop again
+    return _drop_islands(cut, h)  # closing can re-isolate metal
+
+
+MAX_DROPPED = 6.0  # mm²: an eye or a leg gap; anything bigger means the art isolates real metal
+
+
+def _drop_islands(cut: np.ndarray, h: dict) -> np.ndarray:
+    metal = (~cut).astype(np.uint8)
     n, lab, stats, _ = cv2.connectedComponentsWithStats(metal, connectivity=4)
-    if n > 2:
-        field = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
-        cut = lab != field
-    return cut
+    if n <= 2:
+        return cut
+    field = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    for i in range(1, n):
+        a = stats[i, cv2.CC_STAT_AREA] / PX**2
+        if i != field and a > MAX_DROPPED:
+            h.setdefault("_problems", []).append(
+                f"would drop a {a:.0f} mm² metal island at ({stats[i, 0] / PX:.0f}, {stats[i, 1] / PX:.0f}) mm — add a bridge")
+    return lab != field
 
 
 # ------------------------------------------------------------------ export
@@ -263,7 +310,7 @@ def build(name: str) -> list[str]:
     bird = trace(h)
     cv2.imwrite(str(OUT / f"{name}-mask.png"), bird.astype(np.uint8) * 255)
     cut = compose(h, bird)
-    probs = check.problems(cut)
+    probs = h.get("_problems", []) + check.problems(cut)
     export(name, cut)
     for col in h["colonies"]:
         preview(name, col, cut)
