@@ -14,6 +14,7 @@ Thirteen matching Craftsman-style hanging lanterns ("Liberty lamps"), each repre
 - All four insert panels on a lantern are identical: the colony's bird **cut out of a dark stencil so the bird glows**, like the tree silhouettes in the Grand Californian lanterns. Birds stand alone, with no name or number on the panels
 - Panel stack (outside → in, ≤ 3 mm): ~1 mm laser-cut aluminum stencil, powder-coated in the palette's dark color · 0.75 mm clear UV-stabilized polycarbonate · ~0.25 mm mica-look film tinted to the palette's light color (no natural mica: its shellac binder fails in rain) · 0.75 mm polycarbonate. Edges sealed with clear outdoor adhesive or tape
 - Stencil artwork: every cut-out region must stay attached to the sheet, so islands (eye, wing gaps) get ~1 mm bridges or are dropped
+- North Carolina and Virginia share the same Northern Cardinal silhouette; only their palettes differ
 - FDM-printed frame/housing; insert panels are the swappable/etched element
 
 ## 3. Electronics

@@ -26,7 +26,6 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
 
 ## Decide
 
-- [ ] **North Carolina and Virginia both use the Northern Cardinal.** Keep the same silhouette, or vary the pose? (Their palettes already differ.)
 
 ## Build and test
 
