@@ -94,8 +94,6 @@
   "height_mm": 29,
   "feet_frac": 1.0,
   "x_mm": -1,
-  "twig_at": 0.1,
-  "twig_lean": -3,
   "rotate": 14,
   "legs": [
     0.4

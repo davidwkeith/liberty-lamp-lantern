@@ -162,7 +162,7 @@ def _band(canvas, path, w0, w1):
     _poly(canvas, left + right[::-1])
 
 
-def perch(kind: str, twig_at: float = 0.84, twig_lean: float = -3.0) -> np.ndarray:
+def perch(kind: str, twig_at: float | None = 0.84, twig_lean: float = -3.0) -> np.ndarray:
     c = np.zeros((mm(PANEL[1]), mm(PANEL[0])), np.uint8)
     x0, _, x1, _ = inner_box()
     g = GROUND_Y
@@ -170,6 +170,8 @@ def perch(kind: str, twig_at: float = 0.84, twig_lean: float = -3.0) -> np.ndarr
         # gentle S-curve, thick at the left (trunk side), tapering right, one up-curving twig
         pts = [(x0 + 2 + t * (x1 - x0 - 6), g + 2.2 * math.sin(t * math.pi * 1.6) - 1.5 * t) for t in np.linspace(0, 1, 40)]
         _band(c, pts, 5.0, 1.6)
+        if twig_at is None:
+            return c.astype(bool)
         bx_ = x0 + 2 + twig_at * (x1 - x0 - 6)
         by_ = g + 2.2 * math.sin(twig_at * math.pi * 1.6) - 1.5 * twig_at
         tw = [(bx_ + twig_lean * t, by_ - 1.0 - 10 * t + 2 * t * t) for t in np.linspace(0, 1, 15)]
@@ -208,7 +210,7 @@ def perch(kind: str, twig_at: float = 0.84, twig_lean: float = -3.0) -> np.ndarr
 
 def compose(h: dict, bird: np.ndarray) -> np.ndarray:
     """Place the bird on its perch inside the panel; returns cut mask (True = cut)."""
-    cut = perch(h["perch"], h.get("twig_at", 0.84), h.get("twig_lean", -3.0)).astype(np.uint8)
+    cut = perch(h["perch"], None).astype(np.uint8)
     hmm_ = h["height_mm"]
     scale = mm(hmm_) / bird.shape[0]
     b = cv2.resize(bird.astype(np.uint8), (max(1, int(bird.shape[1] * scale)), mm(hmm_)), interpolation=cv2.INTER_AREA)
@@ -238,6 +240,8 @@ def compose(h: dict, bird: np.ndarray) -> np.ndarray:
         rows = np.nonzero(b[:, int(f * b.shape[1])])[0]
         if len(rows):
             cv2.line(cut, (col, top + rows.max() - mm(1)), (col, perch_top), 1, mm(1.2))
+    if h["perch"] == "branch":
+        cut = cut.astype(bool) | _twig(h, cut.astype(bool))
     cut = cut.astype(bool) | frame()
     # manufacturability fixes: drop metal islands (eye etc.) unless bridged, then bridges, then
     # erase sub-1 mm slivers of both kinds
@@ -251,6 +255,26 @@ def compose(h: dict, bird: np.ndarray) -> np.ndarray:
     c8 = cv2.morphologyEx(c8, cv2.MORPH_CLOSE, k)  # remove thin metal
     cut = c8.astype(bool)
     return _drop_islands(cut, h)  # closing can re-isolate metal
+
+
+def _twig(h: dict, scene: np.ndarray) -> np.ndarray:
+    """The leafy twig, placed where it clears the bird and the frame by >= 2 mm.
+
+    Uses the hint's twig_at / twig_lean if given; otherwise searches along the branch.
+    """
+    base = perch("branch", None)
+    keepout = cv2.dilate((scene & ~base).astype(np.uint8) | frame().astype(np.uint8),
+                         cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (mm(4) | 1, mm(4) | 1))).astype(bool)
+    if "twig_at" in h:
+        cands = [(h["twig_at"], h.get("twig_lean", -3.0))]
+    else:
+        cands = [(t, lean) for t in (0.08, 0.92, 0.2, 0.8, 0.32, 0.68, 0.5) for lean in (-3.0, 3.0)]
+    for t, lean in cands:
+        tw = perch("branch", t, lean) & ~base
+        if not (tw & keepout).any():
+            return tw
+    print(f"     note: no clear spot for the twig on {h['bird']}; branch left plain")
+    return np.zeros_like(scene)
 
 
 MAX_DROPPED = 6.0  # mm²: an eye or a leg gap; anything bigger means the art isolates real metal
