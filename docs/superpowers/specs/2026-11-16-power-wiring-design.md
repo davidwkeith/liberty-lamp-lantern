@@ -57,13 +57,13 @@ This doc also sets the electrical requirements the candle PCB has to meet.
 
 | Item | Value |
 |------|-------|
-| Per-lantern draw (PCB requirement) | ≤ 4 W peak, hard-capped in firmware (owner wants range: "show off" at 100%, subtle when dimmed) |
-| 13 lanterns | ≤ 52 W peak: ≤ 4.3 A at 12 V, ≤ 3.5 A at 15 V. A flicker averages about 65% of peak, so roughly 34 W typical |
-| Cube capacity | 60 W / 5 A. **Only about 13% headroom at peak, so use the 15 V tap if the Luxor allows it** |
+| Per-lantern draw (PCB requirement) | Hardware designed for **4 W peak**; firmware cap **defaults to 3 W** and can be raised to 4 W after a lit test in the tree (owner wants range: "show off" at 100%, subtle when dimmed) |
+| 13 lanterns | At the default 3 W cap: ≤ 39 W, ≤ 3.3 A at 12 V (65% of the Cube). At the 4 W ceiling: ≤ 52 W, 4.3 A at 12 V (87%), 3.5 A at 15 V (70%). A flicker averages about 65% of peak |
+| Cube capacity | 60 W / 5 A. Comfortable at the 3 W default on any tap. **Before raising the cap to 4 W, use the 15 V tap (or 14 V)** |
 | Worst-case drop, 14 AWG trunk (60 ft round trip, 0.15 Ω) | ≈ 0.33 V per trunk at 2.2 A (2 trunks); ≈ 0.65 V if one trunk carried all 13 |
 | Drop, 20 AWG drop cable, ~10 ft (0.2 Ω round trip) at 0.33 A | ≈ 0.07 V |
 
-At 4 W, each lantern puts out roughly 250–300 lm at flicker peak, or about 100–150 lm through the panels: like 8–12 candles, or a 15 W incandescent. Dimmed to 10–20% in the Luxor, it's a subtle single-candle glow.
+At the 3 W default, about 75–110 lm leaves each lantern (6–9 candles). Brightness looks roughly logarithmic to the eye, so that's only about 10–15% dimmer than 4 W. At 4 W, roughly 250–300 lm is emitted at flicker peak, or about 100–150 lm through the panels: like 8–12 candles, or a 15 W incandescent. Dimmed to 10–20% in the Luxor, it's a subtle single-candle glow.
 
 ### Topology
 
@@ -102,7 +102,7 @@ Luxor xfmr ──(existing run)── Cube ── base enclosure (junction)
 ### Electrical requirements handed to the candle PCB
 
 - **Input:** 10–16 V, either AC or DC, non-polarized (bridge rectifier on board), from the Cube's output whatever its dimming waveform.
-- **Power:** ≤ 4 W peak, enforced by a firmware cap so 100% in the Luxor can never exceed the Cube's rating. It needs efficient conversion: a buck LED driver, not linear regulation.
+- **Power:** components and thermal design rated for **4 W peak**. A firmware cap, **3 W by default** and settable up to 4 W, means 100% in the Luxor can never exceed the configured limit. It needs efficient conversion: a buck LED driver, not linear regulation.
 - **Thermal:** about 3 W of LED heat. Use an aluminum-core LED section, or enough copper to spread the heat, so the surface touching the printed candle cup stays **≤ 60 °C** at full output in summer. The frame should be printed in **ASA** (softens around 100 °C) rather than PETG.
 - **Inrush:** limit it with an NTC or soft-start, so 13 boards switching on together stay well inside what the Cube tolerates.
 - **Dimming:** the board works out its brightness from its supply (voltage level, duty cycle or phase angle; TBD by measurement). It keeps a hold-up capacitor so the MCU rides through the Cube's chopping without resetting, and it maps the Luxor's 0–100% onto the flame's brightness.

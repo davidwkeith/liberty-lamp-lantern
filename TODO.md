@@ -15,7 +15,8 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
   | 50%  |  |  |  |  |
   | 10%  |  |  |  |  |
 
-- [ ] **Luxor transformer tap** for the cedar's run: 12, 13, 14, or 15 V? **Use 15 V if possible.** At 4 W per lantern, 13 lanterns need 4.3 A at 12 V, against the Cube's 5 A limit.
+- [ ] **Luxor transformer tap** for the cedar's run: 12, 13, 14, or 15 V? Any tap is fine at the 3 W default. **Use 15 V (or 14 V) before raising the cap to 4 W.** At 4 W, 13 lanterns need 4.3 A at 12 V, against the Cube's 5 A limit.
+- [ ] After the first lantern is lit in the tree, decide whether to keep the 3 W cap or raise it to 4 W.
 - [ ] **Base enclosure:** the inside dimensions, and a photo showing the Cube and the incoming wire. Only needed if the ESP32 fallback is used.
 
 ## Survey the tree

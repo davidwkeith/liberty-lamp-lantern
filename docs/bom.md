@@ -65,7 +65,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
-| Candle PCB assembly | Custom: 10–16 V AC/DC input, MCU flame, ≤ 4 W peak (firmware-capped), aluminum-core or heat-spreading LED section | 1 | 15+ | **Placeholder.** Waits on the Cube measurement; see the PCB sub-project |
+| Candle PCB assembly | Custom: 10–16 V AC/DC input, MCU flame, designed for 4 W peak, firmware cap 3 W default, aluminum-core or heat-spreading LED section | 1 | 15+ | **Placeholder.** Waits on the Cube measurement; see the PCB sub-project |
 
 ## Already installed (nothing to buy)
 
