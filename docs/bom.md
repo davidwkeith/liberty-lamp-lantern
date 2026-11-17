@@ -16,7 +16,7 @@ Estimates come from PrusaSlicer: 0.2 mm layers, 3 perimeters, 20% gyroid infill,
 |------|------|-------------|---------------|-------|
 | Body | `build/stl/body.stl` | 1 | 15 | ~180 g, ~17 h 40 m each |
 | Roof | `build/stl/roof.stl` | 1 | 15 | ~68 g, ~5 h 50 m each |
-| Filament | PETG or ASA, 1.75 mm | ~248 g | ~3.7 kg → **4 × 1 kg spools** | Buy one color lot for all 13 so they match |
+| Filament | PETG or ASA, 1.75 mm | ~248 g | ~3.7 kg → **5 × 1 kg spools** | One color lot for all 13 so they match; the 5th spool covers purge, test prints and failures |
 
 The total print time is about **306 h** for 13 lanterns, or about 353 h with spares.
 
@@ -26,7 +26,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 |------|------|-------------|---------------|-------|
 | Heat-set insert | M3, ≤ 6 mm long, for a 4.2 mm hole | 2 | 29 | Hole is 8 mm deep |
 | Screw | M3×10 socket head, A4 (316) stainless | 2 | 29 | Down through the roof wells |
-| Well plug | Dab of outdoor sealant, or a printed plug | 2 | — | Keeps rain out of the screw wells |
+| Well plug | Outdoor sealant (one tube), or printed plugs | 2 | 1 tube, or 30 plugs | Keeps rain out of the screw wells |
 | Panel | 83.4 × 113.7 × 3 mm; material TBD | 4 | 54 | One per lantern carries the colony's art |
 
 ## Lantern cord and connector
@@ -41,20 +41,20 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
-| Trunk cable | 14/2 low-voltage landscape cable, UV-resistant, direct burial | — | TBD (survey) | 2–3 runs, base to limb splice points |
-| Drop cable | Same 2 × 20 AWG cable as the lantern cord | TBD (survey) | 13 × TBD (survey) | Limb splice to the SP13 female |
-| Limb splice | Gel-filled direct-burial connector (3M DBR/Y-6 or Wago 221 in a gel box) | 1 | 13 + 1 per trunk, +10% | One per drop at the trunk's limb splice |
-| Base junction | Wago 221 lever connector | — | 1 per trunk + 1 spare | At the Cube's output, in the existing enclosure |
-| Cable gland | Sized for 14/2, IP68 | — | 1 per trunk + 1 for the feed | Through the enclosure wall; keep drain paths |
+| Trunk cable | 14/2 low-voltage cable with a **round jacket**, UV-resistant, direct burial | — | TBD (survey) | 2–3 runs, base to limb splice points. Round, not flat zip-cord, so the glands seal |
+| Drop cable | Same 2 × 20 AWG cable as the lantern cord | TBD (survey) | 13 × TBD (survey), +10% | Limb splice, down the chain, to the SP13 female at the lantern |
+| Limb splice | Gel-filled direct-burial connector, one conductor each (3M DBR/Y-6 or Wago 221 in a gel box) | 2 | 26, +10% → 29 | Two per drop, one per conductor, at the trunk's limb splice |
+| Base junction | Wago 221 lever connector, with enough ports for every trunk plus the Cube lead (221-415 for up to 4 trunks) | — | 2 + 1 spare | One per Cube output conductor, in the existing enclosure |
+| Cable gland | IP68, sized to the round 14/2 jacket (and to the existing feed cable) | — | 1 per trunk + 1 for the feed | Through the enclosure wall; keep drain paths |
 
 ## Hanging
 
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
-| Sling | 25 mm (1") polyester webbing, sewn loop or girth-hitched | 1 | 15 | Padded, loose over the limb |
+| Sling | 25 mm (1") polyester webbing, sewn loop | 1 | 15 | Basket hitch over the limb, both ends to the quick link. Never girth-hitched |
 | Quick link | 316 stainless, ~5 mm | 1 | 15 | Sling to chain |
-| Chain | 316 stainless, short | TBD (survey) | 13 × TBD (survey) | Quick link to the roof eye |
-| Tree ties | Soft rubber-coated twist tie, bulk roll | — | 1 roll | Limbs about every 40 cm; padded loops at the trunk crotches only |
+| Chain | 316 stainless, short | TBD (survey) | 13 × TBD (survey), +1 m | Quick link to the roof eye |
+| Tree ties | Soft rubber-coated twist tie, bulk roll | — | 1 roll | Limbs about every 40 cm, plus padded limb loops at each crotch for the trunk cables. Never around the trunk |
 
 ## Candle PCB
 

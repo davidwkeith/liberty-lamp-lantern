@@ -29,20 +29,21 @@ How to wire and hang the 13 lanterns in the front-yard Deodar cedar, and how to 
 
 ## 4. Limb splices and drops
 
-1. At the splice point, attach one drop cable per lantern to the trunk with a **gel-filled splice connector**.
+1. At the splice point, join each drop cable to the trunk with **two gel-filled splice connectors**, one per conductor.
 2. Run each drop along the limb toward its lantern spot, tied loosely about every 40 cm.
-3. Fit an SP13 **female** on the end of each drop, and let it hang a little below the limb.
+3. Let the drop come down beside where the chain will hang, long enough to reach the lantern. Fit an SP13 **female** on its end. The connector belongs **at the lantern**, not up at the limb.
+4. Make a drip loop in the drop just above the connector, so water running down the drop drips off before it reaches the connector.
 
 ## 5. Hanging a lantern
 
 The ladder steps below need both hands. Have a helper foot the ladder, and keep three points of contact while you climb.
 
-1. Girth-hitch a webbing sling **loosely** over the limb, padding the bark. Don't cinch it tight.
-2. Clip a 316 quick link to the sling, and hang the chain from it.
+1. Drape the webbing sling over the limb in a **basket hitch**: over the top, with both ends brought down to the quick link. The webbing pads the bark and spreads the load. A basket hitch can't cinch, but a girth or choker hitch would tighten under the lantern's weight and girdle the limb over the years.
+2. Clip both sling ends into a 316 quick link, and hang the chain from it.
 3. Hook the lantern's roof eye onto the chain. Check that it hangs plumb and clears nearby branches when they move in the wind.
-4. Plug the lantern's SP13 male into the drop's female and screw the collar down until the seal seats.
-5. Form a **drip loop** below the connector, so the cable dips lower than the eye.
-6. Add a strain-relief tie that holds the cord to the chain near the eye. A tug on the cord should pull the chain, not the cord's joints inside the lantern.
+4. Plug the lantern's SP13 male into the drop's female next to the lantern, and screw the collar down until the seal seats.
+5. Let the pigtail dip into a **drip loop below the roof eye** before it rises to the connector.
+6. Tie the drop loosely to the chain every 20–30 cm with **some slack**, and add a strain-relief tie that holds the pigtail to the chain near the eye. The chain carries the lantern; the cable must never go taut. A tug on the cord should pull the chain, not the cord's joints inside the lantern.
 
 ## 6. Power-on check
 
@@ -52,12 +53,15 @@ The ladder steps below need both hands. Have a helper foot the ladder, and keep 
 
 ## 7. Annual maintenance (once a year, before summer)
 
-- [ ] **Trunk loops:** loosen any loop that's getting tight against bark, and re-tie it with slack.
+**Turn the cedar's Luxor group off first.** Never open a wet connector or the enclosure while it's live.
+
+- [ ] **Crotch loops:** these are the limb loops holding the trunk cables at each crotch. Loosen any that's getting tight against bark, and re-tie it with slack.
 - [ ] **Limb ties:** same check. Replace any brittle or sun-cracked ties.
-- [ ] **Slings:** look for UV fading, fraying or stiffness, and replace any that show it. Webbing in full sun lasts a few seasons.
+- [ ] **Slings:** look for UV fading, fraying or stiffness, and replace any that show it. Webbing in full sun lasts a few seasons. Confirm each one is still a basket hitch and hasn't been re-rigged as a girth hitch.
 - [ ] **Chain and quick links:** check the gates are closed and there's no wear at the roof eye.
 - [ ] **SP13 connectors:** unscrew one or two to check the seals are seated and there's no water inside. Re-seat the collars.
 - [ ] **Drip loops:** make sure they're still lower than each connector and gland.
 - [ ] **Roof screw wells:** check the sealant or plugs are intact.
 - [ ] **Panels and frame:** look for cracks, sagging, or creep at the eye from heat, and replace any affected part.
 - [ ] **Base enclosure:** check it's dry inside, the glands are tight, and the drain is clear.
+- [ ] **Power back on:** finish with the 100% → 10% check from section 6.

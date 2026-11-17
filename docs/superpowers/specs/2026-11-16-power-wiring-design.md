@@ -80,12 +80,12 @@ Luxor xfmr ──(existing run)── Cube ── base enclosure (junction)
 
 | Role | Part | Notes |
 |------|------|-------|
-| Trunk cable | 14/2 low-voltage landscape cable, UV-resistant and direct-burial (e.g. Southwire 14/2 LV landscape) | Dark jacket, run up the shaded side of the trunk |
+| Trunk cable | 14/2 low-voltage cable with a round jacket, UV-resistant and direct-burial | Round (not flat zip-cord) so the glands seal. Dark jacket, run up the shaded side of the trunk |
 | Lantern drop / cord | 2 × 20 AWG (0.5 mm²) round outdoor cable, UV and oil resistant (PUR or SJOOW-type), about 5 mm OD | The same cable runs inside the lantern to the PCB |
 | Lantern connector | SP13 IP68 2-pin, inline male on the lantern cord and female on the drop | Keyed, screw-locking, rated for 5 A. Sits on a short (~30 cm) pigtail at the lantern, not up at the limb, so whoever can reach a lantern can unplug it |
-| Limb splices | Gel-filled direct-burial connectors (e.g. 3M DBR/Y-6 or a Wago 221 in a gel box) | One per drop at each splice point |
+| Limb splices | Gel-filled direct-burial connectors (e.g. 3M DBR/Y-6 or a Wago 221 in a gel box) | Two per drop (one per conductor) at each splice point |
 | Base junction | Wago 221 lever connectors inside the existing enclosure; glands or grommets on the cable entries | The enclosure must keep drip and drain paths |
-| Hanging | 25 mm (1") polyester webbing sling, girth-hitched loosely over the limb; a 316 stainless quick link; a short length of 316 chain to the roof eye | Pads the bark and spreads the load, with no hardware in the wood |
+| Hanging | 25 mm (1") polyester webbing sling in a **basket hitch** over the limb (both ends to the quick link; never girth-hitched, which cinches); a 316 stainless quick link; a short length of 316 chain to the roof eye | Pads the bark and spreads the load, with no hardware in the wood |
 | Cable dressing, limbs | Soft rubber-coated twist ties, loose, about every 40 cm | Retied each year as the tree grows |
 | Cable dressing, trunk | **No ties around the trunk.** The cables lie in the bark furrows on the shaded side and are held only at limb crotches by padded, loose loops | Let out each year; my call to meet the girdling and visibility anti-goals |
 
