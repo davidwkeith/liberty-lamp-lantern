@@ -11,7 +11,7 @@ Thirteen matching Craftsman-style hanging lanterns ("Liberty lamps"), each repre
 
 - Single candle per lantern (not a 3-up cluster)
 - Acrylic/mica-style insert panels (not a pierced-shell design)
-- One insert panel per lantern bears the colony name, number (1–13, Continental Congress signing order), and bird silhouette
+- All four insert panels on a lantern bear the same bird silhouette (the colony's bird, in its palette); colony name and number (1–13, Continental Congress signing order) placement TBD
 - FDM-printed frame/housing; insert panels are the swappable/etched element
 
 ## 3. Electronics
