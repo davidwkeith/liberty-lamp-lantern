@@ -255,10 +255,30 @@ module roof() {
 }
 
 // ---- Assembly preview ----
+// Optional stencil art (from `make stencils`): stencils/out/<bird>-art.svg, panel-sized.
+panel_art  = "";         // e.g. "../stencils/out/robin-art.svg"; empty = plain stand-in panels
+art_dark   = "#4A5D7A";  // powder-coat color of the stencil field
+art_light  = "#E8DFC8";  // glow film color
+
 module panels() {
-  color("#E8DFC8", 0.45) four()
-    translate([-panel_size[0] / 2, plane - panel_thickness / 2, base_h - 2])
-      cube([panel_size[0], panel_thickness, panel_size[1]]);
+  if (panel_art == "") {
+    color("#E8DFC8", 0.45) four()
+      translate([-panel_size[0] / 2, plane - panel_thickness / 2, base_h - 2])
+        cube([panel_size[0], panel_thickness, panel_size[1]]);
+  } else {
+    four() translate([0, plane, base_h - 2]) {
+      // Seen from outside (+Y), +X runs right-to-left, so mirror the art to read correctly.
+      // Outer 1 mm: the metal stencil with the bird cut out
+      color(art_dark) difference() {
+        translate([-panel_size[0] / 2, panel_thickness / 2 - 1, 0]) cube([panel_size[0], 1, panel_size[1]]);
+        translate([panel_size[0] / 2, panel_thickness / 2 + 0.5, 0]) rotate([90, 0, 0]) mirror([1, 0, 0])
+          linear_extrude(2) import(panel_art);
+      }
+      // Glow film + covers behind it
+      color(art_light) translate([-panel_size[0] / 2, -panel_thickness / 2, 0])
+        cube([panel_size[0], panel_thickness - 1, panel_size[1]]);
+    }
+  }
 }
 
 module assembly() {

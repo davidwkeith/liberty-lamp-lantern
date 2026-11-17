@@ -22,7 +22,11 @@ Twelve stencil artworks, one per unique colony bird (North Carolina and Virginia
 ## Decided
 
 - **Composition:** each bird is posed on a shared, stylized element. The nine songbirds sit on **one shared branch**. The **ruffed grouse** stands on a **drumming log**. The **Delaware Blue Hen** and **Rhode Island Red** stand on a **split-rail fence**. All 12 keep the same ground-line height.
-- **Source:** silhouettes are traced from **Audubon's *Birds of America*** (1827–38, public domain). The two hens come from **public-domain 19th-century poultry illustration** (e.g. Harrison Weir).
+- **Sources (public domain only):**
+  - **Audubon's *Birds of America*** (1827–38), where his pose makes a strong silhouette, as with the cardinal.
+  - **Louis Agassiz Fuertes's plates for *Birds of New York*** (1910–14), where it doesn't. Fuertes painted clean side profiles; Audubon's robin, for example, is hunched with a gaping beak.
+  - The two hens come from **public-domain 19th-century poultry illustration**, e.g. Harrison Weir.
+  - Each bird's source is recorded in `stencils/sources/sources.json`.
 
 ## Approaches (for isolating each bird from a busy plate)
 

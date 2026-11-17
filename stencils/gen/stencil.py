@@ -223,6 +223,7 @@ def export(name: str, cut: np.ndarray):
     subprocess.run(["potrace", "-b", "dxf", *dims, "-o", str(dxf), str(pbm)], check=True)
     pbm.unlink()
     s = svg.read_text()
+    (OUT / f"{name}-art.svg").write_text(s)  # fill-only copy for OpenSCAD import (assembly preview)
     outline = (f'<rect x="0" y="0" width="{PANEL[0]}" height="{PANEL[1]}" fill="none" stroke="#ff0000" '
                f'stroke-width="0.1" id="panel-outline"/>')
     # potrace's viewBox is in pt; draw the outline in a mm-scaled group

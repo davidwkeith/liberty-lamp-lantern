@@ -51,6 +51,123 @@
       15992
     ]
   },
+  "fuertes-101": {
+    "file": "fuertes-101.jpg",
+    "plate": 101,
+    "commons_title": "File:Birds of New York (Plate 101) (7047594233).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_101)_(7047594233).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Birds_of_New_York_%28Plate_101%29_%287047594233%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1205,
+      1654
+    ]
+  },
+  "fuertes-102": {
+    "file": "fuertes-102.jpg",
+    "plate": 102,
+    "commons_title": "File:Birds of New York (Plate 102) (7047594497).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_102)_(7047594497).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/9/96/Birds_of_New_York_%28Plate_102%29_%287047594497%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1205,
+      1654
+    ]
+  },
+  "fuertes-103": {
+    "file": "fuertes-103.jpg",
+    "plate": 103,
+    "commons_title": "File:Birds of New York (Plate 103) (6901498002).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_103)_(6901498002).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Birds_of_New_York_%28Plate_103%29_%286901498002%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1205,
+      1654
+    ]
+  },
+  "fuertes-106": {
+    "file": "fuertes-106.jpg",
+    "plate": 106,
+    "commons_title": "File:Birds of New York (Plate 106) (7047595507).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_106)_(7047595507).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/5/52/Birds_of_New_York_%28Plate_106%29_%287047595507%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1205,
+      1654
+    ]
+  },
+  "fuertes-41": {
+    "file": "fuertes-41.jpg",
+    "plate": 41,
+    "commons_title": "File:Birds of New York (Plate 41) (6815756200).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_41)_(6815756200).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Birds_of_New_York_%28Plate_41%29_%286815756200%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      2273,
+      3176
+    ]
+  },
+  "fuertes-75": {
+    "file": "fuertes-75.jpg",
+    "plate": 75,
+    "commons_title": "File:Birds of New York (Plate 75) (7047587833).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_75)_(7047587833).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Birds_of_New_York_%28Plate_75%29_%287047587833%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1215,
+      1608
+    ]
+  },
+  "fuertes-76": {
+    "file": "fuertes-76.jpg",
+    "plate": 76,
+    "commons_title": "File:Birds of New York (Plate 76) (6901491228).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_76)_(6901491228).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/5/56/Birds_of_New_York_%28Plate_76%29_%286901491228%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1215,
+      1608
+    ]
+  },
+  "fuertes-78": {
+    "file": "fuertes-78.jpg",
+    "plate": 78,
+    "commons_title": "File:Birds of New York (Plate 78) (7047588521).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_78)_(7047588521).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/d/df/Birds_of_New_York_%28Plate_78%29_%287047588521%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1215,
+      1608
+    ]
+  },
+  "fuertes-79": {
+    "file": "fuertes-79.jpg",
+    "plate": 79,
+    "commons_title": "File:Birds of New York (Plate 79) (7047588733).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birds_of_New_York_(Plate_79)_(7047588733).jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/2/25/Birds_of_New_York_%28Plate_79%29_%287047588733%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "license": "Public domain",
+    "credit": "Louis Agassiz Fuertes, Birds of New York (Eaton, 1910–14)",
+    "original_px": [
+      1215,
+      1608
+    ]
+  },
   "goldfinch": {
     "file": "goldfinch.jpg",
     "plate": 33,
