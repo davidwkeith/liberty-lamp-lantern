@@ -42,7 +42,7 @@ The ladder steps below need both hands. Have a helper foot the ladder, and keep 
 2. Clip both sling ends into a 316 quick link, and hang the chain from it.
 3. Hook the lantern's roof eye onto the chain. Check that it hangs plumb and clears nearby branches when they move in the wind.
 4. Plug the lantern's SP13 male into the drop's female next to the lantern, and screw the collar down until the seal seats.
-5. Let the pigtail dip into a **drip loop below the roof eye** before it rises to the connector.
+5. The pigtail leaves the lantern through the post corner just below the top rail. Let it dip into a **drip loop below that opening** before it rises to the connector.
 6. Tie the drop loosely to the chain every 20–30 cm with **some slack**, and add a strain-relief tie that holds the pigtail to the chain near the eye. The chain carries the lantern; the cable must never go taut. A tug on the cord should pull the chain, not the cord's joints inside the lantern.
 
 ## 6. Power-on check

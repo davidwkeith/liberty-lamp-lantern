@@ -44,6 +44,7 @@ screw_head_d = 6.5;  // counterbore for M3 socket head
 well_floor   = 3;    // roof material clamped under the screw head
 ledge_h      = 3;    // roof corner ledges that bear on the standoffs
 cord_elbow   = 7;    // 45° chord easing the cord's turn from post into base
+cord_exit_drop = 8;  // cord leaves the post this far below the top rail, sloping 30° down
 
 $fn = 48;
 eps = 0.01;
@@ -58,6 +59,7 @@ slot_end = inner + slot_depth;                    // panel edge reach into post
 web      = plane - slot_w / 2 - slot_end;         // post material between the two grooves
 cord_c   = (slot_end + half) / 2;                 // cord channel center (x = y)
 boss_c   = inner - 3.5;                           // insert boss center (x = y)
+cord_exit_z = body_h - top_rail_h - cord_exit_drop; // where the cord turns out of the post
 roof_half = half + eave;
 roof_rise = roof_half - cap_w / 2;                // 45° from eave to cap
 panel_size = [2 * slot_end - 2 * panel_clearance, body_h - (base_h - 2) - panel_clearance];
@@ -66,6 +68,7 @@ assert(slot_depth < post_w - 2, "slot_depth must leave ≥2 mm of post");
 assert(led_d < 2 * inner, "led_d larger than interior");
 assert(cord_d + 2.4 <= half - slot_end, "cord channel too wide for post");
 assert(cord_d >= cord_od + 0.5, "cord_d must be ≥ cord_od + 0.5 mm");
+assert(cord_exit_drop >= cord_d, "cord exit would cut into the top rail");
 assert(web >= 1.6, str("post web between panel grooves is ", web, " mm; need ≥1.6 (thinner panels, shallower slot_depth, or wider post_w)"));
 assert(panel_skin >= 1.6, "panel_skin too thin");
 assert(led_h <= base_h - 3, "led_h cuts through (or nearly through) the base floor");
@@ -175,10 +178,16 @@ module body() {
     translate([0, 0, -eps]) cylinder(d = drain_d, h = base_h);
     // Floor drains on the axes (clear of the diagonal cord tunnel)
     four() translate([inner - 10, 0, -eps]) cylinder(d = drain_d, h = base_h + 2 * eps);
-    // Cord: down the +X+Y post, then a diagonal tunnel into the candle cup
+    // Cord: in through the +X+Y post's outer corner, down the post, round the elbow, then a diagonal tunnel into the candle cup
     tz = base_h - led_h + cord_d / 2;
     ek = cord_elbow / sqrt(2);
-    translate([cord_c, cord_c, tz + cord_elbow]) cylinder(d = cord_d, h = body_h + standoff_h);
+    translate([cord_c, cord_c, tz + cord_elbow]) cylinder(d = cord_d, h = cord_exit_z - tz - cord_elbow);
+    // Side exit through the post's outer corner, sloping 30° down so rain drains out
+    hull() {
+      cord_node([cord_c, cord_c, cord_exit_z]);
+      ex = half + cord_d - cord_c;  // run past the corner
+      cord_node([cord_c + ex, cord_c + ex, cord_exit_z - ex * sqrt(2) * tan(30)]);
+    }
     hull() {
       cord_node([cord_c, cord_c, tz + cord_elbow]);
       cord_node([cord_c - ek, cord_c - ek, tz]);
@@ -234,10 +243,6 @@ module roof() {
       translate([0, 0, -eps]) cylinder(d = screw_d, h = well_floor + 2 * eps);
       translate([0, 0, well_floor]) cylinder(d = screw_head_d, h = fascia_h + roof_rise);
     }
-    // Cord drop through the +X+Y ledge into the hollow post
-    translate([cord_c, cord_c, -1]) cylinder(d = cord_d, h = ledge_h + 2);
-    // Cord entry beside the eye
-    translate([0, eye_t / 2 + cord_d / 2 + 1, fascia_h + roof_rise - 10]) cylinder(d = cord_d, h = 20);
   }
 }
 

@@ -11,6 +11,8 @@ import { parseStl, analyze, overhangArea } from './check-stl.mjs';
 const OPENSCAD = process.env.OPENSCAD ?? 'openscad';
 const SRC = fileURLToPath(new URL('../src/lantern.scad', import.meta.url));
 const CONTACT = fileURLToPath(new URL('./fixtures/roof-contact.scad', import.meta.url));
+const CAP = fileURLToPath(new URL('./fixtures/roof-cap.scad', import.meta.url));
+const EXIT = fileURLToPath(new URL('./fixtures/cord-exit.scad', import.meta.url));
 const dir = mkdtempSync(join(tmpdir(), 'lantern-'));
 
 /** Render `file` with -D overrides; returns { ok, stderr, tris }. */
@@ -54,4 +56,20 @@ test('body prints without supports (no raised down-facing area)', () => {
   assert.ok(r.ok, r.stderr);
   const area = overhangArea(r.tris, 0.5);
   assert.ok(area < 100, `${Math.round(area)} mm² of unsupported overhang`);
+});
+
+test('roof cap has no opening to the sky', () => {
+  const r = render(CAP, {}, 'cap');
+  assert.ok(r.ok, r.stderr);
+  assert.equal(analyze(r.tris).count, 12, 'cap slab is not a plain box: something pierces the cap');
+});
+
+test('cord exits sideways under the eave, sloping down', () => {
+  const control = render(EXIT, { probe_only: true }, 'probe');
+  assert.doesNotMatch(control.stderr, /WARNING|ERROR/);
+  assert.ok(analyze(control.tris).count > 0, 'probe itself is empty; the test is broken');
+  const r = render(EXIT, {}, 'exit');
+  assert.doesNotMatch(r.stderr, /WARNING|ERROR/);
+  // An empty intersection exports no file (or zero triangles): the path is open.
+  assert.equal(analyze(r.tris).count, 0, 'body material blocks the cord exit path');
 });

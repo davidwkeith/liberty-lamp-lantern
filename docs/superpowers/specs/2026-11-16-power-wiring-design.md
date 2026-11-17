@@ -91,7 +91,7 @@ Luxor xfmr ──(existing run)── Cube ── base enclosure (junction)
 
 ### Lantern cord routing
 
-- The cord leaves the roof beside the hanging eye and goes to the SP13 connector on its short pigtail. The drop then runs up the chain to the limb, with a **drip loop** below the connector so water can't follow it into the lantern.
+- The cord leaves the lantern through the outer corner of the cord post, just below the top-rail band, through an opening that slopes 30° downward so rain drains out. The roof has no cord openings. From there it goes to the SP13 connector on its short pigtail. The drop then runs up the chain to the limb, with a **drip loop** below the connector so water can't follow it into the lantern.
 - It gets a strain-relief tie at the eye, so pulling on the cord never loads the PCB joints.
 - Inside the lantern, it follows the existing path down the hollow post, through the elbow, and into the candle cup.
 - **Model change:** set `cord_d` from 4.5 to the chosen cable's OD + 0.5 mm. That's about 5.5 mm, still inside the post limit of 6.6 mm.

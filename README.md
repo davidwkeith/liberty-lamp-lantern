@@ -71,7 +71,7 @@ All parts, hardware, cable and hanging gear, per lantern and ×13, are in [docs/
 
 ## Assembly
 
-1. Thread the lantern cord through the hole beside the hanging eye and through the hole in the matching corner ledge under the roof. From there it runs down the hollow +X/+Y corner post, round a 45° elbow, and through the base tunnel into the candle cup. Outside, the cord dips into a drip loop **below** the eye before rising to its connector, so rain drips off the bottom of the loop instead of following the cord inside.
+1. Feed the lantern cord into the opening in the outer corner of the +X/+Y post, just below the top-rail band. That opening slopes down and outward, so rain drains out of it. Inside, the cord runs down the hollow post, round a 45° elbow, and through the base tunnel into the candle cup. The roof has no openings. Outside, let the cord hang in a drip loop **below** the opening before it rises to its connector.
 2. Drop the 4 panels in through the slits in the top rail.
 3. Set the roof on the standoffs (its corner ledges sit on them) and screw it down. The lantern hangs from the roof eye, so these screws carry its weight.
 
