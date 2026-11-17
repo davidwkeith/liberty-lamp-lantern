@@ -1,6 +1,6 @@
 # Liberty Lamp Tree Lantern — Design Spec
 
-**Project:** 13 Craftsman-style lanterns, one per original colony, hung in a backyard tree
+**Project:** 13 Craftsman-style lanterns, one per original colony, hung in the heritage Deodar cedar in the front yard
 **Inspiration:** Lanterns at Disneyland's Grand Californian Hotel
 
 ## 1. Concept
