@@ -57,10 +57,13 @@ This doc also sets the electrical requirements the candle PCB has to meet.
 
 | Item | Value |
 |------|-------|
-| Per-lantern draw (PCB requirement) | ≤ 1 W |
-| 13 lanterns | ≤ 13 W, ≤ ~1.1 A at 12 V |
-| Cube capacity | 60 W / 5 A, so ≥ 4× headroom |
-| Worst-case drop, 14 AWG, 30 ft run (60 ft round trip, 0.15 Ω) at 1.1 A | ≈ 0.17 V |
+| Per-lantern draw (PCB requirement) | ≤ 4 W peak, hard-capped in firmware (owner wants range: "show off" at 100%, subtle when dimmed) |
+| 13 lanterns | ≤ 52 W peak: ≤ 4.3 A at 12 V, ≤ 3.5 A at 15 V. A flicker averages about 65% of peak, so roughly 34 W typical |
+| Cube capacity | 60 W / 5 A. **Only about 13% headroom at peak, so use the 15 V tap if the Luxor allows it** |
+| Worst-case drop, 14 AWG trunk (60 ft round trip, 0.15 Ω) | ≈ 0.33 V per trunk at 2.2 A (2 trunks); ≈ 0.65 V if one trunk carried all 13 |
+| Drop, 20 AWG drop cable, ~10 ft (0.2 Ω round trip) at 0.33 A | ≈ 0.07 V |
+
+At 4 W, each lantern puts out roughly 250–300 lm at flicker peak, or about 100–150 lm through the panels: like 8–12 candles, or a 15 W incandescent. Dimmed to 10–20% in the Luxor, it's a subtle single-candle glow.
 
 ### Topology
 
@@ -99,7 +102,8 @@ Luxor xfmr ──(existing run)── Cube ── base enclosure (junction)
 ### Electrical requirements handed to the candle PCB
 
 - **Input:** 10–16 V, either AC or DC, non-polarized (bridge rectifier on board), from the Cube's output whatever its dimming waveform.
-- **Power:** ≤ 1 W steady.
+- **Power:** ≤ 4 W peak, enforced by a firmware cap so 100% in the Luxor can never exceed the Cube's rating. It needs efficient conversion: a buck LED driver, not linear regulation.
+- **Thermal:** about 3 W of LED heat. Use an aluminum-core LED section, or enough copper to spread the heat, so the surface touching the printed candle cup stays **≤ 60 °C** at full output in summer. The frame should be printed in **ASA** (softens around 100 °C) rather than PETG.
 - **Inrush:** limit it with an NTC or soft-start, so 13 boards switching on together stay well inside what the Cube tolerates.
 - **Dimming:** the board works out its brightness from its supply (voltage level, duty cycle or phase angle; TBD by measurement). It keeps a hold-up capacitor so the MCU rides through the Cube's chopping without resetting, and it maps the Luxor's 0–100% onto the flame's brightness.
 - **Protection:** a TVS diode on the input against surges on the long outdoor runs, and a conformal coating.

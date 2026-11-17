@@ -10,13 +10,13 @@ Spares: +2 for printed parts, panels and connectors; +10% (rounded up) for faste
 
 ## Printed parts
 
-Estimates come from PrusaSlicer: 0.2 mm layers, 3 perimeters, 20% gyroid infill, PETG at 1.27 g/cm³, no supports.
+Estimates come from PrusaSlicer: 0.2 mm layers, 3 perimeters, 20% gyroid infill, at PETG density (1.27 g/cm³), no supports. ASA is about 1.07 g/cm³, so the same spools go roughly 15% further.
 
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
 | Body | `build/stl/body.stl` | 1 | 15 | ~180 g, ~17 h 40 m each |
 | Roof | `build/stl/roof.stl` | 1 | 15 | ~69 g, ~6 h each |
-| Filament | PETG or ASA, 1.75 mm | ~248 g | ~3.7 kg → **5 × 1 kg spools** | One color lot for all 13 so they match; the 5th spool covers purge, test prints and failures |
+| Filament | **ASA** (PETG only if candle-cup temperatures test ≤ 60 °C), 1.75 mm | ~248 g | ~3.7 kg → **5 × 1 kg spools** | One color lot for all 13 so they match; the 5th spool covers purge, test prints and failures |
 
 The total print time is about **306 h** for 13 lanterns, or about 353 h with spares.
 
@@ -65,7 +65,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
-| Candle PCB assembly | Custom: 10–16 V AC/DC input, MCU flame, ≤ 1 W | 1 | 15+ | **Placeholder.** Waits on the Cube measurement; see the PCB sub-project |
+| Candle PCB assembly | Custom: 10–16 V AC/DC input, MCU flame, ≤ 4 W peak (firmware-capped), aluminum-core or heat-spreading LED section | 1 | 15+ | **Placeholder.** Waits on the Cube measurement; see the PCB sub-project |
 
 ## Already installed (nothing to buy)
 

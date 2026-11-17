@@ -62,7 +62,7 @@ ECHO: "PANEL (w × h × t): 83.4 × 113.7 × 3 mm, qty 4"
 
 ## Print settings
 
-- PETG or ASA (it hangs outdoors; avoid PLA)
+- **ASA** recommended: it hangs outdoors, and the 4 W candle warms the base. PETG only if the candle-cup temperature tests ≤ 60 °C; avoid PLA
 - 0.2 mm layers, 3 walls, 20% gyroid infill
 
 ## Bill of materials

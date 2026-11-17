@@ -15,7 +15,7 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
   | 50%  |  |  |  |  |
   | 10%  |  |  |  |  |
 
-- [ ] **Luxor transformer tap** for the cedar's run: 12, 13, 14, or 15 V?
+- [ ] **Luxor transformer tap** for the cedar's run: 12, 13, 14, or 15 V? **Use 15 V if possible.** At 4 W per lantern, 13 lanterns need 4.3 A at 12 V, against the Cube's 5 A limit.
 - [ ] **Base enclosure:** the inside dimensions, and a photo showing the Cube and the incoming wire. Only needed if the ESP32 fallback is used.
 
 ## Survey the tree
@@ -31,7 +31,7 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
 
 ## Build and test
 
-- [ ] Test-print one body and one roof in PETG or ASA. Check:
+- [ ] Test-print one body and one roof in **ASA**. Check:
   - panel slot fit (adjust `panel_clearance` if needed)
   - that the heat-set inserts go in cleanly
   - that the roof seats on all four standoffs
