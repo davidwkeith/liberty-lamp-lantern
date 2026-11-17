@@ -26,6 +26,10 @@ Things only you can do: measurements, decisions, and physical checks. Claude's w
 
 ## Decide
 
+- [ ] **Cube power budget.** A rectifier feeding a capacitor draws current in short peaks (a power factor of about 0.6), and the buck drivers are about 85% efficient. At the 3 W default cap, 13 lanterns come to about 46 W real and about 70 VA, against the Cube's 60 W rating. Options:
+  - lower the default cap to about 2.5 W
+  - split the lanterns across two Cubes on the same Luxor group
+  - ask FX whether the 60 W is rated in VA, or measure the Cube's current with a test lantern
 
 ## Build and test
 
