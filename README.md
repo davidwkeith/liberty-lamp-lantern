@@ -32,9 +32,9 @@ Open `src/lantern.scad` in the OpenSCAD app for a live preview. Set `part` to `"
 | Part | Size (mm) | Orientation |
 |------|-----------|-------------|
 | `body.stl` | 108 × 108 × 134 | upright, base on bed |
-| `roof.stl` | 114 × 114 × 68 | peak up, open side on bed |
+| `roof.stl` | 114 × 114 × 54 | peak up, open side on bed |
 
-Assembled height is about 202 mm (8"). Neither part needs supports.
+Assembled height is about 219 mm to the top of the eye bolt (about 194 mm to the roof peak). Neither part needs supports.
 
 ## Key parameters
 
@@ -67,13 +67,14 @@ ECHO: "PANEL (w × h × t): 83.4 × 113.7 × 3 mm, qty 4"
 
 ## Bill of materials
 
-All parts, hardware, cable and hanging gear, per lantern and ×13, are in [docs/bom.md](docs/bom.md). Per lantern, the frame takes 2 M3 heat-set inserts, 2 M3×10 screws and 4 panels (83.4 × 113.7 mm).
+All parts, hardware, cable and hanging gear, per lantern and ×13, are in [docs/bom.md](docs/bom.md). Per lantern, the frame takes 2 M3 heat-set inserts, 2 M3×10 screws, 4 panels (83.4 × 113.7 mm), and a black stainless M6 × 40 eye bolt with its nuts and washers.
 
 ## Assembly
 
 1. Feed the lantern cord into the opening in the outer corner of the +X/+Y post, just below the top-rail band. That opening slopes down and outward, so rain drains out of it. Inside, the cord runs down the hollow post, round a 45° elbow, and through the base tunnel into the candle cup. The roof has no openings. Outside, let the cord hang in a drip loop **below** the opening before it rises to its connector.
 2. Drop the 4 panels in through the slits in the top rail.
-3. Set the roof on the standoffs (its corner ledges sit on them) and screw it down. The lantern hangs from the roof eye, so these screws carry its weight.
+3. Fit the eye bolt **before** the roof goes on. From the top, stack the eye bolt, an M6 nut, and a bonded sealing washer on the cap. Underneath the roof, add an M6 × 18 fender washer and a nyloc nut on the seat. Tighten until the sealing washer just compresses.
+4. Set the roof on the standoffs (its corner ledges sit on them) and screw it down. The lantern hangs from the eye bolt, so the roof screws carry its weight.
 
 The roof screw wells are open on top; a dab of sealant or a printed plug keeps rain out.
 

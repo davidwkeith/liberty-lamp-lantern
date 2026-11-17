@@ -31,10 +31,11 @@ standoff_h   = 6;    // vent gap between top rail and roof
 eave         = 6;    // roof overhang beyond posts, per side
 fascia_h     = 4;    // vertical roof edge below the 45° slope
 roof_wall    = 2.4;  // roof shell thickness
-cap_w        = 20;   // flat top under the hanging eye
-eye_od       = 16;
-eye_id       = 8;
-eye_t        = 5;
+cap_w        = 20;   // flat top the eye bolt clamps onto
+bolt_hole_d  = 6.6;  // M6 eye bolt clearance
+washer_od    = 18;   // M6 × 18 fender washer under the peak
+seat_depth   = 12;   // solid plastic between the cap and the washer seat
+eye_bolt_od  = 25;   // eye outside diameter (preview + height only)
 insert_d     = 4.2;  // M3 heat-set insert hole
 insert_depth = 8;    // ≥ screw reach below the well floor + 1
 screw_len    = 10;   // M3 screw length
@@ -69,6 +70,7 @@ assert(led_d < 2 * inner, "led_d larger than interior");
 assert(cord_d + 2.4 <= half - slot_end, "cord channel too wide for post");
 assert(cord_d >= cord_od + 0.5, "cord_d must be ≥ cord_od + 0.5 mm");
 assert(cord_exit_drop >= cord_d, "cord exit would cut into the top rail");
+assert(seat_depth >= 8, "eye-bolt seat too thin");
 assert(web >= 1.6, str("post web between panel grooves is ", web, " mm; need ≥1.6 (thinner panels, shallower slot_depth, or wider post_w)"));
 assert(panel_skin >= 1.6, "panel_skin too thin");
 assert(led_h <= base_h - 3, "led_h cuts through (or nearly through) the base floor");
@@ -77,7 +79,9 @@ assert(insert_d + 3 <= boss_d, "insert too large for boss");
 assert(screw_head_d + 2 <= boss_d, "screw head too large for roof well");
 
 echo(str("PANEL (w × h × t): ", panel_size[0], " × ", panel_size[1], " × ", panel_thickness, " mm, qty 4"));
-echo(str("ASSEMBLED HEIGHT: ", body_h + standoff_h + fascia_h + roof_rise + 3 + eye_od - 2, " mm"));
+echo(str("ASSEMBLED HEIGHT: ", body_h + standoff_h + fascia_h + roof_rise + 3 + 6 + eye_bolt_od, " mm (to top of eye bolt)"));
+// Clamp stack: top nut+washer (6.6) + cap (3) + seat (seat_depth) + fender washer (1.6) + nyloc (8)
+echo(str("EYE BOLT: M6 black stainless, thread ≥ ", ceil(6.6 + 3 + seat_depth + 1.6 + 8), " mm"));
 
 // ---- Helpers ----
 module sq(w, h) { translate([-w / 2, -w / 2, 0]) cube([w, w, h]); }
@@ -231,14 +235,18 @@ module roof() {
         roof_solid();
         four() translate([slot_end + 0.5, slot_end + 0.5, 0]) cube([roof_half, roof_half, ledge_h]);
       }
-      // Flat cap + hanging eye (ring in the XZ plane)
+      // Flat cap the eye bolt clamps onto
       translate([0, 0, fascia_h + roof_rise - eps]) sq(cap_w, 3);
-      translate([0, eye_t / 2, fascia_h + roof_rise + 3 + eye_od / 2 - 2])
-        rotate([90, 0, 0]) difference() {
-          cylinder(d = eye_od, h = eye_t);
-          translate([0, 0, -eps]) cylinder(d = eye_id, h = eye_t + 2 * eps);
-        }
+      // Solid peak boss: an inverted 45° cone (prints unsupported) ending in a
+      // flat seat for the fender washer, so the bolt loads plastic in compression
+      zb = fascia_h + roof_rise - seat_depth;
+      intersection() {
+        roof_solid();
+        translate([0, 0, zb]) cylinder(r1 = washer_od / 2 + 2, r2 = washer_od / 2 + 2 + seat_depth, h = seat_depth + eps);
+      }
     }
+    // Eye-bolt hole down the roof axis
+    translate([0, 0, fascia_h + roof_rise - seat_depth - 1]) cylinder(d = bolt_hole_d, h = seat_depth + 5);
     for (a = [0, 180]) rotate(a) translate([boss_c, boss_c, 0]) {
       translate([0, 0, -eps]) cylinder(d = screw_d, h = well_floor + 2 * eps);
       translate([0, 0, well_floor]) cylinder(d = screw_head_d, h = fascia_h + roof_rise);
@@ -257,6 +265,14 @@ module assembly() {
   color("#5a4632") body();
   panels();
   color("#3b4a5a") translate([0, 0, body_h + standoff_h]) roof();
+  // Black stainless M6 eye bolt (preview only; purchased part)
+  top = body_h + standoff_h + fascia_h + roof_rise + 3;
+  color("#1a1a1a") {
+    translate([0, 0, top - 3 - seat_depth - 9.6]) cylinder(d = 6, h = 3 + seat_depth + 9.6 + 6);
+    translate([0, 0, top]) cylinder(d = 10, h = 6, $fn = 6);
+    translate([0, 0, top + 6 + eye_bolt_od / 2]) rotate([90, 0, 0])
+      rotate_extrude() translate([eye_bolt_od / 2 - 2.5, 0]) circle(d = 5);
+  }
 }
 
 if (part == "body") body();

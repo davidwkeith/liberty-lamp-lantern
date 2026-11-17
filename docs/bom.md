@@ -15,7 +15,7 @@ Estimates come from PrusaSlicer: 0.2 mm layers, 3 perimeters, 20% gyroid infill,
 | Item | Spec | Per lantern | ×13 (+spares) | Notes |
 |------|------|-------------|---------------|-------|
 | Body | `build/stl/body.stl` | 1 | 15 | ~180 g, ~17 h 40 m each |
-| Roof | `build/stl/roof.stl` | 1 | 15 | ~68 g, ~5 h 50 m each |
+| Roof | `build/stl/roof.stl` | 1 | 15 | ~69 g, ~6 h each |
 | Filament | PETG or ASA, 1.75 mm | ~248 g | ~3.7 kg → **5 × 1 kg spools** | One color lot for all 13 so they match; the 5th spool covers purge, test prints and failures |
 
 The total print time is about **306 h** for 13 lanterns, or about 353 h with spares.
@@ -27,6 +27,11 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 | Heat-set insert | M3, ≤ 6 mm long, for a 4.2 mm hole | 2 | 29 | Hole is 8 mm deep |
 | Screw | M3×10 socket head, A4 (316) stainless | 2 | 29 | Down through the roof wells |
 | Well plug | Outdoor sealant (one tube), or printed plugs | 2 | 1 tube, or 30 plugs | Keeps rain out of the screw wells |
+| Eye bolt | M6 × 40 eye bolt (≥ 32 mm thread), **black** stainless (black-oxide or black-coated 316/304), eye ID ≥ 12 mm | 1 | 15 | Carries the lantern; metal takes the chain wear |
+| Hex nut | M6, black stainless | 1 | 15 | On top of the cap, under the eye |
+| Sealing washer | M6 bonded EPDM/stainless sealing washer | 1 | 15 | Under the top nut; seals the bolt hole |
+| Fender washer | M6 × 18 × 1.6, stainless | 1 | 15 | Inside the roof, on the printed seat |
+| Nyloc nut | M6, stainless | 1 | 15 | Inside the roof; reachable before the roof is screwed on |
 | Panel | 83.4 × 113.7 × 3 mm; material TBD | 4 | 54 | One per lantern carries the colony's art |
 
 ## Lantern cord and connector
@@ -53,7 +58,7 @@ The total print time is about **306 h** for 13 lanterns, or about 353 h with spa
 |------|------|-------------|---------------|-------|
 | Sling | 25 mm (1") polyester webbing, sewn loop | 1 | 15 | Basket hitch over the limb, both ends to the quick link. Never girth-hitched |
 | Quick link | 316 stainless, ~5 mm | 1 | 15 | Sling to chain |
-| Chain | 316 stainless, short | TBD (survey) | 13 × TBD (survey), +1 m | Quick link to the roof eye |
+| Chain | 316 stainless, short | TBD (survey) | 13 × TBD (survey), +1 m | Quick link to the eye bolt |
 | Tree ties | Soft rubber-coated twist tie, bulk roll | — | 1 roll | Limbs about every 40 cm, plus padded limb loops at each crotch for the trunk cables. Never around the trunk |
 
 ## Candle PCB

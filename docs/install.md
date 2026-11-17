@@ -11,7 +11,7 @@ How to wire and hang the 13 lanterns in the front-yard Deodar cedar, and how to 
 
 - [ ] Cube readings are recorded in [TODO.md](../TODO.md). The cabling below can go in before them; the lanterns' boards can't.
 - [ ] The tree survey is done: 13 spots grouped by limb into 2–3 trunk runs, with cable lengths measured.
-- [ ] Each lantern is assembled: panels in, roof screwed down, and the cord out through the eye with an SP13 **male** on a ~30 cm pigtail.
+- [ ] Each lantern is assembled: panels in, roof screwed down, and the cord out through the post-corner opening with an SP13 **male** on a ~30 cm pigtail.
 - [ ] **The cedar's Luxor group is turned off** in the Luxor app, or the transformer is switched off, before you touch any wire.
 
 ## 2. Base junction
@@ -40,7 +40,7 @@ The ladder steps below need both hands. Have a helper foot the ladder, and keep 
 
 1. Drape the webbing sling over the limb in a **basket hitch**: over the top, with both ends brought down to the quick link. The webbing pads the bark and spreads the load. A basket hitch can't cinch, but a girth or choker hitch would tighten under the lantern's weight and girdle the limb over the years.
 2. Clip both sling ends into a 316 quick link, and hang the chain from it.
-3. Hook the lantern's roof eye onto the chain. Check that it hangs plumb and clears nearby branches when they move in the wind.
+3. Hook the lantern's eye bolt onto the chain. Check that it hangs plumb and clears nearby branches when they move in the wind.
 4. Plug the lantern's SP13 male into the drop's female next to the lantern, and screw the collar down until the seal seats.
 5. The pigtail leaves the lantern through the post corner just below the top rail. Let it dip into a **drip loop below that opening** before it rises to the connector.
 6. Tie the drop loosely to the chain every 20–30 cm with **some slack**, and add a strain-relief tie that holds the pigtail to the chain near the eye. The chain carries the lantern; the cable must never go taut. A tug on the cord should pull the chain, not the cord's joints inside the lantern.
@@ -58,10 +58,10 @@ The ladder steps below need both hands. Have a helper foot the ladder, and keep 
 - [ ] **Crotch loops:** these are the limb loops holding the trunk cables at each crotch. Loosen any that's getting tight against bark, and re-tie it with slack.
 - [ ] **Limb ties:** same check. Replace any brittle or sun-cracked ties.
 - [ ] **Slings:** look for UV fading, fraying or stiffness, and replace any that show it. Webbing in full sun lasts a few seasons. Confirm each one is still a basket hitch and hasn't been re-rigged as a girth hitch.
-- [ ] **Chain and quick links:** check the gates are closed and there's no wear at the roof eye.
+- [ ] **Chain, quick links and eye bolt:** check the gates are closed, there's no wear at the eye, and the eye bolt doesn't turn or rock. Its top nut and sealing washer should be snug.
 - [ ] **SP13 connectors:** unscrew one or two to check the seals are seated and there's no water inside. Re-seat the collars.
 - [ ] **Drip loops:** make sure they're still lower than each connector and gland.
 - [ ] **Roof screw wells:** check the sealant or plugs are intact.
-- [ ] **Panels and frame:** look for cracks, sagging, or creep at the eye from heat, and replace any affected part.
+- [ ] **Panels and frame:** look for cracks or sagging, especially around the roof peak and the two roof screws, and replace any affected part.
 - [ ] **Base enclosure:** check it's dry inside, the glands are tight, and the drain is clear.
 - [ ] **Power back on:** finish with the 100% → 10% check from section 6.

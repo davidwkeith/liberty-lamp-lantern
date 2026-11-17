@@ -13,6 +13,7 @@ const SRC = fileURLToPath(new URL('../src/lantern.scad', import.meta.url));
 const CONTACT = fileURLToPath(new URL('./fixtures/roof-contact.scad', import.meta.url));
 const CAP = fileURLToPath(new URL('./fixtures/roof-cap.scad', import.meta.url));
 const EXIT = fileURLToPath(new URL('./fixtures/cord-exit.scad', import.meta.url));
+const BOLT = fileURLToPath(new URL('./fixtures/roof-bolt.scad', import.meta.url));
 const dir = mkdtempSync(join(tmpdir(), 'lantern-'));
 
 /** Render `file` with -D overrides; returns { ok, stderr, tris }. */
@@ -58,10 +59,13 @@ test('body prints without supports (no raised down-facing area)', () => {
   assert.ok(area < 100, `${Math.round(area)} mm² of unsupported overhang`);
 });
 
-test('roof cap has no opening to the sky', () => {
+test('roof cap has no opening to the sky except the eye bolt', () => {
+  const control = render(CAP, { mode: 'control' }, 'cap-control');
+  assert.doesNotMatch(control.stderr, /WARNING|ERROR/);
+  assert.ok(analyze(control.tris).count > 0, 'slab itself is empty; the test is broken');
   const r = render(CAP, {}, 'cap');
-  assert.ok(r.ok, r.stderr);
-  assert.equal(analyze(r.tris).count, 12, 'cap slab is not a plain box: something pierces the cap');
+  assert.doesNotMatch(r.stderr, /WARNING|ERROR/);
+  assert.equal(analyze(r.tris).count, 0, 'something other than the eye bolt pierces the cap');
 });
 
 test('cord exits sideways under the eave, sloping down', () => {
@@ -72,4 +76,21 @@ test('cord exits sideways under the eave, sloping down', () => {
   assert.doesNotMatch(r.stderr, /WARNING|ERROR/);
   // An empty intersection exports no file (or zero triangles): the path is open.
   assert.equal(analyze(r.tris).count, 0, 'body material blocks the cord exit path');
+});
+
+test('roof has an open bolt hole down its axis', () => {
+  const control = render(BOLT, { mode: 'probe' }, 'bolt-probe');
+  assert.doesNotMatch(control.stderr, /WARNING|ERROR/);
+  assert.ok(analyze(control.tris).count > 0, 'probe itself is empty; the test is broken');
+  const r = render(BOLT, { mode: 'hole' }, 'bolt-hole');
+  assert.doesNotMatch(r.stderr, /WARNING|ERROR/);
+  assert.equal(analyze(r.tris).count, 0, 'roof material blocks the eye-bolt hole');
+});
+
+test('roof has a solid washer seat under the peak', () => {
+  const r = render(BOLT, { mode: 'seat' }, 'bolt-seat');
+  assert.doesNotMatch(r.stderr, /WARNING|ERROR/);
+  const { count, size } = analyze(r.tris);
+  assert.ok(count > 0, 'no material where the washer bears');
+  assert.ok(size[0] >= 17 && size[1] >= 17, `seat only ${size[0]} × ${size[1]} mm`);
 });
